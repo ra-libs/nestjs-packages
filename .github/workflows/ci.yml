@@ -33,9 +33,11 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         with:
           fetch-depth: 0
-      - uses: ./.github/actions/nx-set-shas
-        with:
-          main-branch-name: ${{ github.base_ref }}
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: ./.github/actions/nx-set-shas
+      - run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
       - run: npm ci
       - run: npx nx format:check
       - run: npx nx affected -t lint --parallel=3
