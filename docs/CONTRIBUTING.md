@@ -6,6 +6,7 @@ This repo uses some tools:
 - [lint-staged](https://github.com/okonet/lint-staged) to run linters against staged git files.
 - [commitlint](https://github.com/conventional-changelog/commitlint) to follow [conventional-commit](https://www.conventionalcommits.org/en/v1.0.0/).
 - [commitizen](https://commitizen.github.io/cz-cli/) to fill any missing required fields.
+- [semantic-release-plus](https://semantic-release-plus.gitbook.io/semantic-release-plus/) automated version management and package publishing
 
 ## How to
 
@@ -21,4 +22,32 @@ This repo uses some tools:
 
 ```bash
 nx g @nx/nest:library growthbook --publishable --importPath @will-bank/<LIBRARY_NAME>
+```
+
+After publishable library created, you must update `package.json`
+
+1. replace `version: 0.0.1` to `version: 0.0.0-semantic-release`
+2. add repository config
+
+```json
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/will-bank/nestjs-packages.git",
+    "directory": "libs/<LIBRARY_NAME>"
+  },
+```
+
+3. add `publishConfig`
+
+```json
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+```
+
+4. add [release.config.js](../libs/growthbook/release.config.js) file.
+5. add a `release` target ub your library `project.json`
+
+```bash
+nx generate @nrwl/workspace:run-commands release --command='npx semantic-release-plus --extends ./libs/<LIBRARY_NAME>/release.config.js' --project=<LIBRARY_NAME>
 ```

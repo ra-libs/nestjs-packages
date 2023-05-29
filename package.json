@@ -7,6 +7,7 @@
   },
   "private": true,
   "dependencies": {
+    "@growthbook/growthbook": "^0.27.0",
     "@nestjs/common": "^9.1.1",
     "@nestjs/core": "^9.1.1",
     "@nestjs/platform-express": "^9.1.1",
@@ -43,6 +44,8 @@
     "lint-staged": "^13.2.2",
     "nx": "16.2.2",
     "prettier": "^2.6.2",
+    "semantic-release-npm-github-publish": "^1.5.4",
+    "semantic-release-plus": "^20.0.0",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.0.2"

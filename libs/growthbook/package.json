@@ -1,0 +1,13 @@
+{
+  "name": "@will-bank/growthbook",
+  "version": "0.0.0-semantic-release",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/will-bank/nestjs-packages.git",
+    "directory": "libs/growthbook"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

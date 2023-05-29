@@ -1,0 +1,52 @@
+{
+  "name": "growthbook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/growthbook/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/growthbook",
+        "tsConfig": "libs/growthbook/tsconfig.lib.json",
+        "packageJson": "libs/growthbook/package.json",
+        "main": "libs/growthbook/src/index.ts",
+        "assets": ["libs/growthbook/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs growthbook {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/growthbook/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/growthbook/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "npx semantic-release-plus --extends ./libs/growthbook/release.config.js"
+      }
+    }
+  },
+  "tags": []
+}
