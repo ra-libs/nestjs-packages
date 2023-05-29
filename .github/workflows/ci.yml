@@ -12,9 +12,6 @@ env:
 jobs:
   main:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ github.workspace }}
     permissions:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
@@ -22,22 +19,11 @@ jobs:
       id-token: write # to enable use of OIDC for npm provenance
       packages: write # to be able to publish to GitHub Packages
     steps:
-      - name: Checkout [Pull Request]
-        uses: actions/checkout@v3
-        if: ${{ github.event_name == 'pull_request' }}
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0
-      - name: Checkout [Default Branch]
-        uses: actions/checkout@v3
-        if: ${{ github.event_name != 'pull_request' }}
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: ./.github/actions/nx-set-shas
-      - run: |
-          echo "BASE: ${{ env.NX_BASE }}"
-          echo "HEAD: ${{ env.NX_HEAD }}"
+      - run: "git branch --track main origin/main"
+      - uses: ./.github/actions/nx-set-shas
       - run: npm ci
       - run: npx nx format:check
       - run: npx nx affected -t lint --parallel=3
