@@ -45,8 +45,8 @@ After publishable library created, you must update `package.json`
   }
 ```
 
-4. add [release.config.js](../libs/growthbook/release.config.js) file.
-5. add a `release` target ub your library `project.json`
+4. add [release.config.js](/libs/growthbook/release.config.js) file. make sure to set your library name correctly
+5. add a `release` target to your library `project.json`
 
 ```bash
 nx generate @nrwl/workspace:run-commands release --command='npx semantic-release-plus --extends ./libs/<LIBRARY_NAME>/release.config.js' --project=<LIBRARY_NAME>
