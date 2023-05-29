@@ -26,4 +26,4 @@ See [Changelog](CHANGELOG.md) for more information.
 
 ## Contributing
 
-Contributions welcome! See [Contributing](CONTRIBUTING.md).
+Contributions welcome! See [Contributing](docs/CONTRIBUTING.md).
