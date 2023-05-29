@@ -2,7 +2,7 @@ const name = 'growthbook';
 const srcRoot = `libs/${name}`;
 
 module.exports = {
-  extends: `release.config.base.js`,
+  extends: 'release.config.js',
   pkgRoot: `dist/${srcRoot}`,
   tagFormat: name + '-v${version}',
   commitPaths: [`${srcRoot}/*`],
@@ -19,10 +19,10 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: [`${srcRoot}/CHANGELOG.md`, `${srcRoot}/package.json`],
+        assets: [`${srcRoot}/package.json`, `${srcRoot}/CHANGELOG.md`],
         message:
           `release(version): Release ${name} ` +
-          '${nextRelease.version} [skip ci] \n\n${nextRelease.notes}',
+          '${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
   ],
