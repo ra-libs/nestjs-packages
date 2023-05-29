@@ -2,7 +2,7 @@ const name = 'growthbook';
 const srcRoot = `libs/${name}`;
 
 module.exports = {
-  extends: 'release.config.base.js',
+  extends: '.releaserc.json',
   pkgRoot: `dist/${srcRoot}`,
   tagFormat: name + '-v${version}',
   commitPaths: [`${srcRoot}/*`],
