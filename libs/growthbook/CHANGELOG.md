@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.0...growthbook-v1.1.1) (2023-06-12)
+
+
+### Bug Fixes
+
+* inject growthbook client ([#5](https://github.com/will-bank/nestjs-packages/issues/5)) ([ec184af](https://github.com/will-bank/nestjs-packages/commit/ec184af3151741961c1249d27fca8023fcf44fc8))
+
 # [1.1.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.0.0...growthbook-v1.1.0) (2023-06-12)
 
 
