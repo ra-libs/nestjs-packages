@@ -22,6 +22,7 @@ export class GrowthbookModule {
                 process.env['NODE_END'] === 'development',
               ...context,
             }),
+          inject: ['client'],
         },
         GrowthbookService,
       ],
