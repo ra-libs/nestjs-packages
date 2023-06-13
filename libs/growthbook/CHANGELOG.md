@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.4...growthbook-v1.1.5) (2023-06-13)
+
+
+### Bug Fixes
+
+* **growthbook:** change register to forRoot method ([#7](https://github.com/will-bank/nestjs-packages/issues/7)) ([e361ed8](https://github.com/will-bank/nestjs-packages/commit/e361ed8a587c9b0e897a0754f49388e2fc80f49b))
+
 ## [1.1.4](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.3...growthbook-v1.1.4) (2023-06-13)
 
 
