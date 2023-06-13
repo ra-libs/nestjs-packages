@@ -25,9 +25,7 @@ export class GrowthbookService implements OnModuleInit {
       ...this.context,
       ...attributes,
     });
-
     await client.loadFeatures({ autoRefresh: true });
-
     return client.isOn(name);
   }
 }

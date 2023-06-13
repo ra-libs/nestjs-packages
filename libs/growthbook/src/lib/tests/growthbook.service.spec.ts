@@ -40,7 +40,7 @@ describe('GrowthbookService', () => {
 
   it('should call isOn', async () => {
     await growthbookService.isOn('test');
-    expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1)
+    expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1);
     expect(growthbookClientMock.isOn).toBeCalledWith('test');
   });
 });
