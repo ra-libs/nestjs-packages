@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.2...growthbook-v1.1.3) (2023-06-13)
+
+
+### Bug Fixes
+
+* **growthbook:** verify load features ([f13f757](https://github.com/will-bank/nestjs-packages/commit/f13f757ddeb6dcbfb2d38ab0d94f7d531ac1ace2))
+
 ## [1.1.2](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.1...growthbook-v1.1.2) (2023-06-13)
 
 
