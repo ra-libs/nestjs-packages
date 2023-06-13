@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.1...growthbook-v1.1.2) (2023-06-13)
+
+
+### Bug Fixes
+
+* **growthbook:** attributes and setPolyfills for node ([#6](https://github.com/will-bank/nestjs-packages/issues/6)) ([301098b](https://github.com/will-bank/nestjs-packages/commit/301098b3287f9bd65fae65dd6686214562472e78))
+
 ## [1.1.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.0...growthbook-v1.1.1) (2023-06-12)
 
 
