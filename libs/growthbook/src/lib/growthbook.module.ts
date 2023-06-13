@@ -6,7 +6,7 @@ import { GrowthbookService } from './growthbook.service';
 @Global()
 @Module({})
 export class GrowthbookModule {
-  static register(context: Context = {}): DynamicModule {
+  static forRoot(context: Context = {}): DynamicModule {
     return {
       module: GrowthbookModule,
       providers: [

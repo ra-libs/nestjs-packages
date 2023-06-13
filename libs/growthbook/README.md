@@ -2,6 +2,55 @@
 
 This library was generated with [Nx](https://nx.dev).
 
+## Installing this package
+
+```bash
+npm install @will-bank/growthbook
+```
+
+> Make sure to create your `.npmrc` correctly.
+
+## Usage
+
+in your `app.module.ts` import this module
+
+```ts
+import { GrowthbookModule } from '@will-bank/growthbook';
+
+@Module({
+  imports: [
+    // ...
+    GrowthbookModule.forRoot(),
+  ],
+})
+export class AppModule {}
+```
+
+You can pass configuration options as an object parameter or it will use by default the environment variables to setup growthbook
+
+- GROWTHBOOK_API_HOST
+- GROWTHBOOK_CLIENT_KEY
+
+In your specific service inject the GrowthbookService as follow:
+
+```ts
+@Injectable()
+export class YourService {
+  constructor(private readonly growthbookService: GrowthbookService) {}
+
+  async xptoMethod() {
+    if (
+      await this.growthbookService.isOn('featureFlagX', {
+        // attributes
+        customerId: 'ABC',
+      })
+    ) {
+      // Do something
+    }
+  }
+}
+```
+
 ## Building
 
 Run `nx build growthbook` to build the library.

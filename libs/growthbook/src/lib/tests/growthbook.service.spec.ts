@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { createMock, DeepMocked } from '@golevelup/ts-jest';
+import { createMock } from '@golevelup/ts-jest';
 
 import { GrowthbookService } from '../growthbook.service';
 import { GrowthBook } from '@growthbook/growthbook';
