@@ -1,21 +1,31 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { createMock, DeepMocked } from '@golevelup/ts-jest';
 
-import { GROWTHTBOOK_CLIENT } from '../growthbook.constants';
 import { GrowthbookService } from '../growthbook.service';
+import { GrowthBook } from '@growthbook/growthbook';
+
+const growthbookClientMock = createMock<GrowthBook>();
+
+jest.mock('@growthbook/growthbook', () => ({
+  GrowthBook: jest.fn().mockImplementation(() => growthbookClientMock),
+  setPolyfills: jest.fn(),
+}));
 
 describe('GrowthbookService', () => {
   let growthbookService: GrowthbookService;
-  const growthbookClientMock = {
-    isOn: jest.fn().mockReturnThis(),
-  };
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
-          provide: GROWTHTBOOK_CLIENT,
-          useValue: growthbookClientMock,
+          provide: GrowthbookService,
+          useFactory: () => {
+            return new GrowthbookService({
+              apiHost: 'test',
+              clientKey: 'test',
+            });
+          },
         },
-        GrowthbookService,
       ],
     }).compile();
 
@@ -28,8 +38,8 @@ describe('GrowthbookService', () => {
     expect(growthbookService).toBeDefined();
   });
 
-  it('should call isOn', () => {
-    growthbookService.isOn('test');
+  it('should call isOn', async () => {
+    await growthbookService.isOn('test');
     expect(growthbookClientMock.isOn).toBeCalledWith('test');
   });
 });

@@ -1,19 +1,19 @@
-import { Context, GrowthBook } from '@growthbook/growthbook';
-import { DynamicModule, Module } from '@nestjs/common';
+import { Context } from '@growthbook/growthbook';
+import { DynamicModule, Global, Module } from '@nestjs/common';
 
-import { GROWTHTBOOK_CLIENT } from './growthbook.constants';
 import { GrowthbookService } from './growthbook.service';
 
+@Global()
 @Module({})
 export class GrowthbookModule {
-  static register(context: Context): DynamicModule {
+  static register(context: Context = {}): DynamicModule {
     return {
       module: GrowthbookModule,
       providers: [
         {
-          provide: GROWTHTBOOK_CLIENT,
-          useFactory: () =>
-            new GrowthBook({
+          provide: GrowthbookService,
+          useFactory: () => {
+            return new GrowthbookService({
               apiHost: context.apiHost || process.env['GROWTHBOOK_API_HOST'],
               clientKey:
                 context.clientKey || process.env['GROWTHBOOK_CLIENT_KEY'],
@@ -21,12 +21,11 @@ export class GrowthbookModule {
                 context.enableDevMode ||
                 process.env['NODE_END'] === 'development',
               ...context,
-            }),
-          inject: ['client'],
+            });
+          },
         },
-        GrowthbookService,
       ],
-      exports: [],
+      exports: [GrowthbookService],
     };
   }
 }

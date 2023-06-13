@@ -21,7 +21,7 @@ This repo uses some tools:
 ## Create new Library
 
 ```bash
-nx g @nx/nest:library growthbook --publishable --importPath @will-bank/<LIBRARY_NAME>
+nx g @nx/nest:library <LIBRARY_NAME> --publishable --importPath @will-bank/<LIBRARY_NAME>
 ```
 
 After publishable library created, you must update `package.json`
