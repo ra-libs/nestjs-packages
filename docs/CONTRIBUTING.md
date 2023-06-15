@@ -20,6 +20,16 @@ This repo uses some tools:
 
 ## Create new Library
 
+### Using Makefile
+
+```bash
+make create-lib NAME=<LIBRARY_NAME>
+```
+
+That's it :rocket:
+
+### Manually
+
 ```bash
 nx g @nx/nest:library <LIBRARY_NAME> --publishable --importPath @will-bank/<LIBRARY_NAME>
 ```
@@ -45,7 +55,7 @@ After publishable library created, you must update `package.json`
   }
 ```
 
-4. add [release.config.js](/libs/growthbook/release.config.js) file. make sure to set your library name correctly
+4. add [release.config.js](/assets/release.config.js) file. make sure to set your library name correctly
 5. add a `release` target to your library `project.json`
 
 ```bash

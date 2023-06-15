@@ -8,7 +8,7 @@ This library was generated with [Nx](https://nx.dev).
 npm install @will-bank/growthbook
 ```
 
-> Make sure to create your `.npmrc` correctly.
+> Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
 
 ## Usage
 

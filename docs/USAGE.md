@@ -9,9 +9,10 @@ To be able to install these packages locally you should create a Personal Access
 Make sure to save your PAT and export it as GPR_TOKEN variable.
 
 Create a `.npmrc` file in your project as follow
+
 ```
 @will-bank:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=$GPR_TOKEN
+//npm.pkg.github.com/:_authToken=${GPR_TOKEN}
 ```
 
 Now you should be able to install any package using `npm install @will-bank/<LIBRARY_NAME>`

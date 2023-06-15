@@ -1,0 +1,13 @@
+{
+  "name": "@will-bank/sns",
+  "version": "0.0.0-semantic-release",
+  "type": "commonjs",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/will-bank/nestjs-packages.git",
+    "directory": "libs/sns"
+  }
+}

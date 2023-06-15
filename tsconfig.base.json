@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@will-bank/growthbook": ["libs/growthbook/src/index.ts"]
+      "@will-bank/growthbook": ["libs/growthbook/src/index.ts"],
+      "@will-bank/sns": ["libs/sns/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
