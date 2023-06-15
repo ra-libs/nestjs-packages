@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.5...growthbook-v1.2.0) (2023-06-15)
+
+
+### Features
+
+* **sns:** create initial sns lib ([#8](https://github.com/will-bank/nestjs-packages/issues/8)) ([5e1a2ef](https://github.com/will-bank/nestjs-packages/commit/5e1a2efc6d190b22e64141eaf3856adf99f3846b))
+
 ## [1.1.5](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.4...growthbook-v1.1.5) (2023-06-13)
 
 
