@@ -23,8 +23,12 @@ export class GrowthbookService implements OnModuleInit {
   async isOn(name: string, attributes: Attributes = {}) {
     const client = new GrowthBook({
       ...this.context,
-      ...attributes,
+      attributes: {
+        ...this.context.attributes,
+        ...attributes,
+      },
     });
+
     await client.loadFeatures({ autoRefresh: true });
     return client.isOn(name);
   }

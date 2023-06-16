@@ -43,4 +43,17 @@ describe('GrowthbookService', () => {
     expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1);
     expect(growthbookClientMock.isOn).toBeCalledWith('test');
   });
+
+  it('should call isOn with attributes', async () => {
+    const gbMock = jest.requireMock('@growthbook/growthbook');
+    const attributes = { customerId: '22ac469f-5d20-42c0-aaae-5634571ebc9d' };
+
+    await growthbookService.isOn('test', attributes);
+
+    expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1);
+    expect(growthbookClientMock.isOn).toBeCalledWith('test');
+    expect(gbMock.GrowthBook).toHaveBeenCalledWith(
+      expect.objectContaining({ attributes })
+    );
+  });
 });
