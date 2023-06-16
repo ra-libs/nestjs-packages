@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.2.0...growthbook-v1.2.1) (2023-06-16)
+
+
+### Bug Fixes
+
+* **growthbook:** concat attributes ([#9](https://github.com/will-bank/nestjs-packages/issues/9)) ([1c78b6b](https://github.com/will-bank/nestjs-packages/commit/1c78b6ba2705688f400c482c1104e9b618b17b94))
+
 # [1.2.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.1.5...growthbook-v1.2.0) (2023-06-15)
 
 
