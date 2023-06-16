@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.2.1...growthbook-v1.3.0) (2023-06-16)
+
+
+### Features
+
+* **growthbook:** add getFeatureValue ([#10](https://github.com/will-bank/nestjs-packages/issues/10)) ([1c202de](https://github.com/will-bank/nestjs-packages/commit/1c202de16006b4821413c6434458e6a9f307e0db))
+
 ## [1.2.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.2.0...growthbook-v1.2.1) (2023-06-16)
 
 
