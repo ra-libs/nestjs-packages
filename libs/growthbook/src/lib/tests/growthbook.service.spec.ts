@@ -38,22 +38,54 @@ describe('GrowthbookService', () => {
     expect(growthbookService).toBeDefined();
   });
 
-  it('should call isOn', async () => {
-    await growthbookService.isOn('test');
-    expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1);
-    expect(growthbookClientMock.isOn).toBeCalledWith('test');
+  describe('isOn', () => {
+    it('should call isOn', async () => {
+      await growthbookService.isOn('test');
+      expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1);
+      expect(growthbookClientMock.isOn).toBeCalledWith('test');
+    });
+
+    it('should call isOn with attributes', async () => {
+      const gbMock = jest.requireMock('@growthbook/growthbook');
+      const attributes = { customerId: '22ac469f-5d20-42c0-aaae-5634571ebc9d' };
+
+      await growthbookService.isOn('test', attributes);
+
+      expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1);
+      expect(growthbookClientMock.isOn).toBeCalledWith('test');
+      expect(gbMock.GrowthBook).toHaveBeenCalledWith(
+        expect.objectContaining({ attributes })
+      );
+    });
   });
 
-  it('should call isOn with attributes', async () => {
-    const gbMock = jest.requireMock('@growthbook/growthbook');
-    const attributes = { customerId: '22ac469f-5d20-42c0-aaae-5634571ebc9d' };
+  describe('getFeatureValue', () => {
+    it('should call getFeatureValue', async () => {
+      growthbookClientMock.getFeatureValue.mockReturnValue('test-value');
 
-    await growthbookService.isOn('test', attributes);
+      const value = await growthbookService.getFeatureValue('test', 'default');
+      expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1);
+      expect(growthbookClientMock.getFeatureValue).toBeCalledWith(
+        'test',
+        'default'
+      );
+      expect(value).toEqual('test-value');
+    });
 
-    expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1);
-    expect(growthbookClientMock.isOn).toBeCalledWith('test');
-    expect(gbMock.GrowthBook).toHaveBeenCalledWith(
-      expect.objectContaining({ attributes })
-    );
+    it('should call getFeatureValue with attributes', async () => {
+      const gbMock = jest.requireMock('@growthbook/growthbook');
+      const attributes = { customerId: '22ac469f-5d20-42c0-aaae-5634571ebc9d' };
+
+      await growthbookService.getFeatureValue('test', 'default', attributes);
+
+      expect(growthbookClientMock.loadFeatures).toBeCalledTimes(1);
+      expect(growthbookClientMock.getFeatureValue).toBeCalledWith(
+        'test',
+        'default'
+      );
+      expect(gbMock.GrowthBook).toHaveBeenCalledWith(
+        expect.objectContaining({ attributes })
+      );
+    });
   });
 });

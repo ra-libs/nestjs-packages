@@ -3,7 +3,10 @@ import { Injectable, OnModuleInit } from '@nestjs/common';
 import { Attributes } from './@types';
 
 @Injectable()
-export class GrowthbookService implements OnModuleInit {
+export class GrowthbookService<
+  AppFeatures extends Record<string, any> = Record<string, any>
+> implements OnModuleInit
+{
   constructor(private context: Context) {}
 
   async onModuleInit() {
@@ -20,7 +23,7 @@ export class GrowthbookService implements OnModuleInit {
     });
   }
 
-  async isOn(name: string, attributes: Attributes = {}) {
+  private async createClientInstance(attributes: Attributes = {}) {
     const client = new GrowthBook({
       ...this.context,
       attributes: {
@@ -28,8 +31,23 @@ export class GrowthbookService implements OnModuleInit {
         ...attributes,
       },
     });
-
     await client.loadFeatures({ autoRefresh: true });
-    return client.isOn(name);
+    return client;
+  }
+
+  async isOn<K extends string & keyof AppFeatures = string>(
+    key: K,
+    attributes: Attributes = {}
+  ) {
+    const client = await this.createClientInstance(attributes);
+    return client.isOn<K>(key);
+  }
+
+  async getFeatureValue<
+    V extends AppFeatures[K],
+    K extends string & keyof AppFeatures = string
+  >(key: K, defaultValue: V, attributes: Attributes = {}) {
+    const client = await this.createClientInstance(attributes);
+    return client.getFeatureValue<V, K>(key, defaultValue);
   }
 }
