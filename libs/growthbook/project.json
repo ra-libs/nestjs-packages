@@ -40,12 +40,13 @@
         }
       }
     },
-    "release": {
-      "executor": "nx:run-commands",
-      "outputs": [],
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
-        "command": "npx semantic-release-plus --extends ./libs/growthbook/release.config.js",
-        "parallel": false
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "growthbook-v${VERSION}"
       }
     }
   },

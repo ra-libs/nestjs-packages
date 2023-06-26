@@ -40,11 +40,13 @@
         }
       }
     },
-    "release": {
-      "executor": "nx:run-commands",
-      "outputs": [],
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
-        "command": "npx semantic-release-plus --extends ./libs/logger/release.config.js"
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "logger-v${VERSION}"
       }
     }
   },

@@ -35,4 +35,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.WILLBANK_PLATFORMS_PERSONAL_ACCESS_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx nx run-many --targets=build,release
+          npx nx run-many --targets=build,semantic-release --parallel=false
