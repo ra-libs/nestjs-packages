@@ -45,7 +45,7 @@
       "options": {
         "github": true,
         "changelog": true,
-        "npm": true,
+        "npm": false,
         "tagFormat": "logger-v${VERSION}"
       }
     }

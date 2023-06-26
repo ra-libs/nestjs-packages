@@ -6,7 +6,16 @@ module.exports = {
     '${PROJECT_DIR}/CHANGELOG.md',
     '${PROJECT_DIR}/package.json',
   ],
-  npm: true,
+  plugins: [
+    [
+      '@semantic-release/npm',
+      {
+        npmPublish: true,
+        pkgRoot: '${WORKSPACE_DIR}/dist/libs/${PROJECT_NAME}',
+      },
+    ],
+  ],
+  npm: false,
   buildTarget: 'build',
   outputPath: '${WORKSPACE_DIR}/dist/libs/${PROJECT_NAME}',
 };
