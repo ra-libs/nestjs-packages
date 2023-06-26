@@ -1,6 +1,6 @@
 {
   "name": "@will-bank/sns",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "type": "commonjs",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
