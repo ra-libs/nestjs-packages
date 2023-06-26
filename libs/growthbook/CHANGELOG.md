@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.4...growthbook-v1.4.5) (2023-06-26)
+
+
+### Bug Fixes
+
+* npm set private to false ([e60760a](https://github.com/will-bank/nestjs-packages/commit/e60760a7dd65c1085e997b83c88413e0ce1727c9))
+
 ## [1.4.4](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.3...growthbook-v1.4.4) (2023-06-26)
 
 
