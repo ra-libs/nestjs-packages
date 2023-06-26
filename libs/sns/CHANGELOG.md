@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/will-bank/nestjs-packages/compare/sns-v1.1.1...sns-v1.1.2) (2023-06-26)
+
+
+### Bug Fixes
+
+* change semantic-release lib ([#16](https://github.com/will-bank/nestjs-packages/issues/16)) ([5d7b573](https://github.com/will-bank/nestjs-packages/commit/5d7b573da2f71d4143b390fcce7d916637d7d3d2))
+
 ## [1.1.1](https://github.com/will-bank/nestjs-packages/compare/sns-v1.1.0...sns-v1.1.1) (2023-06-26)
 
 
