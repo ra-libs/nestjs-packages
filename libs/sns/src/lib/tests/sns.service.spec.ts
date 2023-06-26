@@ -31,7 +31,6 @@ describe('SNSService', () => {
         },
       ],
     }).compile();
-
     service = module.get<SNSService>(SNSService);
   });
 
@@ -50,6 +49,7 @@ describe('SNSService', () => {
       });
 
       expect(snsClientMock.send).toBeCalledTimes(1);
+
       expect(snsClientMock.send).toBeCalledWith({
         TopicArn: topicArn,
         Message: message,

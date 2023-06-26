@@ -28,7 +28,6 @@ describe('Logger', () => {
     }).compile();
 
     logger = module.get<Logger>(Logger);
-
     jest.clearAllMocks();
   });
 
