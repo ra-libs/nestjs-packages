@@ -5,7 +5,10 @@
   "scripts": {
     "prepare": "husky install"
   },
-  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "private": false,
   "dependencies": {
     "@aws-sdk/client-sns": "^3.359.0",
     "@growthbook/growthbook": "^0.27.0",
