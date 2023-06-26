@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/will-bank/nestjs-packages/compare/sns-v1.1.4...sns-v1.1.5) (2023-06-26)
+
+
+### Bug Fixes
+
+* npm set private to false ([e60760a](https://github.com/will-bank/nestjs-packages/commit/e60760a7dd65c1085e997b83c88413e0ce1727c9))
+
 ## [1.1.4](https://github.com/will-bank/nestjs-packages/compare/sns-v1.1.3...sns-v1.1.4) (2023-06-26)
 
 
