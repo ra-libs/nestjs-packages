@@ -18,3 +18,14 @@ lint:
 
 test:
 	npx nx affected -t test
+
+# Check https://nx.dev/core-features/automate-updating-dependencies
+check-deps:
+	npx nx migrate latest
+
+update-deps:
+	npm install
+	npx nx migrate --run-migrations
+
+clean-migrations:
+	rm ./migrations.json
