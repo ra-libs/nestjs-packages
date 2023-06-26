@@ -11,11 +11,11 @@ module.exports = {
       '@semantic-release/npm',
       {
         npmPublish: true,
-        pkgRoot: '${WORKSPACE_DIR}/dist/${PROJECT_NAME}',
+        pkgRoot: '${WORKSPACE_DIR}/dist/libs/${PROJECT_NAME}',
       },
     ],
   ],
   npm: true,
   buildTarget: 'build',
-  outputPath: '${WORKSPACE_DIR}/dist/${PROJECT_NAME}',
+  outputPath: '${WORKSPACE_DIR}/dist/libs/${PROJECT_NAME}',
 };

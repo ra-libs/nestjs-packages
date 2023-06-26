@@ -30,6 +30,7 @@ describe('GrowthbookService', () => {
     }).compile();
 
     growthbookService = module.get<GrowthbookService>(GrowthbookService);
+
     jest.clearAllMocks();
   });
 

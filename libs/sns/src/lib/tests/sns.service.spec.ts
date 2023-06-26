@@ -31,7 +31,6 @@ describe('SNSService', () => {
         },
       ],
     }).compile();
-
     service = module.get<SNSService>(SNSService);
   });
 
