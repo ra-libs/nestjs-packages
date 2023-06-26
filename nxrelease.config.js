@@ -11,6 +11,7 @@ module.exports = {
       '@semantic-release/npm',
       {
         npmPublish: true,
+        pkgRoot: '${WORKSPACE_DIR}/dist/${PROJECT_NAME}',
       },
     ],
   ],

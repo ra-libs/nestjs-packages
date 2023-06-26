@@ -2,6 +2,7 @@
   "name": "@will-bank/logger",
   "version": "1.0.5",
   "type": "commonjs",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/will-bank/nestjs-packages.git",
