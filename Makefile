@@ -5,6 +5,7 @@ create-lib:
 setup-lib:
 	npx nx g @theunderscorer/nx-semantic-release:setup-project ${NAME}
 	cd libs/${NAME} && \
+	npm pkg set private=false --json && \
 	npm pkg set 'repository.type'='git' && \
 	npm pkg set 'repository.url'='https://github.com/will-bank/nestjs-packages.git' && \
 	npm pkg set 'repository.directory'='libs/${NAME}' && \
