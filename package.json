@@ -37,7 +37,6 @@
     "@nx/node": "16.4.0",
     "@nx/webpack": "16.4.0",
     "@nx/workspace": "16.4.0",
-    "@semantic-release/npm": "^10.0.4",
     "@theunderscorer/nx-semantic-release": "^2.4.0",
     "@types/eventsource": "^1.1.11",
     "@types/jest": "^29.5.2",

@@ -4,5 +4,5 @@ module.exports = {
     'nx affected --target test --uncommitted',
     'nx format:write --uncommitted',
   ],
-  '*.{md}': ['prettier --write', 'nx format:write --uncommitted'],
+  '*.md': ['prettier --write', 'nx format:write --uncommitted'],
 };
