@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.6...growthbook-v1.4.7) (2023-06-26)
+
+
+### Bug Fixes
+
+* update docs ([91e3740](https://github.com/will-bank/nestjs-packages/commit/91e374094e60ca4194e90ee2ee732d34bb90e73e))
+
 ## [1.4.6](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.5...growthbook-v1.4.6) (2023-06-26)
 
 
