@@ -38,18 +38,15 @@ This will override the application logger.
 in your specifc module
 
 ```ts
-import { Logger } from '@will-bank/logger`
-
+import { Logger } from '@will-bank/logger';
 
 @Injectable()
 export class YourCustomModule {
-
   private readonly logger = new Logger(YourCustomModule.name);
 
-  yourMethod(){
-    this.logger.log("XPTO")
+  yourMethod() {
+    this.logger.log('XPTO');
   }
-
 }
 ```
 
@@ -67,31 +64,26 @@ export class YourCustomModule {}
 in your service:
 
 ```ts
-import { Logger } from '@will-bank/logger`
+import { Logger } from '@will-bank/logger';
 
 @Injectable()
 export class YourCustomService {
+  constructor(private readonly logger: Logger) {}
 
-  constructor(
-    private readonly logger: Logger
-  )
-
-  yourMethod(){
+  yourMethod() {
     this.logger.log('Hello World!');
   }
 }
-
 ```
 
 ## Node
 
 ```ts
-import { Logger } from '@will-bank/logger`
+import { Logger } from '@will-bank/logger';
 
 const logger = new Logger('Your Custom Logger');
 
 logger.error('Unexpected error!', new Error('Ops..'));
-
 ```
 
 ## Specs
