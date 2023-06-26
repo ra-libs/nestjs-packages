@@ -1,3 +1,11 @@
+## [1.0.6](https://github.com/will-bank/nestjs-packages/compare/logger-v1.0.5...logger-v1.0.6) (2023-06-26)
+
+
+### Bug Fixes
+
+* npm publish ([c2fd533](https://github.com/will-bank/nestjs-packages/commit/c2fd533f343c10aec918db2f417ad5ee881a10b1))
+* semantic npm dist dir ([c66121d](https://github.com/will-bank/nestjs-packages/commit/c66121d57f00310fcf58a0baeb72dde43fb846cb))
+
 ## [1.0.5](https://github.com/will-bank/nestjs-packages/compare/logger-v1.0.4...logger-v1.0.5) (2023-06-26)
 
 
