@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/will-bank/nestjs-packages/compare/sns-v1.1.7...sns-v1.1.8) (2023-06-26)
+
+
+### Bug Fixes
+
+* npm publish ([b1846fd](https://github.com/will-bank/nestjs-packages/commit/b1846fd5b00757725e702240d66507fd540db536))
+
 ## [1.1.7](https://github.com/will-bank/nestjs-packages/compare/sns-v1.1.6...sns-v1.1.7) (2023-06-26)
 
 
