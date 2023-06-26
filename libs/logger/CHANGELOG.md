@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/will-bank/nestjs-packages/compare/logger-v1.0.2...logger-v1.0.3) (2023-06-26)
+
+
+### Bug Fixes
+
+* force deploy ([22f51f5](https://github.com/will-bank/nestjs-packages/commit/22f51f571e69280f6aaaa07ee3b810ca6064b5e8))
+
 ## [1.0.2](https://github.com/will-bank/nestjs-packages/compare/logger-v1.0.1...logger-v1.0.2) (2023-06-26)
 
 
