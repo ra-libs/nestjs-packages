@@ -60,5 +60,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "overrides": {
+    "semantic-release": {
+      "@semantic-release/npm": "^9.0.2"
+    }
   }
 }
