@@ -1,3 +1,10 @@
+## [1.4.10](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.9...growthbook-v1.4.10) (2023-06-28)
+
+
+### Bug Fixes
+
+* **growthbook:** make context optional ([0d0625e](https://github.com/will-bank/nestjs-packages/commit/0d0625e856b64294ec05b33cb05858549176d029))
+
 ## [1.4.9](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.8...growthbook-v1.4.9) (2023-06-28)
 
 
