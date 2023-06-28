@@ -1,3 +1,10 @@
+## [1.4.9](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.8...growthbook-v1.4.9) (2023-06-28)
+
+
+### Bug Fixes
+
+* **growthbook:** set context using env vars inside the service ([#18](https://github.com/will-bank/nestjs-packages/issues/18)) ([f6a134f](https://github.com/will-bank/nestjs-packages/commit/f6a134fc4a110af916c499592c6b72217a880bd1))
+
 ## [1.4.8](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.7...growthbook-v1.4.8) (2023-06-26)
 
 
