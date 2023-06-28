@@ -7,7 +7,7 @@ export class GrowthbookService<
   AppFeatures extends Record<string, any> = Record<string, any>
 > implements OnModuleInit
 {
-  constructor(private context: Context) {}
+  constructor(private context: Context = {}) {}
 
   async onModuleInit() {
     const crossFetch = await import('cross-fetch');
