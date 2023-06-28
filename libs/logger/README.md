@@ -12,7 +12,7 @@ Using this library will make it easier to filter logs in datadog.
 npm install @will-bank/logger
 ```
 
-> Make sure to create your `.npmrc` correctly. check this [documentation](/docs/NPMRC.md)
+> Make sure to create your `.npmrc` correctly. check this [documentation](docs/NPMRC.md)
 
 ## Usage
 

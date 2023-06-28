@@ -8,7 +8,7 @@ This library was generated with [Nx](https://nx.dev).
 npm install @will-bank/sns
 ```
 
-> Make sure to create your `.npmrc` correctly. check this [documentation](/docs/NPMRC.md)
+> Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
 
 ## Usage
 

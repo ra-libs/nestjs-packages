@@ -8,9 +8,11 @@ This library was generated with [Nx](https://nx.dev).
 npm install @will-bank/growthbook
 ```
 
-> Make sure to create your `.npmrc` correctly. check this [documentation](/docs/NPMRC.md)
+> Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
 
 ## Usage
+
+### Nestjs
 
 in your `app.module.ts` import this module
 
@@ -47,6 +49,25 @@ export class YourService {
     ) {
       // Do something
     }
+  }
+}
+```
+
+### Node
+
+```ts
+import { GrowthbookService } from '@will-bank/growthbook';
+
+const growthbookService = new GrowthbookService();
+
+async function yourMethod() {
+  const featureIsOn = await growthbookService.isOn('featureFlagX', {
+    // attributes
+    customerID: '123',
+  });
+
+  if (featureIsOn) {
+    // Do Something
   }
 }
 ```

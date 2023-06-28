@@ -6,7 +6,7 @@
 
 ## Usage
 
-check this [documentation](/docs/USAGE.md)
+check this [documentation](docs/USAGE.md)
 
 ## Development server
 

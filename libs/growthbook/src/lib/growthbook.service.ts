@@ -23,11 +23,22 @@ export class GrowthbookService<
     });
   }
 
-  private async createClientInstance(attributes: Attributes = {}) {
-    const client = new GrowthBook({
+  private getContext(): Context {
+    return {
+      apiHost: this.context.apiHost || process.env['GROWTHBOOK_API_HOST'],
+      clientKey: this.context.clientKey || process.env['GROWTHBOOK_CLIENT_KEY'],
+      enableDevMode:
+        this.context.enableDevMode || process.env['NODE_END'] === 'development',
       ...this.context,
+    };
+  }
+
+  private async createClientInstance(attributes: Attributes = {}) {
+    const context = this.getContext();
+    const client = new GrowthBook({
+      ...context,
       attributes: {
-        ...this.context.attributes,
+        ...context.attributes,
         ...attributes,
       },
     });

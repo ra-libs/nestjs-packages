@@ -13,15 +13,7 @@ export class GrowthbookModule {
         {
           provide: GrowthbookService,
           useFactory: () => {
-            return new GrowthbookService({
-              apiHost: context.apiHost || process.env['GROWTHBOOK_API_HOST'],
-              clientKey:
-                context.clientKey || process.env['GROWTHBOOK_CLIENT_KEY'],
-              enableDevMode:
-                context.enableDevMode ||
-                process.env['NODE_END'] === 'development',
-              ...context,
-            });
+            return new GrowthbookService(context);
           },
         },
       ],
