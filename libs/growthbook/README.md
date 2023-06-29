@@ -36,6 +36,8 @@ You can pass configuration options as an object parameter or it will use by defa
 In your specific service inject the GrowthbookService as follow:
 
 ```ts
+import { GrowthbookService } from '@will-bank/growthbook';
+
 @Injectable()
 export class YourService {
   constructor(private readonly growthbookService: GrowthbookService) {}
