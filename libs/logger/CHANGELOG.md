@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/will-bank/nestjs-packages/compare/logger-v1.0.9...logger-v1.1.0) (2023-06-29)
+
+
+### Features
+
+* **metrics:** add initial datadog custom metrics ([#19](https://github.com/will-bank/nestjs-packages/issues/19)) ([273719b](https://github.com/will-bank/nestjs-packages/commit/273719b033341a434dd6a7d0e7a94e5a15cd9731))
+
 ## [1.0.9](https://github.com/will-bank/nestjs-packages/compare/logger-v1.0.8...logger-v1.0.9) (2023-06-28)
 
 
