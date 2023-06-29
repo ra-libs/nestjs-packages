@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.10...growthbook-v1.5.0) (2023-06-29)
+
+
+### Features
+
+* **metrics:** add initial datadog custom metrics ([#19](https://github.com/will-bank/nestjs-packages/issues/19)) ([273719b](https://github.com/will-bank/nestjs-packages/commit/273719b033341a434dd6a7d0e7a94e5a15cd9731))
+
 ## [1.4.10](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.4.9...growthbook-v1.4.10) (2023-06-28)
 
 
