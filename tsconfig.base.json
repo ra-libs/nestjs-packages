@@ -17,6 +17,7 @@
     "paths": {
       "@will-bank/growthbook": ["libs/growthbook/src/index.ts"],
       "@will-bank/logger": ["libs/logger/src/index.ts"],
+      "@will-bank/metrics": ["libs/metrics/src/index.ts"],
       "@will-bank/sns": ["libs/sns/src/index.ts"]
     }
   },
