@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/will-bank/nestjs-packages/compare/sns-v1.1.9...sns-v1.2.0) (2023-06-29)
+
+
+### Features
+
+* **metrics:** add initial datadog custom metrics ([#19](https://github.com/will-bank/nestjs-packages/issues/19)) ([273719b](https://github.com/will-bank/nestjs-packages/commit/273719b033341a434dd6a7d0e7a94e5a15cd9731))
+
 ## [1.1.9](https://github.com/will-bank/nestjs-packages/compare/sns-v1.1.8...sns-v1.1.9) (2023-06-28)
 
 
