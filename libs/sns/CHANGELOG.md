@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/will-bank/nestjs-packages/compare/sns-v1.2.0...sns-v1.2.1) (2023-06-29)
+
+
+### Bug Fixes
+
+* update deps ([c572cf8](https://github.com/will-bank/nestjs-packages/commit/c572cf8f227fb2b0f702e1c8b6367faa2454c68f))
+
 # [1.2.0](https://github.com/will-bank/nestjs-packages/compare/sns-v1.1.9...sns-v1.2.0) (2023-06-29)
 
 
