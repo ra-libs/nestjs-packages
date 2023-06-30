@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.0.1...metrics-v1.0.2) (2023-06-30)
+
+
+### Bug Fixes
+
+* **metrics:** tag prefix ([23ad066](https://github.com/will-bank/nestjs-packages/commit/23ad0666850ebe5bb1132f51c34382b5431d53ea))
+
 ## [1.0.1](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.0.0...metrics-v1.0.1) (2023-06-29)
 
 
