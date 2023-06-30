@@ -13,7 +13,7 @@ export class MetricsService {
     }
 
     this.ddClient = new StatsD({
-      prefix: process.env['APP_NAME'],
+      prefix: `${process.env['APP_NAME']}_`,
       ...options,
     });
   }
