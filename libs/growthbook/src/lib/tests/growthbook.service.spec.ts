@@ -87,4 +87,17 @@ describe('GrowthbookService', () => {
       );
     });
   });
+
+  describe('setDefaultFeatureValue', () => {
+    it('should set defaultValue', async () => {
+      const expecredSetValue = { test: { defaultValue: true } };
+      const mockFeature = { test: { defaultValue: false } };
+
+      growthbookClientMock.getFeatures.mockReturnValue(mockFeature);
+      await growthbookService.setDefaultFeatureValue('test', true);
+      expect(growthbookClientMock.setFeatures).toHaveBeenCalledWith(
+        expecredSetValue
+      );
+    });
+  });
 });

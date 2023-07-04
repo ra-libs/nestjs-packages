@@ -61,4 +61,14 @@ export class GrowthbookService<
     const client = await this.createClientInstance(attributes);
     return client.getFeatureValue<V, K>(key, defaultValue);
   }
+
+  async setDefaultFeatureValue<
+    V extends AppFeatures[K],
+    K extends string & keyof AppFeatures = string
+  >(key: K, defaultValue: V, attributes: Attributes = {}) {
+    const client = await this.createClientInstance(attributes);
+    const features = client.getFeatures();
+    features[key] = { defaultValue: defaultValue };
+    client.setFeatures(features);
+  }
 }
