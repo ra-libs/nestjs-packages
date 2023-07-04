@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.0.2...metrics-v1.1.0) (2023-07-04)
+
+
+### Features
+
+* **commons:** add RequestId decorator ([#22](https://github.com/will-bank/nestjs-packages/issues/22)) ([1b85848](https://github.com/will-bank/nestjs-packages/commit/1b85848be14d7f1bc0864195ee25e45ea3275422))
+
 ## [1.0.2](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.0.1...metrics-v1.0.2) (2023-06-30)
 
 
