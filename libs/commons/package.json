@@ -1,0 +1,14 @@
+{
+  "name": "@will-bank/commons",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/will-bank/nestjs-packages.git",
+    "directory": "libs/commons"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
