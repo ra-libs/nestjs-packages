@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.6.0...growthbook-v1.7.0) (2023-07-04)
+
+
+### Features
+
+* **commons:** add RequestId decorator ([#22](https://github.com/will-bank/nestjs-packages/issues/22)) ([1b85848](https://github.com/will-bank/nestjs-packages/commit/1b85848be14d7f1bc0864195ee25e45ea3275422))
+
 # [1.6.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.5.2...growthbook-v1.6.0) (2023-07-04)
 
 
