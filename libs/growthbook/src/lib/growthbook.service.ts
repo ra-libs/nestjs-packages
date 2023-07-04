@@ -33,7 +33,7 @@ export class GrowthbookService<
     };
   }
 
-  private async createClientInstance(attributes: Attributes = {}) {
+  public async createClientInstance(attributes: Attributes = {}) {
     const context = this.getContext();
     const client = new GrowthBook({
       ...context,

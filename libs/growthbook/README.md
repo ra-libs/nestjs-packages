@@ -55,6 +55,26 @@ export class YourService {
 }
 ```
 
+### Use unmapped function
+
+```ts
+import { GrowthbookService } from '@will-bank/growthbook';
+
+export class YourService {
+  constructor(private readonly growthbookService: GrowthbookService) {}
+
+  async xptoMethod() {
+    // Disable feature
+    const client = this.growthbookService.createClientInstance();
+    const features = await client.getFeatures();
+    features['your-feature'] = {
+      defaultValue: false,
+    };
+    client.setFeatures(features);
+  }
+}
+```
+
 ### Node
 
 ```ts
