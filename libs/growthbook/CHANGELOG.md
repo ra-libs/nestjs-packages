@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.5.1...growthbook-v1.5.2) (2023-07-04)
+
+
+### Bug Fixes
+
+* **growthbook:** make growthbook client public ([#20](https://github.com/will-bank/nestjs-packages/issues/20)) ([4e0e329](https://github.com/will-bank/nestjs-packages/commit/4e0e3298a9ff42688311f28ad989c082fa2c0b15))
+
 ## [1.5.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.5.0...growthbook-v1.5.1) (2023-06-29)
 
 
