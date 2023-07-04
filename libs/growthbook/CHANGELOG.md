@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.5.2...growthbook-v1.6.0) (2023-07-04)
+
+
+### Features
+
+* **growthboook:** adding set feature default value method ([#21](https://github.com/will-bank/nestjs-packages/issues/21)) ([f8405c0](https://github.com/will-bank/nestjs-packages/commit/f8405c05adb25747fc8ba4a7b8d7284a97765c11))
+
 ## [1.5.2](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.5.1...growthbook-v1.5.2) (2023-07-04)
 
 
