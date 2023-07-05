@@ -1,6 +1,7 @@
 import { GrowthBook, setPolyfills, Context } from '@growthbook/growthbook';
 import { Injectable, OnModuleInit } from '@nestjs/common';
-import { Attributes } from './@types';
+import { Attributes, ToggleFeatureBody } from './@types';
+import axios from 'axios';
 
 @Injectable()
 export class GrowthbookService<
@@ -62,13 +63,16 @@ export class GrowthbookService<
     return client.getFeatureValue<V, K>(key, defaultValue);
   }
 
-  async setDefaultFeatureValue<
-    V extends AppFeatures[K],
-    K extends string & keyof AppFeatures = string
-  >(key: K, defaultValue: V, attributes: Attributes = {}) {
-    const client = await this.createClientInstance(attributes);
-    const features = client.getFeatures();
-    features[key] = { defaultValue: defaultValue };
-    client.setFeatures(features);
+  async toggleFeatureValue(key: string, body: ToggleFeatureBody) {
+    const baseUrl = this.context.apiHost || process.env['GROWTHBOOK_API_HOST'];
+    const accessToken = process.env['GROWTHBOOK_API_ACCESS_TOKEN'];
+
+    const requestUrl = `${baseUrl}/api/v1/features/${key}/toggle`;
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+    };
+
+    const { data } = await axios.post(requestUrl, body, { headers: headers });
+    return data;
   }
 }

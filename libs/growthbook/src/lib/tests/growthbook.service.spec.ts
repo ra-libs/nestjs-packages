@@ -1,11 +1,14 @@
+import axios, { Axios } from 'axios';
 import { Test, TestingModule } from '@nestjs/testing';
 import { createMock } from '@golevelup/ts-jest';
 
 import { GrowthbookService } from '../growthbook.service';
 import { GrowthBook } from '@growthbook/growthbook';
+import { HttpStatus } from '@nestjs/common';
+import { ToggleFeatureBody } from '../@types';
 
 const growthbookClientMock = createMock<GrowthBook>();
-
+jest.mock('axios');
 jest.mock('@growthbook/growthbook', () => ({
   GrowthBook: jest.fn().mockImplementation(() => growthbookClientMock),
   setPolyfills: jest.fn(),
@@ -89,15 +92,24 @@ describe('GrowthbookService', () => {
   });
 
   describe('setDefaultFeatureValue', () => {
-    it('should set defaultValue', async () => {
-      const expecredSetValue = { test: { defaultValue: true } };
-      const mockFeature = { test: { defaultValue: false } };
+    it('should toggleFeatureValue', async () => {
+      const body: ToggleFeatureBody = {
+        reason: 'test',
+        environments: {
+          production: true,
+          dev: true,
+        },
+      };
 
-      growthbookClientMock.getFeatures.mockReturnValue(mockFeature);
-      await growthbookService.setDefaultFeatureValue('test', true);
-      expect(growthbookClientMock.setFeatures).toHaveBeenCalledWith(
-        expecredSetValue
-      );
+      const axiosMock = createMock<Axios>();
+      jest.spyOn(axios, 'post').mockImplementation(axiosMock.post);
+      axiosMock.post.mockResolvedValue({
+        status: HttpStatus.OK,
+        data: {},
+      });
+
+      await expect(growthbookService.toggleFeatureValue('test', body)).rejects
+        .not;
     });
   });
 });
