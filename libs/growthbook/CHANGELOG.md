@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.7.2...growthbook-v1.7.3) (2023-07-05)
+
+
+### Bug Fixes
+
+* **growthbook:** fix ToggleFeatureEnv make envs optional ([#26](https://github.com/will-bank/nestjs-packages/issues/26)) ([1c11847](https://github.com/will-bank/nestjs-packages/commit/1c118476651a5b67595a0aada00799580e7f999f))
+
 ## [1.7.2](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.7.1...growthbook-v1.7.2) (2023-07-05)
 
 
