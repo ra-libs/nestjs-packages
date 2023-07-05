@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.7.1...growthbook-v1.7.2) (2023-07-05)
+
+
+### Bug Fixes
+
+* **growthbook:** skip cache in getFeatureValue ([#25](https://github.com/will-bank/nestjs-packages/issues/25)) ([0a967dc](https://github.com/will-bank/nestjs-packages/commit/0a967dc54dae39291f910ec79cfd33494be98dad))
+
 ## [1.7.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.7.0...growthbook-v1.7.1) (2023-07-05)
 
 
