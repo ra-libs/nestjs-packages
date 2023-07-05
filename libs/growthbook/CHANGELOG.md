@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.7.0...growthbook-v1.7.1) (2023-07-05)
+
+
+### Bug Fixes
+
+* **growthbook:** use api to set feature toggle default value ([#23](https://github.com/will-bank/nestjs-packages/issues/23)) ([c2b5f9e](https://github.com/will-bank/nestjs-packages/commit/c2b5f9e3297ee778f1eb66642f210ae34c04e099))
+
 # [1.7.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.6.0...growthbook-v1.7.0) (2023-07-04)
 
 
