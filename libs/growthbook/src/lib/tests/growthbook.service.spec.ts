@@ -96,7 +96,6 @@ describe('GrowthbookService', () => {
       const body: ToggleFeatureBody = {
         reason: 'test',
         environments: {
-          production: true,
           dev: true,
         },
       };

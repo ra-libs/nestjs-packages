@@ -5,8 +5,8 @@ export type Attributes = GBAttributes & {
 };
 
 export type ToggleFeatureEnv = {
-  production: boolean;
-  dev: boolean;
+  production?: boolean;
+  dev?: boolean;
 };
 
 export type ToggleFeatureBody = {
