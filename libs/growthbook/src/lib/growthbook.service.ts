@@ -34,7 +34,10 @@ export class GrowthbookService<
     };
   }
 
-  public async createClientInstance(attributes: Attributes = {}) {
+  public async createClientInstance(
+    attributes: Attributes = {},
+    skipCache = false
+  ) {
     const context = this.getContext();
     const client = new GrowthBook({
       ...context,
@@ -43,15 +46,16 @@ export class GrowthbookService<
         ...attributes,
       },
     });
-    await client.loadFeatures({ autoRefresh: true });
+    await client.loadFeatures({ autoRefresh: true, skipCache: skipCache });
     return client;
   }
 
   async isOn<K extends string & keyof AppFeatures = string>(
     key: K,
-    attributes: Attributes = {}
+    attributes: Attributes = {},
+    skipCache = false
   ) {
-    const client = await this.createClientInstance(attributes);
+    const client = await this.createClientInstance(attributes, skipCache);
     return client.isOn<K>(key);
   }
 
