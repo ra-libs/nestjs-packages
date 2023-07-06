@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/will-bank/nestjs-packages/compare/commons-v1.0.2...commons-v1.0.3) (2023-07-06)
+
+
+### Bug Fixes
+
+* **commons:** use crypto.randomUUID for uuid v4 ([4048f9a](https://github.com/will-bank/nestjs-packages/commit/4048f9aec257a623fbb7f2ad0b1114768282a337))
+
 ## [1.0.2](https://github.com/will-bank/nestjs-packages/compare/commons-v1.0.1...commons-v1.0.2) (2023-07-06)
 
 
