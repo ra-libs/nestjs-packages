@@ -1,5 +1,5 @@
 import { ExecutionContext, createParamDecorator } from '@nestjs/common';
-import { v4 as uuidv4 } from 'uuid';
+import * as crypto from 'crypto';
 
 export const RequestId = createParamDecorator(
   (_: unknown, ctx: ExecutionContext) => {
@@ -7,6 +7,6 @@ export const RequestId = createParamDecorator(
     const requestIdHeaderKey =
       process.env['REQUEST_ID_HEADER_KEY'] ?? 'x-request-id';
     const incomingRequestId = request.headers[requestIdHeaderKey];
-    return incomingRequestId ?? uuidv4();
+    return incomingRequestId ?? crypto.randomUUID(); // generate a new uuid v4 if not present
   }
 );
