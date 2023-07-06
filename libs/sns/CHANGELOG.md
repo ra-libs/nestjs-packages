@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/will-bank/nestjs-packages/compare/sns-v1.3.1...sns-v1.3.2) (2023-07-06)
+
+
+### Bug Fixes
+
+* **commons:** generate new uuid if the headers one is invalid v4 format ([#28](https://github.com/will-bank/nestjs-packages/issues/28)) ([a4d0bec](https://github.com/will-bank/nestjs-packages/commit/a4d0becf5f5b64165c1516fafaa35a0718936b86))
+
 ## [1.3.1](https://github.com/will-bank/nestjs-packages/compare/sns-v1.3.0...sns-v1.3.1) (2023-07-06)
 
 
