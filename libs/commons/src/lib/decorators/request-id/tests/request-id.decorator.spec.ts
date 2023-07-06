@@ -2,6 +2,8 @@ import { RequestId } from '../request-id.decorator';
 
 import { createMock } from '@golevelup/ts-jest';
 import { ExecutionContext } from '@nestjs/common';
+import { faker } from '@faker-js/faker';
+import { v1 as uuidV1 } from 'uuid';
 
 import { getParamDecoratorFactory } from '../../factories/get-param-decorator.factory';
 
@@ -16,14 +18,40 @@ describe('@RequestId', () => {
   const requestIdDecorator = getParamDecoratorFactory(RequestId);
 
   it('test_existing_request_id', () => {
+    const requestId = faker.string.uuid();
     const mockRequest = {
       headers: {
-        'x-request-id': 'existing-id',
+        'x-request-id': requestId,
       },
     };
     getRequestMock.mockReturnValue(mockRequest);
     const result = requestIdDecorator(null, executionContextMock);
-    expect(result).toBe('existing-id');
+    expect(result).toBe(requestId);
+  });
+
+  it('test_existing_non_v4_request_id', () => {
+    const requestId = uuidV1();
+    const mockRequest = {
+      headers: {
+        'x-request-id': requestId,
+      },
+    };
+    getRequestMock.mockReturnValue(mockRequest);
+    const result = requestIdDecorator(null, executionContextMock);
+    expect(result).not.toBe(requestId);
+  });
+
+  it('test_existing_request_id_with_different_header_key', () => {
+    const requestId = faker.string.uuid();
+    const mockRequest = {
+      headers: {
+        'x-correlation-id': requestId,
+      },
+    };
+    process.env['REQUEST_ID_HEADER_KEY'] = 'x-correlation-id';
+    getRequestMock.mockReturnValue(mockRequest);
+    const result = requestIdDecorator(null, executionContextMock);
+    expect(result).toBe(requestId);
   });
 
   it('test_new_request_id', () => {
