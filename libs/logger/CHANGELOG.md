@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/will-bank/nestjs-packages/compare/logger-v1.2.0...logger-v1.2.1) (2023-07-06)
+
+
+### Bug Fixes
+
+* **commons:** use crypto.randomUUID for uuid v4 ([4048f9a](https://github.com/will-bank/nestjs-packages/commit/4048f9aec257a623fbb7f2ad0b1114768282a337))
+
 # [1.2.0](https://github.com/will-bank/nestjs-packages/compare/logger-v1.1.1...logger-v1.2.0) (2023-07-04)
 
 
