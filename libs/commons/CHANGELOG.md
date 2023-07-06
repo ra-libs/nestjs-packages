@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/will-bank/nestjs-packages/compare/commons-v1.0.4...commons-v1.0.5) (2023-07-06)
+
+
+### Bug Fixes
+
+* **commons:** generate new uuid if the headers one is invalid v4 format ([#28](https://github.com/will-bank/nestjs-packages/issues/28)) ([a4d0bec](https://github.com/will-bank/nestjs-packages/commit/a4d0becf5f5b64165c1516fafaa35a0718936b86))
+
 ## [1.0.4](https://github.com/will-bank/nestjs-packages/compare/commons-v1.0.3...commons-v1.0.4) (2023-07-06)
 
 
