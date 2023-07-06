@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/will-bank/nestjs-packages/compare/commons-v1.0.3...commons-v1.0.4) (2023-07-06)
+
+
+### Bug Fixes
+
+* **commons:** add logs for debug in request id ([#27](https://github.com/will-bank/nestjs-packages/issues/27)) ([ac5ed76](https://github.com/will-bank/nestjs-packages/commit/ac5ed76f0df6fd4744e2e0a18d886c9a4c654255))
+
 ## [1.0.3](https://github.com/will-bank/nestjs-packages/compare/commons-v1.0.2...commons-v1.0.3) (2023-07-06)
 
 
