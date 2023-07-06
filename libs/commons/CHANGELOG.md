@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/will-bank/nestjs-packages/compare/commons-v1.0.0...commons-v1.0.1) (2023-07-06)
+
+
+### Bug Fixes
+
+* **commons:** uuidv4 method ([4c5a02a](https://github.com/will-bank/nestjs-packages/commit/4c5a02a42c6175b8fc3d568fa818de51355ebe19))
+
 # 1.0.0 (2023-07-04)
 
 
