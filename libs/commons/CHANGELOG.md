@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/will-bank/nestjs-packages/compare/commons-v1.0.1...commons-v1.0.2) (2023-07-06)
+
+
+### Bug Fixes
+
+* **commons:** change build target to es2017 ([a7cc260](https://github.com/will-bank/nestjs-packages/commit/a7cc2607919cacfd395d56da56b7237d4bd72652))
+
 ## [1.0.1](https://github.com/will-bank/nestjs-packages/compare/commons-v1.0.0...commons-v1.0.1) (2023-07-06)
 
 
