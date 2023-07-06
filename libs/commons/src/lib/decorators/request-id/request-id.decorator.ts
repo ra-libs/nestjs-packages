@@ -7,6 +7,17 @@ export const RequestId = createParamDecorator(
     const requestIdHeaderKey =
       process.env['REQUEST_ID_HEADER_KEY'] ?? 'x-request-id';
     const incomingRequestId = request.headers[requestIdHeaderKey];
-    return incomingRequestId ?? crypto.randomUUID(); // generate a new uuid v4 if not present
+    console.log('requestIdHeaderKey: ', requestIdHeaderKey);
+    console.log(`Incoming request id ${incomingRequestId}`);
+    if (!incomingRequestId) {
+      // Temp debug
+      console.log(`No request id found in header ${requestIdHeaderKey}`);
+      console.log(`Generating new request id`);
+      const newRequestId = crypto.randomUUID();
+      console.log(`Generated new request id ${newRequestId}`);
+      return newRequestId;
+    }
+
+    return incomingRequestId;
   }
 );
