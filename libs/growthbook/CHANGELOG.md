@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.8.0...growthbook-v1.8.1) (2023-07-09)
+
+
+### Bug Fixes
+
+* update deps ([#30](https://github.com/will-bank/nestjs-packages/issues/30)) ([6f7e07d](https://github.com/will-bank/nestjs-packages/commit/6f7e07da21f7e2958b810da6b8030011d16e5144))
+
 # [1.8.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.7.5...growthbook-v1.8.0) (2023-07-09)
 
 
