@@ -1,6 +1,6 @@
+import { createMock } from '@golevelup/ts-jest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { Logger as WinstonLogger } from 'winston';
-import { createMock } from '@golevelup/ts-jest';
 
 import { Logger } from '../logger.service';
 

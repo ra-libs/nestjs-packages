@@ -1,6 +1,7 @@
 import { DynamicModule, Global } from '@nestjs/common';
-import { MetricsService } from './metrics.service';
 import { ClientOptions } from 'hot-shots';
+
+import { MetricsService } from './metrics.service';
 
 @Global()
 export class MetricsModule {

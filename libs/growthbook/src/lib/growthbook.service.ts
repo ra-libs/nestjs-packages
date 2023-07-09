@@ -1,7 +1,8 @@
-import { GrowthBook, setPolyfills, Context } from '@growthbook/growthbook';
+import { Context, GrowthBook, setPolyfills } from '@growthbook/growthbook';
 import { Injectable, OnModuleInit } from '@nestjs/common';
-import { Attributes, ToggleFeatureBody } from './@types';
 import axios from 'axios';
+
+import { Attributes, ToggleFeatureBody } from './@types';
 
 @Injectable()
 export class GrowthbookService<

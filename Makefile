@@ -13,7 +13,7 @@ setup-lib:
 
 lint:
 	npx nx format:write
-	npx nx affected -t lint
+	npx nx affected -t lint --fix
 
 test:
 	npx nx affected -t test

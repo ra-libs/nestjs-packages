@@ -1,11 +1,11 @@
-import axios, { Axios } from 'axios';
-import { Test, TestingModule } from '@nestjs/testing';
 import { createMock } from '@golevelup/ts-jest';
-
-import { GrowthbookService } from '../growthbook.service';
 import { GrowthBook } from '@growthbook/growthbook';
 import { HttpStatus } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
+import axios, { Axios } from 'axios';
+
 import { ToggleFeatureBody } from '../@types';
+import { GrowthbookService } from '../growthbook.service';
 
 const growthbookClientMock = createMock<GrowthBook>();
 jest.mock('axios');

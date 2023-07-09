@@ -1,8 +1,9 @@
-import { format } from 'winston';
-import { Format, TransformableInfo } from 'logform';
-import { LogLevel } from './@types';
 import safeStringify from 'fast-safe-stringify';
+import { Format, TransformableInfo } from 'logform';
 import { inspect } from 'util';
+import { format } from 'winston';
+
+import { LogLevel } from './@types';
 
 export const getFormat = (): Format => {
   if (process.env['NODE_ENV'] === 'development') {

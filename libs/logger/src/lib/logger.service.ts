@@ -1,10 +1,11 @@
-import {
-  Logger as WinstonLogger,
-  createLogger,
-  transports,
-  LoggerOptions,
-} from 'winston';
 import { Injectable, LoggerService, Scope } from '@nestjs/common';
+import {
+  createLogger,
+  Logger as WinstonLogger,
+  LoggerOptions,
+  transports,
+} from 'winston';
+
 import { getFormat, getLogLevel } from './winston.utilities';
 
 @Injectable({ scope: Scope.TRANSIENT })

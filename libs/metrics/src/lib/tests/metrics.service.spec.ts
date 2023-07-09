@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
 import { createMock } from '@golevelup/ts-jest';
+import { Test, TestingModule } from '@nestjs/testing';
+import { StatsD } from 'hot-shots';
 
 import { MetricsService } from '../metrics.service';
-import { StatsD } from 'hot-shots';
 
 const statsDMock = createMock<StatsD>();
 

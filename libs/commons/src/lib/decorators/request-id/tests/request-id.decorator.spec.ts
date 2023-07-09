@@ -1,11 +1,10 @@
-import { RequestId } from '../request-id.decorator';
-
+import { faker } from '@faker-js/faker';
 import { createMock } from '@golevelup/ts-jest';
 import { ExecutionContext } from '@nestjs/common';
-import { faker } from '@faker-js/faker';
 import { v1 as uuidV1 } from 'uuid';
 
 import { getParamDecoratorFactory } from '../../factories/get-param-decorator.factory';
+import { RequestId } from '../request-id.decorator';
 
 /// Usage
 describe('@RequestId', () => {
