@@ -17,7 +17,7 @@ npm install @will-bank/sns
 in your `app.module.ts` import this module
 
 ```ts
-import { SNSModule } from '@will-bank/growthbook';
+import { SNSModule } from '@will-bank/sns';
 
 @Module({
   imports: [
@@ -32,7 +32,7 @@ You can pass configurations options as an object parameter. By default this modu
 
 - AWS_REGION
 
-In your specific service inject the GrowthbookService as follow:
+In your specific service inject the SNSService as follow:
 
 ```ts
 import { SNSService } from '@will-bank/sns';
