@@ -9,10 +9,13 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class SNSService {
-  private client: SNSClient;
+  public client: SNSClient;
 
-  constructor(configurations: SNSClientConfig) {
-    this.client = new SNSClient(configurations);
+  constructor(configurations: SNSClientConfig = {}) {
+    this.client = new SNSClient({
+      region: configurations.region ?? process.env['AWS_REGION'],
+      ...configurations,
+    });
   }
 
   async publish(input: PublishCommandInput): Promise<PublishCommandOutput> {

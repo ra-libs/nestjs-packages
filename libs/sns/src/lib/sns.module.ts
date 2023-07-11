@@ -13,10 +13,7 @@ export class SNSModule {
         {
           provide: SNSService,
           useFactory: () => {
-            return new SNSService({
-              region: options.region ?? process.env['AWS_REGION'],
-              ...options,
-            });
+            return new SNSService(options);
           },
         },
       ],
