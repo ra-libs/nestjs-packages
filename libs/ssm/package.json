@@ -1,0 +1,14 @@
+{
+  "name": "@will-bank/ssm",
+  "version": "0.0.2",
+  "type": "commonjs",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/will-bank/nestjs-packages.git",
+    "directory": "libs/ssm"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
