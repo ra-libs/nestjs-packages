@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.1.1...commons-v1.2.0) (2023-07-11)
+
+
+### Features
+
+* **ssm:** add initial lib ([#32](https://github.com/will-bank/nestjs-packages/issues/32)) ([73f745b](https://github.com/will-bank/nestjs-packages/commit/73f745beb3e189517a503d523910123f288115b8))
+
 ## [1.1.1](https://github.com/will-bank/nestjs-packages/compare/commons-v1.1.0...commons-v1.1.1) (2023-07-09)
 
 
