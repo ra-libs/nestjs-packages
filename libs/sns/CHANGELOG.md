@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/will-bank/nestjs-packages/compare/sns-v1.4.1...sns-v1.4.2) (2023-07-11)
+
+
+### Bug Fixes
+
+* **sns:** pass sns config to service ([#31](https://github.com/will-bank/nestjs-packages/issues/31)) ([4b6febb](https://github.com/will-bank/nestjs-packages/commit/4b6febb81a622e6a641dd44e8e2e36d2f4992282))
+
 ## [1.4.1](https://github.com/will-bank/nestjs-packages/compare/sns-v1.4.0...sns-v1.4.1) (2023-07-09)
 
 
