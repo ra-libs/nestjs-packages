@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/will-bank/nestjs-packages/compare/sns-v1.4.2...sns-v1.5.0) (2023-07-11)
+
+
+### Features
+
+* **ssm:** add initial lib ([#32](https://github.com/will-bank/nestjs-packages/issues/32)) ([73f745b](https://github.com/will-bank/nestjs-packages/commit/73f745beb3e189517a503d523910123f288115b8))
+
 ## [1.4.2](https://github.com/will-bank/nestjs-packages/compare/sns-v1.4.1...sns-v1.4.2) (2023-07-11)
 
 
