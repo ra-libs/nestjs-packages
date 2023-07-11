@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/will-bank/nestjs-packages/compare/ssm-v1.0.0...ssm-v1.0.1) (2023-07-11)
+
+
+### Bug Fixes
+
+* update docs ([#34](https://github.com/will-bank/nestjs-packages/issues/34)) ([c48368a](https://github.com/will-bank/nestjs-packages/commit/c48368ab38443b9a5e6cac5a615b94392c7ea0d5))
+
 # 1.0.0 (2023-07-11)
 
 
