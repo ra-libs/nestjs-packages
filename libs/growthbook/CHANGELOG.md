@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.9.0...growthbook-v1.10.0) (2023-07-11)
+
+
+### Features
+
+* **secrets-manager:** add initial lib ([#35](https://github.com/will-bank/nestjs-packages/issues/35)) ([0b079db](https://github.com/will-bank/nestjs-packages/commit/0b079db636a14d69fa98f921294abedf9b96d5a3))
+
 # [1.9.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.8.1...growthbook-v1.9.0) (2023-07-11)
 
 
