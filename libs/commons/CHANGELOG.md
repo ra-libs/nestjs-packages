@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/will-bank/nestjs-packages/compare/commons-v1.4.0...commons-v1.4.1) (2023-07-14)
+
+
+### Bug Fixes
+
+* **commons:** export account-owner-decorator ([#37](https://github.com/will-bank/nestjs-packages/issues/37)) ([cbd1cde](https://github.com/will-bank/nestjs-packages/commit/cbd1cded4694bf9f2ac45b35f547d830522701bb))
+
 # [1.4.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.3.0...commons-v1.4.0) (2023-07-14)
 
 
