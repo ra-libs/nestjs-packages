@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.3.0...commons-v1.4.0) (2023-07-14)
+
+
+### Features
+
+* **commons:** adding account owner decorator ([#36](https://github.com/will-bank/nestjs-packages/issues/36)) ([dbf742b](https://github.com/will-bank/nestjs-packages/commit/dbf742bc515a17fce0948a961e821258f06d1b09))
+
 # [1.3.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.2.0...commons-v1.3.0) (2023-07-11)
 
 
