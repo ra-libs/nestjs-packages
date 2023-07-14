@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/will-bank/nestjs-packages/compare/commons-v1.4.1...commons-v1.4.2) (2023-07-14)
+
+
+### Bug Fixes
+
+* **commons:** export account-owner types ([#39](https://github.com/will-bank/nestjs-packages/issues/39)) ([97858ce](https://github.com/will-bank/nestjs-packages/commit/97858ce3717bf3846f550956800ce69ef46c1c47))
+
 ## [1.4.1](https://github.com/will-bank/nestjs-packages/compare/commons-v1.4.0...commons-v1.4.1) (2023-07-14)
 
 
