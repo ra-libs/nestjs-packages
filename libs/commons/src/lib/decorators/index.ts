@@ -1,2 +1,2 @@
-export * from './request-id/request-id.decorator';
-export * from './account-owner/account-owner.decorator';
+export * from './request-id/';
+export * from './account-owner/';
