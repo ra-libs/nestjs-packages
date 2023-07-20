@@ -6,16 +6,9 @@ module.exports = {
     '${PROJECT_DIR}/CHANGELOG.md',
     '${PROJECT_DIR}/package.json',
   ],
-  plugins: [
-    [
-      '@semantic-release/npm',
-      {
-        npmPublish: true,
-        pkgRoot: '${WORKSPACE_DIR}/dist/libs/${PROJECT_NAME}',
-      },
-    ],
-  ],
   npm: false,
   buildTarget: 'build',
   outputPath: '${WORKSPACE_DIR}/dist/libs/${PROJECT_NAME}',
+  commitMessage:
+    'chore(release): ${PROJECT_NAME} ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
 };
