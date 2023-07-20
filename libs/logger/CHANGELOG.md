@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/will-bank/nestjs-packages/compare/logger-v1.5.0...logger-v1.5.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* semantic-release ([#43](https://github.com/will-bank/nestjs-packages/issues/43)) ([f033420](https://github.com/will-bank/nestjs-packages/commit/f0334207498ae97c1f70dea2cdb51f8c61ef9db2))
+
 # [1.5.0](https://github.com/will-bank/nestjs-packages/compare/logger-v1.4.0...logger-v1.5.0) (2023-07-11)
 
 
