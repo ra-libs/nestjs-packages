@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/will-bank/nestjs-packages/compare/commons-v1.4.4...commons-v1.4.5) (2023-07-22)
+
+
+### Bug Fixes
+
+* **commons:** remove v4 uuid validation ([#38](https://github.com/will-bank/nestjs-packages/issues/38)) ([9c90484](https://github.com/will-bank/nestjs-packages/commit/9c90484b66db6b10b3b2f0ac9b03bcfb95589fdd))
+
 ## [1.4.4](https://github.com/will-bank/nestjs-packages/compare/commons-v1.4.3...commons-v1.4.4) (2023-07-20)
 
 
