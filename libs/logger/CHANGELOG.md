@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/will-bank/nestjs-packages/compare/logger-v1.5.1...logger-v1.5.2) (2023-07-22)
+
+
+### Bug Fixes
+
+* **commons:** remove v4 uuid validation ([#38](https://github.com/will-bank/nestjs-packages/issues/38)) ([9c90484](https://github.com/will-bank/nestjs-packages/commit/9c90484b66db6b10b3b2f0ac9b03bcfb95589fdd))
+
 ## [1.5.1](https://github.com/will-bank/nestjs-packages/compare/logger-v1.5.0...logger-v1.5.1) (2023-07-20)
 
 
