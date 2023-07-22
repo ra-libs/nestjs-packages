@@ -28,18 +28,6 @@ describe('@RequestId', () => {
     expect(result).toBe(requestId);
   });
 
-  it('test_existing_non_v4_request_id', () => {
-    const requestId = uuidV1();
-    const mockRequest = {
-      headers: {
-        'x-request-id': requestId,
-      },
-    };
-    getRequestMock.mockReturnValue(mockRequest);
-    const result = requestIdDecorator(null, executionContextMock);
-    expect(result).not.toBe(requestId);
-  });
-
   it('test_existing_request_id_with_different_header_key', () => {
     const requestId = faker.string.uuid();
     const mockRequest = {

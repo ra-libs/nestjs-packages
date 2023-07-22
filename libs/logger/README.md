@@ -33,16 +33,16 @@ async function bootstrap(){
 
 This will override the application logger.
 
-#### Per module
+#### Per service
 
-in your specifc module
+in your specifc service
 
 ```ts
 import { Logger } from '@will-bank/logger';
 
 @Injectable()
-export class YourCustomModule {
-  private readonly logger = new Logger(YourCustomModule.name);
+export class YourCustomService {
+  private readonly logger = new Logger(YourCustomService.name);
 
   yourMethod() {
     this.logger.log('XPTO');
