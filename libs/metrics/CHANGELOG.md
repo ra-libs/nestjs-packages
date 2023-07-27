@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.4.1...metrics-v1.4.2) (2023-07-27)
+
+
+### Bug Fixes
+
+* **metrics:** set buffer size and flush interval ([#45](https://github.com/will-bank/nestjs-packages/issues/45)) ([8483345](https://github.com/will-bank/nestjs-packages/commit/84833456fd0c8bf0b80045338f153ea4c392e58a))
+
 ## [1.4.1](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.4.0...metrics-v1.4.1) (2023-07-20)
 
 
