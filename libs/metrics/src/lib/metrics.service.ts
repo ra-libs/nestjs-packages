@@ -14,6 +14,12 @@ export class MetricsService {
 
     this.ddClient = new StatsD({
       prefix: `${process.env['APP_NAME']}_`,
+      maxBufferSize: parseInt(
+        process.env['METRICS_MAX_BUFFER_SIZE'] || '10000'
+      ),
+      bufferFlushInterval: parseInt(
+        process.env['METRICS_BUFFER_FLUSH_INTERVAL'] || '5000'
+      ),
       ...options,
     });
   }

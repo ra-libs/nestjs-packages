@@ -16,6 +16,16 @@ Make sure to add `APP_NAME` as an environment variable, it will be used as a pre
 
 This package uses [hot-shots](https://github.com/brightcove/hot-shots)!
 
+## Environment Variables
+
+This library can be modified using some env vars
+
+| Environment Variable          | Type   | Default | Required | Description                                                                                              |
+| ----------------------------- | ------ | ------- | -------- | -------------------------------------------------------------------------------------------------------- |
+| APP_NAME                      | string | -       | true     | To set the metrics prefix, required unless you pass the prefix param                                     |
+| METRICS_MAX_BUFFER_SIZE       | number | 10000   | false    | If larger than 0, metrics will be buffered and only sent when the string length is greater than the size |
+| METRICS_BUFFER_FLUSH_INTERVAL | number | 5000    | false    | If buffering is in use, this is the time in ms to always flush any buffered metrics                      |
+
 ### Nestjs
 
 in your `app.module.ts` import this module
