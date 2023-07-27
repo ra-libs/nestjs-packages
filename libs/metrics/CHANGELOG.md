@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.4.2...metrics-v1.4.3) (2023-07-27)
+
+
+### Bug Fixes
+
+* **metrics:** add missing methods and send metrics only in production ([#46](https://github.com/will-bank/nestjs-packages/issues/46)) ([06ff598](https://github.com/will-bank/nestjs-packages/commit/06ff598400daa1230c633b8428223df72c24a129))
+
 ## [1.4.2](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.4.1...metrics-v1.4.2) (2023-07-27)
 
 
