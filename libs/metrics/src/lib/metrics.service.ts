@@ -24,7 +24,40 @@ export class MetricsService {
     });
   }
 
+  private shouldSendMetrics(): boolean {
+    if (process.env['METRICS_ENABLED']) {
+      return process.env['METRICS_ENABLED'] === 'true';
+    }
+    return process.env['NODE_ENV'] === 'production';
+  }
+
   public increment(metric: string, tags?: string[]): void {
-    this.ddClient.increment(metric, tags);
+    if (this.shouldSendMetrics()) {
+      this.ddClient.increment(metric, tags);
+    }
+  }
+
+  public decrement(metric: string, tags?: string[]): void {
+    if (this.shouldSendMetrics()) {
+      this.ddClient.decrement(metric, tags);
+    }
+  }
+
+  public histogram(metric: string, value: number, tags?: string[]): void {
+    if (this.shouldSendMetrics()) {
+      this.ddClient.histogram(metric, value, tags);
+    }
+  }
+
+  public gauge(metric: string, value: number, tags?: string[]): void {
+    if (this.shouldSendMetrics()) {
+      this.ddClient.gauge(metric, value, tags);
+    }
+  }
+
+  public timing(metric: string, value: number, tags?: string[]): void {
+    if (this.shouldSendMetrics()) {
+      this.ddClient.timing(metric, value, tags);
+    }
   }
 }
