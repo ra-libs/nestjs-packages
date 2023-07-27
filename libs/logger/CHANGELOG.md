@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/will-bank/nestjs-packages/compare/logger-v1.5.2...logger-v1.6.0) (2023-07-27)
+
+
+### Features
+
+* **logger:** add child method ([#44](https://github.com/will-bank/nestjs-packages/issues/44)) ([11482c9](https://github.com/will-bank/nestjs-packages/commit/11482c9660b6400b359f75c5b4aefeddb4ec3de6))
+
 ## [1.5.2](https://github.com/will-bank/nestjs-packages/compare/logger-v1.5.1...logger-v1.5.2) (2023-07-22)
 
 
