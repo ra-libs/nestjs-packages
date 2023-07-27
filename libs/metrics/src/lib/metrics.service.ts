@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ClientOptions, StatsD } from 'hot-shots';
+import { ClientOptions, StatsCb, StatsD, Tags } from 'hot-shots';
 
 @Injectable()
 export class MetricsService {
@@ -34,6 +34,17 @@ export class MetricsService {
   public increment(metric: string, tags?: string[]): void {
     if (this.shouldSendMetrics()) {
       this.ddClient.increment(metric, tags);
+    }
+  }
+
+  public incrementValue(
+    stat: string | string[],
+    value: number,
+    tags?: Tags,
+    callback?: StatsCb
+  ): void {
+    if (this.shouldSendMetrics()) {
+      this.ddClient.increment(stat, value, tags, callback);
     }
   }
 

@@ -64,6 +64,30 @@ describe('MetricsService', () => {
     });
   });
 
+  describe('incrementValue', () => {
+    it('should call ddClient.incrementValue', () => {
+      metricsService.incrementValue('test', 1);
+      expect(statsDMock.increment).toHaveBeenCalledTimes(1);
+      expect(statsDMock.increment).toHaveBeenCalledWith(
+        'test',
+        1,
+        undefined,
+        undefined
+      );
+    });
+
+    it('should call ddClient.incrementValue with tags', () => {
+      metricsService.incrementValue('test', 1, ['tag1', 'tag2']);
+      expect(statsDMock.increment).toHaveBeenCalledTimes(1);
+      expect(statsDMock.increment).toHaveBeenCalledWith(
+        'test',
+        1,
+        ['tag1', 'tag2'],
+        undefined
+      );
+    });
+  });
+
   describe('decrement', () => {
     it('should call ddClient.decrement', () => {
       metricsService.decrement('test');
