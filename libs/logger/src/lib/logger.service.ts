@@ -10,33 +10,41 @@ import { getFormat, getLogLevel } from './winston.utilities';
 
 @Injectable({ scope: Scope.TRANSIENT })
 export class Logger implements LoggerService {
-  private logger: WinstonLogger;
+  public winstonLogger: WinstonLogger;
 
-  private context?: string;
+  protected context?: string;
+  protected options?: LoggerOptions;
 
   constructor(context?: string, options?: LoggerOptions) {
-    this.logger = createLogger({
+    this.winstonLogger = createLogger({
       level: getLogLevel(),
       format: getFormat(),
       transports: [new transports.Console()],
       ...options,
     });
     this.context = context;
+    this.options = options;
   }
 
   public setContext(context: string) {
     this.context = context;
   }
 
+  public child(options: object) {
+    const childLogger = new Logger(this.context, this.options);
+    childLogger.winstonLogger = this.winstonLogger.child(options);
+    return childLogger;
+  }
+
   log(message: unknown, fields?: Record<string, unknown>) {
-    this.logger.info({
+    this.winstonLogger.info({
       message,
       context: this.context,
       fields,
     });
   }
   error(message: unknown, error?: Error, fields?: Record<string, unknown>) {
-    this.logger.error({
+    this.winstonLogger.error({
       message,
       context: this.context,
       error,
@@ -44,7 +52,7 @@ export class Logger implements LoggerService {
     });
   }
   warn(message: unknown, fields?: Record<string, unknown>) {
-    this.logger.warn({
+    this.winstonLogger.warn({
       message,
       context: this.context,
       fields,
@@ -52,7 +60,15 @@ export class Logger implements LoggerService {
   }
 
   debug(message: unknown, fields?: Record<string, unknown>) {
-    this.logger.debug({
+    this.winstonLogger.debug({
+      message,
+      context: this.context,
+      fields,
+    });
+  }
+
+  verbose(message: unknown, fields?: Record<string, unknown>) {
+    this.winstonLogger.verbose({
       message,
       context: this.context,
       fields,

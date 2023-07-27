@@ -28,3 +28,7 @@ update-deps:
 
 clean-migrations:
 	rm ./migrations.json
+
+yalc-publish:
+	nx run-many -t build --skip-nx-cache
+	cd dist/libs/logger && yalc publish

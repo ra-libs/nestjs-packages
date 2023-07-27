@@ -35,6 +35,26 @@ describe('Logger', () => {
     expect(Logger).toBeDefined();
   });
 
+  describe('setContext', () => {
+    it('should set the context', () => {
+      const context = 'test context';
+      const logger = new Logger(context);
+
+      expect(logger['context']).toEqual(context);
+    });
+  });
+
+  describe('child', () => {
+    it('should return a new logger with the same context', () => {
+      const context = 'test context';
+      const logger = new Logger(context);
+      const childLogger = logger.child({ test: 'test' });
+
+      expect(childLogger['context']).toEqual(context);
+      expect(childLogger).not.toBe(logger);
+    });
+  });
+
   describe('log', () => {
     it('should call logger.info', () => {
       const message = 'test message';
@@ -102,6 +122,23 @@ describe('Logger', () => {
       };
 
       expect(loggerMock.debug).toHaveBeenCalledWith(expectedParams);
+    });
+  });
+
+  describe('verbose', () => {
+    it('should call logger.verbose', () => {
+      const message = 'test message';
+      const fields = { test: 'test' };
+
+      logger.verbose(message, fields);
+
+      const expectedParams = {
+        message,
+        context: undefined,
+        fields,
+      };
+
+      expect(loggerMock.verbose).toHaveBeenCalledWith(expectedParams);
     });
   });
 });
