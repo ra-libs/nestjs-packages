@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.4.3...metrics-v1.4.4) (2023-07-27)
+
+
+### Bug Fixes
+
+* **metrics:** add incrementValue ([#47](https://github.com/will-bank/nestjs-packages/issues/47)) ([728fd4c](https://github.com/will-bank/nestjs-packages/commit/728fd4c08965d922e3c2f3db383dee8937087a4f))
+
 ## [1.4.3](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.4.2...metrics-v1.4.3) (2023-07-27)
 
 
