@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/will-bank/nestjs-packages/compare/logger-v1.6.0...logger-v1.6.1) (2023-08-01)
+
+
+### Bug Fixes
+
+* **logger:** print fields in development ([#48](https://github.com/will-bank/nestjs-packages/issues/48)) ([1f64436](https://github.com/will-bank/nestjs-packages/commit/1f64436b18d7f88640bc03f1dac11d8b0f91897d))
+
 # [1.6.0](https://github.com/will-bank/nestjs-packages/compare/logger-v1.5.2...logger-v1.6.0) (2023-07-27)
 
 
