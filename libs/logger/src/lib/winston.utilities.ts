@@ -106,7 +106,12 @@ const nestLikeConsoleFormat = (appName = 'NestWinston'): Format =>
       const yellow = clc.yellow;
 
       delete meta['dd'];
-      const stringifiedMeta = safeStringify(meta);
+      let metaToUse = meta;
+
+      if (typeof fields === 'object' && fields !== null) {
+        metaToUse = { ...fields, ...meta };
+      }
+      const stringifiedMeta = safeStringify(metaToUse);
       const formattedMeta = inspect(JSON.parse(stringifiedMeta), {
         colors: true,
         depth: null,
