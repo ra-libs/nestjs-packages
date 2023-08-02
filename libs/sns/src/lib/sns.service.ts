@@ -12,8 +12,14 @@ export class SNSService {
   public client: SNSClient;
 
   constructor(configurations: SNSClientConfig = {}) {
+    const snsOptionsConfig: SNSClientConfig = {};
+    if (process.env['AWS_REGION'])
+      snsOptionsConfig.region = process.env['AWS_REGION'];
+    if (process.env['SNS_AWS_ENDPOINT'])
+      snsOptionsConfig.endpoint = process.env['SNS_AWS_ENDPOINT'];
+
     this.client = new SNSClient({
-      region: configurations.region ?? process.env['AWS_REGION'],
+      ...snsOptionsConfig,
       ...configurations,
     });
   }

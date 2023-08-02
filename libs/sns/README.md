@@ -73,6 +73,81 @@ snsService.publish({
 });
 ```
 
+## Environment Variables
+
+This library can be modified using some env vars
+
+| Environment Variable | Type   | Default | Required | Description                                                          |
+| -------------------- | ------ | ------- | -------- | -------------------------------------------------------------------- |
+| AWS_REGION           | string | -       | false    | To set the aws region                                                |
+| SNS_AWS_ENDPOINT     | string | -       | false    | Set aws sdk endpoint for localstack tests in development environment |
+
+## Building
+
+Run `nx build sns` to build the library.
+
+## Running unit tests
+
+Run `nx test sns` to execute the unit tests via [Jest](https://jestjs.io).
+| METRICS_BUFFER_FLUSH_INTERVAL | number | 5000 | false | If buffering is in use, this is the time in ms to always flush any buffered metrics |
+| METRICS_ENABLED | boolean | - | false | Enable/Disable send metrics |
+| NODE_ENV | string | - | false | If METRICS_ENABLED not set and NODE_ENV is production, this lib will send metrics |
+
+## Building
+
+Run `nx build sns` to build the library.
+
+## Running unit tests
+
+Run `nx test sns` to execute the unit tests via [Jest](https://jestjs.io).
+| METRICS_BUFFER_FLUSH_INTERVAL | number | 5000 | false | If buffering is in use, this is the time in ms to always flush any buffered metrics |
+| METRICS_ENABLED | boolean | - | false | Enable/Disable send metrics |
+| NODE_ENV | string | - | false | If METRICS_ENABLED not set and NODE_ENV is production, this lib will send metrics |
+
+## Building
+
+Run `nx build sns` to build the library.
+
+## Running unit tests
+
+Run `nx test sns` to execute the unit tests via [Jest](https://jestjs.io).
+| METRICS_BUFFER_FLUSH_INTERVAL | number | 5000 | false | If buffering is in use, this is the time in ms to always flush any buffered metrics |
+| METRICS_ENABLED | boolean | - | false | Enable/Disable send metrics |
+| NODE_ENV | string | - | false | If METRICS_ENABLED not set and NODE_ENV is production, this lib will send metrics |
+
+## Building
+
+Run `nx build sns` to build the library.
+
+## Running unit tests
+
+Run `nx test sns` to execute the unit tests via [Jest](https://jestjs.io).
+| METRICS_BUFFER_FLUSH_INTERVAL | number | 5000 | false | If buffering is in use, this is the time in ms to always flush any buffered metrics |
+| METRICS_ENABLED | boolean | - | false | Enable/Disable send metrics |
+| NODE_ENV | string | - | false | If METRICS_ENABLED not set and NODE_ENV is production, this lib will send metrics |
+
+## Building
+
+Run `nx build sns` to build the library.
+
+## Running unit tests
+
+Run `nx test sns` to execute the unit tests via [Jest](https://jestjs.io).
+| METRICS_BUFFER_FLUSH_INTERVAL | number | 5000 | false | If buffering is in use, this is the time in ms to always flush any buffered metrics |
+| METRICS_ENABLED | boolean | - | false | Enable/Disable send metrics |
+| NODE_ENV | string | - | false | If METRICS_ENABLED not set and NODE_ENV is production, this lib will send metrics |
+
+## Building
+
+Run `nx build sns` to build the library.
+
+## Running unit tests
+
+Run `nx test sns` to execute the unit tests via [Jest](https://jestjs.io).
+| METRICS_BUFFER_FLUSH_INTERVAL | number | 5000 | false | If buffering is in use, this is the time in ms to always flush any buffered metrics |
+| METRICS_ENABLED | boolean | - | false | Enable/Disable send metrics |
+| NODE_ENV | string | - | false | If METRICS_ENABLED not set and NODE_ENV is production, this lib will send metrics |
+
 ## Building
 
 Run `nx build sns` to build the library.
