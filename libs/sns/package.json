@@ -1,6 +1,6 @@
 {
   "name": "@will-bank/sns",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "type": "commonjs",
   "private": false,
   "publishConfig": {

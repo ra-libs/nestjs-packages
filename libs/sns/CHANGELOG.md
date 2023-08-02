@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/will-bank/nestjs-packages/compare/sns-v1.6.1...sns-v1.6.2) (2023-08-02)
+
+
+### Bug Fixes
+
+* **sns:** add SNS_AWS_ENDPOINT env var ([#49](https://github.com/will-bank/nestjs-packages/issues/49)) ([68a2492](https://github.com/will-bank/nestjs-packages/commit/68a249211310ecc9852d48e3f10f810b48e1aa69))
+
 ## [1.6.1](https://github.com/will-bank/nestjs-packages/compare/sns-v1.6.0...sns-v1.6.1) (2023-07-20)
 
 
