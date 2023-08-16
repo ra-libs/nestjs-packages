@@ -1,4 +1,9 @@
 {
   "upgrade": false,
-  "reject": ["@semantic-release/npm", "prettier"]
+  "reject": [
+    "prettier",
+    "@typescript-eslint/parser",
+    "@typescript-eslint/eslint-plugin",
+    "eslint-config-prettier"
+  ]
 }

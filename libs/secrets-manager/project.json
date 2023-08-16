@@ -12,7 +12,8 @@
         "tsConfig": "libs/secrets-manager/tsconfig.lib.json",
         "packageJson": "libs/secrets-manager/package.json",
         "main": "libs/secrets-manager/src/index.ts",
-        "assets": ["libs/secrets-manager/*.md"]
+        "assets": ["libs/secrets-manager/*.md"],
+        "updateBuildableProjectDepsInPackageJson": true
       }
     },
     "publish": {

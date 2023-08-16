@@ -12,7 +12,8 @@
         "tsConfig": "libs/metrics/tsconfig.lib.json",
         "packageJson": "libs/metrics/package.json",
         "main": "libs/metrics/src/index.ts",
-        "assets": ["libs/metrics/*.md"]
+        "assets": ["libs/metrics/*.md"],
+        "updateBuildableProjectDepsInPackageJson": true
       }
     },
     "publish": {

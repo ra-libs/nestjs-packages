@@ -12,7 +12,8 @@
         "tsConfig": "libs/growthbook/tsconfig.lib.json",
         "packageJson": "libs/growthbook/package.json",
         "main": "libs/growthbook/src/index.ts",
-        "assets": ["libs/growthbook/*.md"]
+        "assets": ["libs/growthbook/*.md"],
+        "updateBuildableProjectDepsInPackageJson": true
       }
     },
     "publish": {

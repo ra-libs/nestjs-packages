@@ -12,7 +12,8 @@
         "tsConfig": "libs/ssm/tsconfig.lib.json",
         "packageJson": "libs/ssm/package.json",
         "main": "libs/ssm/src/index.ts",
-        "assets": ["libs/ssm/*.md"]
+        "assets": ["libs/ssm/*.md"],
+        "updateBuildableProjectDepsInPackageJson": true
       }
     },
     "publish": {
