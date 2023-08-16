@@ -1,3 +1,10 @@
+## [1.4.6](https://github.com/will-bank/nestjs-packages/compare/commons-v1.4.5...commons-v1.4.6) (2023-08-16)
+
+
+### Bug Fixes
+
+* update deps ([#53](https://github.com/will-bank/nestjs-packages/issues/53)) ([7a94ea7](https://github.com/will-bank/nestjs-packages/commit/7a94ea7e68ad32400448f4df0a4c163d879e1cd7))
+
 ## [1.4.5](https://github.com/will-bank/nestjs-packages/compare/commons-v1.4.4...commons-v1.4.5) (2023-07-22)
 
 
