@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.4.4...metrics-v1.4.5) (2023-08-16)
+
+
+### Bug Fixes
+
+* add growthbook destroy ([#52](https://github.com/will-bank/nestjs-packages/issues/52)) ([2625c23](https://github.com/will-bank/nestjs-packages/commit/2625c23b491bc07e49ec2f80200ffdd913b2f3fa))
+
 ## [1.4.4](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.4.3...metrics-v1.4.4) (2023-07-27)
 
 
