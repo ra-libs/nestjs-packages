@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.10.1...growthbook-v1.10.2) (2023-08-16)
+
+
+### Bug Fixes
+
+* add growthbook destroy ([#52](https://github.com/will-bank/nestjs-packages/issues/52)) ([2625c23](https://github.com/will-bank/nestjs-packages/commit/2625c23b491bc07e49ec2f80200ffdd913b2f3fa))
+
 ## [1.10.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.10.0...growthbook-v1.10.1) (2023-07-20)
 
 
