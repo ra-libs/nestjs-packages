@@ -31,7 +31,7 @@ export class MetricsService {
     return process.env['NODE_ENV'] === 'production';
   }
 
-  public increment(metric: string, tags?: string[]): void {
+  public increment(metric: string, tags?: Tags): void {
     if (this.shouldSendMetrics()) {
       this.ddClient.increment(metric, tags);
     }
@@ -48,25 +48,25 @@ export class MetricsService {
     }
   }
 
-  public decrement(metric: string, tags?: string[]): void {
+  public decrement(metric: string, tags?: Tags): void {
     if (this.shouldSendMetrics()) {
       this.ddClient.decrement(metric, tags);
     }
   }
 
-  public histogram(metric: string, value: number, tags?: string[]): void {
+  public histogram(metric: string, value: number, tags?: Tags): void {
     if (this.shouldSendMetrics()) {
       this.ddClient.histogram(metric, value, tags);
     }
   }
 
-  public gauge(metric: string, value: number, tags?: string[]): void {
+  public gauge(metric: string, value: number, tags?: Tags): void {
     if (this.shouldSendMetrics()) {
       this.ddClient.gauge(metric, value, tags);
     }
   }
 
-  public timing(metric: string, value: number, tags?: string[]): void {
+  public timing(metric: string, value: number, tags?: Tags): void {
     if (this.shouldSendMetrics()) {
       this.ddClient.timing(metric, value, tags);
     }

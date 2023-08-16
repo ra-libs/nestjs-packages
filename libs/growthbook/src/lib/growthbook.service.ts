@@ -57,7 +57,9 @@ export class GrowthbookService<
     skipCache = false
   ) {
     const client = await this.createClientInstance(attributes, skipCache);
-    return client.isOn<K>(key);
+    const isOnResult = client.isOn<K>(key);
+    client.destroy();
+    return isOnResult;
   }
 
   async getFeatureValue<
@@ -65,7 +67,9 @@ export class GrowthbookService<
     K extends string & keyof AppFeatures = string
   >(key: K, defaultValue: V, attributes: Attributes = {}, skipCache = false) {
     const client = await this.createClientInstance(attributes, skipCache);
-    return client.getFeatureValue<V, K>(key, defaultValue);
+    const featureValue = client.getFeatureValue<V, K>(key, defaultValue);
+    client.destroy();
+    return featureValue;
   }
 
   async toggleFeatureValue(key: string, body: ToggleFeatureBody) {
