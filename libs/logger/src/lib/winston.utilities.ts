@@ -11,6 +11,7 @@ export const getFormat = (): Format => {
       format.errors({ stack: true }),
       format.timestamp(),
       format.ms(),
+      format.splat(),
       nestLikeConsoleFormat()
     );
   }
@@ -18,6 +19,7 @@ export const getFormat = (): Format => {
   return format.combine(
     format.errors({ stack: true }),
     format.timestamp(),
+    format.splat(),
     format.printf(buildPrint),
     format.json()
   );
@@ -88,6 +90,14 @@ const nestLikeConsoleFormat = (appName = 'NestWinston'): Format =>
       ms,
       ...meta
     }: TransformableInfo) => {
+      console.log('level', level);
+      console.log('message', message);
+      console.log('context', context);
+      console.log('timestamp', timestamp);
+      console.log('fields', fields);
+      console.log('ms', ms);
+      console.log('meta', meta);
+
       if ('undefined' !== typeof timestamp) {
         // Only format the timestamp to a locale representation if it's ISO 8601 format. Any format
         // that is not a valid date string will throw, just ignore it (it will be printed as-is).

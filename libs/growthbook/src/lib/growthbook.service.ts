@@ -35,10 +35,7 @@ export class GrowthbookService<
     };
   }
 
-  public async createClientInstance(
-    attributes: Attributes = {},
-    skipCache = false
-  ) {
+  public async createClientInstance(attributes: Attributes = {}) {
     const context = this.getContext();
     const client = new GrowthBook({
       ...context,
@@ -47,16 +44,15 @@ export class GrowthbookService<
         ...attributes,
       },
     });
-    await client.loadFeatures({ autoRefresh: true, skipCache: skipCache });
+    await client.loadFeatures({ autoRefresh: true });
     return client;
   }
 
   async isOn<K extends string & keyof AppFeatures = string>(
     key: K,
-    attributes: Attributes = {},
-    skipCache = false
+    attributes: Attributes = {}
   ) {
-    const client = await this.createClientInstance(attributes, skipCache);
+    const client = await this.createClientInstance(attributes);
     const isOnResult = client.isOn<K>(key);
     client.destroy();
     return isOnResult;
@@ -65,8 +61,8 @@ export class GrowthbookService<
   async getFeatureValue<
     V extends AppFeatures[K],
     K extends string & keyof AppFeatures = string
-  >(key: K, defaultValue: V, attributes: Attributes = {}, skipCache = false) {
-    const client = await this.createClientInstance(attributes, skipCache);
+  >(key: K, defaultValue: V, attributes: Attributes = {}) {
+    const client = await this.createClientInstance(attributes);
     const featureValue = client.getFeatureValue<V, K>(key, defaultValue);
     client.destroy();
     return featureValue;
