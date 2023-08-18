@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.10.3...growthbook-v1.10.4) (2023-08-18)
+
+
+### Bug Fixes
+
+* **growthbook:** remove skipCache to avoid OOM ([#54](https://github.com/will-bank/nestjs-packages/issues/54)) ([09dd166](https://github.com/will-bank/nestjs-packages/commit/09dd166488309e1cd2b9498f31736a8869c18ab6))
+
 ## [1.10.3](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.10.2...growthbook-v1.10.3) (2023-08-16)
 
 
