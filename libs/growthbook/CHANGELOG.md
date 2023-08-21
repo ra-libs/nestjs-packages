@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.10.4...growthbook-v1.11.0) (2023-08-21)
+
+
+### Features
+
+* **growthbook:** add cache configuration client and removing autoRefresh from loadFeatures ([0f5b844](https://github.com/will-bank/nestjs-packages/commit/0f5b8445aafa95b2505ed11d4576ee01a798b4e9))
+
 ## [1.10.4](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.10.3...growthbook-v1.10.4) (2023-08-18)
 
 
