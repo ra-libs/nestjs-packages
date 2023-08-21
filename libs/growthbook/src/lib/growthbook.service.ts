@@ -15,6 +15,9 @@ export class GrowthbookService<
     const crossFetch = await import('cross-fetch');
     const nodeCrypto = await import('node:crypto');
     const eventsource = await import('eventsource');
+
+    const cache = new Map();
+
     setPolyfills({
       // Required when using built-in feature loading and Node 17 or lower
       fetch: crossFetch,
@@ -22,6 +25,12 @@ export class GrowthbookService<
       SubtleCrypto: nodeCrypto.webcrypto.subtle,
       // Optional, can make feature rollouts faster
       EventSource: eventsource,
+      localStorage: {
+        getItem: (key) => cache.get(key),
+        setItem: (key, value) => {
+          cache.set(key, value);
+        },
+      },
     });
   }
 
@@ -44,7 +53,7 @@ export class GrowthbookService<
         ...attributes,
       },
     });
-    await client.loadFeatures({ autoRefresh: true });
+    await client.loadFeatures();
     return client;
   }
 
