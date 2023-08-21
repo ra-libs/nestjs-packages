@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.4.6...commons-v1.5.0) (2023-08-21)
+
+
+### Bug Fixes
+
+* **growthbook:** remove skipCache to avoid OOM ([#54](https://github.com/will-bank/nestjs-packages/issues/54)) ([09dd166](https://github.com/will-bank/nestjs-packages/commit/09dd166488309e1cd2b9498f31736a8869c18ab6))
+
+
+### Features
+
+* add RequestMiddleware ([#56](https://github.com/will-bank/nestjs-packages/issues/56)) ([73c5645](https://github.com/will-bank/nestjs-packages/commit/73c56459f7d8ec6c11fa66859c65b94fb5160877))
+
 ## [1.4.6](https://github.com/will-bank/nestjs-packages/compare/commons-v1.4.5...commons-v1.4.6) (2023-08-16)
 
 
