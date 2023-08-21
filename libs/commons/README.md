@@ -34,6 +34,20 @@ export class YourController {
 }
 ```
 
+### Middleware
+
+#### RequestMiddleware
+
+```ts
+import { RequestLoggerMiddleware } from '@will-bank/commons';
+
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(RequestLoggerMiddleware).exclude('/health', '/health/*').forRoutes({ path: '*', method: RequestMethod.ALL });
+  }
+}
+```
+
 ## Building
 
 Run `nx build commons` to build the library.
