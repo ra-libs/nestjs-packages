@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.11.0...growthbook-v1.12.0) (2023-08-22)
+
+
+### Features
+
+* add s3 initial lib ([#57](https://github.com/will-bank/nestjs-packages/issues/57)) ([74ccde3](https://github.com/will-bank/nestjs-packages/commit/74ccde39f642c662dc7ea462ae9a0b80a36e36e5))
+
 # [1.11.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.10.4...growthbook-v1.11.0) (2023-08-21)
 
 
