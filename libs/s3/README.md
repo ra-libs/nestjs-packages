@@ -22,9 +22,7 @@ import { S3Module } from '@will-bank/s3';
 @Module({
   imports: [
     // ...
-    S3Module.forFeature({
-      bucket: 'your-bucket',
-    }),
+    S3Module.forFeature('your-bucket'),
   ],
 })
 export class YourModule {}
@@ -59,9 +57,7 @@ export class YourService {
 ```ts
 import { S3Service } from '@will-bank/s3';
 
-const s3Service = new S3Service({
-  bucket: 'your-bucket',
-});
+const s3Service = new S3Service('your-bucket');
 
 await s3Service.get({
   Key: 'file-key',
