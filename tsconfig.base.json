@@ -19,6 +19,7 @@
       "@will-bank/growthbook": ["libs/growthbook/src/index.ts"],
       "@will-bank/logger": ["libs/logger/src/index.ts"],
       "@will-bank/metrics": ["libs/metrics/src/index.ts"],
+      "@will-bank/s3": ["libs/s3/src/index.ts"],
       "@will-bank/secrets-manager": ["libs/secrets-manager/src/index.ts"],
       "@will-bank/sns": ["libs/sns/src/index.ts"],
       "@will-bank/ssm": ["libs/ssm/src/index.ts"]
