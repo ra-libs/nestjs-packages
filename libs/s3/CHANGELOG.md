@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/will-bank/nestjs-packages/compare/s3-v1.0.0...s3-v1.0.1) (2023-08-22)
+
+
+### Bug Fixes
+
+* **s3:** update readme ([8e28783](https://github.com/will-bank/nestjs-packages/commit/8e287837c69bd90617843f6087d1a9b228c87039))
+
 # 1.0.0 (2023-08-22)
 
 
