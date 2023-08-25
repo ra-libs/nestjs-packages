@@ -26,14 +26,14 @@ export class SQSService {
 
     // Create a producer for each queue
     this.options.producers?.forEach((producerOptions) => {
-      if (this.producers.has(producerOptions.name)) {
+      if (this.producers.has(producerOptions.queueName)) {
         throw new Error(
-          `A producer for queue ${producerOptions.name} already exists`
+          `A producer for queue ${producerOptions.queueName} already exists`
         );
       }
 
       const producer = Producer.create({ ...producerOptions, sqs: sqsClient });
-      this.producers.set(producerOptions.name, producer);
+      this.producers.set(producerOptions.queueName, producer);
     });
   }
 

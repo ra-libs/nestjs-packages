@@ -26,7 +26,7 @@ describe('SQSService', () => {
             return new SQSService({
               producers: [
                 {
-                  name: 'test',
+                  queueName: 'test',
                   queueUrl: 'https://test.com',
                 },
               ],

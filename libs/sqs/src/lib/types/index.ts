@@ -10,7 +10,7 @@ export type SQSOptions = {
 };
 
 export type SQSProducerOptions = ProducerOptions & {
-  name: QueueName;
+  queueName: QueueName;
 };
 
 export interface Message<T = unknown> {
