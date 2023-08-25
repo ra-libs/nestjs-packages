@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/will-bank/nestjs-packages/compare/sqs-v1.0.0...sqs-v1.0.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* **sqs:** queueName option ([#59](https://github.com/will-bank/nestjs-packages/issues/59)) ([c9700c4](https://github.com/will-bank/nestjs-packages/commit/c9700c414350283055d1e3d7bafc356c2fe76111))
+
 # 1.0.0 (2023-08-25)
 
 
