@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.5.0...metrics-v1.6.0) (2023-08-25)
+
+
+### Features
+
+* add sqs initial module with producer only ([#58](https://github.com/will-bank/nestjs-packages/issues/58)) ([ebf5ed1](https://github.com/will-bank/nestjs-packages/commit/ebf5ed1aaa47d5941119947d0a5e4262d180ca62))
+
 # [1.5.0](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.4.6...metrics-v1.5.0) (2023-08-22)
 
 
