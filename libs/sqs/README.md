@@ -25,7 +25,7 @@ import { SQSModule } from '@will-bank/sqs';
     SQSModule.forRoot({
       producers: [
         {
-          name: 'test',
+          queueName: 'test',
           queueUrl: 'https://test.com',
         },
       ],
@@ -65,7 +65,14 @@ export class YourService {
 ```ts
 import { SQSService } from '@will-bank/sqs';
 
-const sqsService = new SQSService();
+const sqsService = new SQSService({
+  producers: [
+    {
+      queueName: 'test',
+      queueUrl: 'https://test.com',
+    },
+  ],
+});
 
 await sqsService.send('queue-name', {
   id: 'test',
