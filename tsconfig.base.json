@@ -22,6 +22,7 @@
       "@will-bank/s3": ["libs/s3/src/index.ts"],
       "@will-bank/secrets-manager": ["libs/secrets-manager/src/index.ts"],
       "@will-bank/sns": ["libs/sns/src/index.ts"],
+      "@will-bank/sqs": ["libs/sqs/src/index.ts"],
       "@will-bank/ssm": ["libs/ssm/src/index.ts"]
     }
   },

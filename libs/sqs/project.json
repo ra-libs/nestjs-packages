@@ -1,0 +1,54 @@
+{
+  "name": "sqs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sqs/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sqs",
+        "tsConfig": "libs/sqs/tsconfig.lib.json",
+        "packageJson": "libs/sqs/package.json",
+        "main": "libs/sqs/src/index.ts",
+        "assets": ["libs/sqs/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs sqs {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/sqs/**/*.ts", "libs/sqs/package.json"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/sqs/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "sqs-v${VERSION}"
+      }
+    }
+  },
+  "tags": []
+}
