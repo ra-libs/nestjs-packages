@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.12.0...growthbook-v1.13.0) (2023-08-25)
+
+
+### Features
+
+* add sqs initial module with producer only ([#58](https://github.com/will-bank/nestjs-packages/issues/58)) ([ebf5ed1](https://github.com/will-bank/nestjs-packages/commit/ebf5ed1aaa47d5941119947d0a5e4262d180ca62))
+
 # [1.12.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.11.0...growthbook-v1.12.0) (2023-08-22)
 
 
