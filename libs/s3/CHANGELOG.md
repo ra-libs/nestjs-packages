@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/will-bank/nestjs-packages/compare/s3-v1.0.1...s3-v1.1.0) (2023-08-25)
+
+
+### Features
+
+* add sqs initial module with producer only ([#58](https://github.com/will-bank/nestjs-packages/issues/58)) ([ebf5ed1](https://github.com/will-bank/nestjs-packages/commit/ebf5ed1aaa47d5941119947d0a5e4262d180ca62))
+
 ## [1.0.1](https://github.com/will-bank/nestjs-packages/compare/s3-v1.0.0...s3-v1.0.1) (2023-08-22)
 
 
