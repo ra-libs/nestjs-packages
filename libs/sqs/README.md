@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-npm install @will-bank/sqs
+pnpm add @will-bank/sqs
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)

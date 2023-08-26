@@ -9,7 +9,7 @@ Using this library will make it easier to filter logs in datadog.
 ## Installing this package
 
 ```bash
-npm install @will-bank/logger
+pnpm add @will-bank/logger
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)

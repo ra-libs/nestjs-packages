@@ -11,7 +11,7 @@ This repo uses some tools:
 ## How to
 
 1. [Clone it](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository)
-2. Install dependencies (`npm install`)
+2. Install dependencies (`pnpm install`)
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit`) without any other arg, commitizen will ask for other fields
 5. Test your changes (`npx nx affected -t test `)

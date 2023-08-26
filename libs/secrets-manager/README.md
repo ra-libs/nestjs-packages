@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-npm install @will-bank/secrets-manager
+pnpm add @will-bank/secrets-manager
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)

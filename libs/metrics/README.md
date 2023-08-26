@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-npm install @will-bank/metrics
+pnpm add @will-bank/metrics
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)

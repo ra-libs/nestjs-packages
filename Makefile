@@ -5,11 +5,11 @@ create-lib:
 setup-lib:
 	npx nx g @theunderscorer/nx-semantic-release:setup-project ${NAME}
 	cd libs/${NAME} && \
-	npm pkg set private=false --json && \
-	npm pkg set 'repository.type'='git' && \
-	npm pkg set 'repository.url'='https://github.com/will-bank/nestjs-packages.git' && \
-	npm pkg set 'repository.directory'='libs/${NAME}' && \
-	npm pkg set 'publishConfig.registry'='https://npm.pkg.github.com/'
+	pnpm pkg set private=false --json && \
+	pnpm pkg set 'repository.type'='git' && \
+	pnpm pkg set 'repository.url'='https://github.com/will-bank/nestjs-packages.git' && \
+	pnpm pkg set 'repository.directory'='libs/${NAME}' && \
+	pnpm pkg set 'publishConfig.registry'='https://npm.pkg.github.com/'
 
 lint:
 	npx nx format:write
@@ -23,7 +23,7 @@ check-deps:
 	npx nx migrate latest
 
 update-deps:
-	npm install
+	pnpm install
 	npx nx migrate --run-migrations
 
 clean-migrations:
