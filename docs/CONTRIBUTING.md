@@ -14,7 +14,7 @@ This repo uses some tools:
 2. Install dependencies (`pnpm install`)
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit`) without any other arg, commitizen will ask for other fields
-5. Test your changes (`npx nx affected -t test `)
+5. Test your changes (`pnpm dlx nx affected -t test `)
 6. Push to the branch (`git push origin my-new-feature`)
 7. [Create new Pull Request](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
@@ -63,5 +63,5 @@ After publishable library created, you must update `package.json`
 4. add a `semantic-release` target to your library `project.json`
 
 ```bash
-  npx nx g @theunderscorer/nx-semantic-release:setup-project <LIBRARY_NAME>
+  pnpm dlx nx g @theunderscorer/nx-semantic-release:setup-project <LIBRARY_NAME>
 ```

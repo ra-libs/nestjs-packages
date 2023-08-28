@@ -31,11 +31,11 @@ jobs:
         with:
           version: 8.6.12
       - run: pnpm i --frozen-lockfile
-      - run: npx nx affected -t build --parallel=3
+      - run: pnpm dlx nx affected -t build --parallel=3
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.WILLBANK_PLATFORMS_PERSONAL_ACCESS_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx nx run-many --targets=build,semantic-release --parallel=false
+          pnpm dlx nx run-many --targets=build,semantic-release --parallel=false

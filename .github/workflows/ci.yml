@@ -27,7 +27,7 @@ jobs:
         with:
           version: 8.6.12
       - run: pnpm i --frozen-lockfile
-      - run: npx nx format:check
-      - run: npx nx affected -t lint --parallel=3
-      - run: npx nx affected -t test --parallel=3 --configuration=ci
-      - run: npx nx affected -t build --parallel=3
+      - run: pnpm dlx nx format:check
+      - run: pnpm dlx nx affected -t lint --parallel=3
+      - run: pnpm dlx nx affected -t test --parallel=3 --configuration=ci
+      - run: pnpm dlx nx affected -t build --parallel=3

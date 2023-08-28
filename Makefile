@@ -1,9 +1,9 @@
 create-lib:
-	npx nx g @nx/nest:library ${NAME} --publishable --importPath @will-bank/${NAME}
+	pnpm dlx nx g @nx/nest:library ${NAME} --publishable --importPath @will-bank/${NAME}
 	$(MAKE) setup-lib NAME=${NAME}
 
 setup-lib:
-	npx nx g @theunderscorer/nx-semantic-release:setup-project ${NAME}
+	pnpm dlx nx g @theunderscorer/nx-semantic-release:setup-project ${NAME}
 	cd libs/${NAME} && \
 	pnpm pkg set private=false --json && \
 	pnpm pkg set 'repository.type'='git' && \
@@ -12,23 +12,23 @@ setup-lib:
 	pnpm pkg set 'publishConfig.registry'='https://npm.pkg.github.com/'
 
 lint:
-	npx nx format:write
-	npx nx affected -t lint --fix
+	pnpm dlx nx format:write
+	pnpm dlx nx affected -t lint --fix
 
 test:
-	npx nx affected -t test
+	pnpm dlx nx affected -t test
 
 # Check https://nx.dev/core-features/automate-updating-dependencies
 check-deps:
-	npx nx migrate latest
+	pnpm dlx nx migrate latest
 
 update-deps:
 	pnpm install
-	npx nx migrate --run-migrations
+	pnpm dlx nx migrate --run-migrations
 
 clean-migrations:
 	rm ./migrations.json
 
 yalc-publish:
-	nx run-many -t build --skip-nx-cache
+	pnpm dlx nx run-many -t build --skip-nx-cache
 	cd dist/libs/logger && yalc publish

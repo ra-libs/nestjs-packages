@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx nx format:write
-npx lint-staged
+pnpm dlx nx format:write
+pnpm dlx lint-staged

@@ -1,4 +1,4 @@
 {
-  "jest.jestCommandLine": "npx nx affected -t test",
+  "jest.jestCommandLine": "pnpm dlx nx affected -t test",
   "jest.rootPath": "/"
 }
