@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/will-bank/nestjs-packages/compare/commons-v1.7.0...commons-v1.7.1) (2023-08-31)
+
+
+### Bug Fixes
+
+* **logger:** log nestLike on non production NODE_ENV ([bd867e1](https://github.com/will-bank/nestjs-packages/commit/bd867e1c06a0f06ea5da0404e9a4cabadff3135d))
+
 # [1.7.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.6.0...commons-v1.7.0) (2023-08-25)
 
 
