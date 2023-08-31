@@ -6,7 +6,7 @@ import { format } from 'winston';
 import { LogLevel } from './@types';
 
 export const getFormat = (): Format => {
-  if (process.env['NODE_ENV'] === 'development') {
+  if (process.env['NODE_ENV'] !== 'production') {
     return format.combine(
       format.errors({ stack: true }),
       format.timestamp(),
