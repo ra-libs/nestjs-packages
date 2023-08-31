@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/will-bank/nestjs-packages/compare/commons-v1.7.1...commons-v1.7.2) (2023-08-31)
+
+
+### Bug Fixes
+
+* **logger:** remove console.log ([72c42b6](https://github.com/will-bank/nestjs-packages/commit/72c42b65321aaa93591a8396d8d992b7f04774a0))
+
 ## [1.7.1](https://github.com/will-bank/nestjs-packages/compare/commons-v1.7.0...commons-v1.7.1) (2023-08-31)
 
 
