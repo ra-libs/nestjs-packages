@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/will-bank/nestjs-packages/compare/logger-v1.8.1...logger-v1.8.2) (2023-08-31)
+
+
+### Bug Fixes
+
+* **logger:** remove console.log ([72c42b6](https://github.com/will-bank/nestjs-packages/commit/72c42b65321aaa93591a8396d8d992b7f04774a0))
+
 ## [1.8.1](https://github.com/will-bank/nestjs-packages/compare/logger-v1.8.0...logger-v1.8.1) (2023-08-31)
 
 
