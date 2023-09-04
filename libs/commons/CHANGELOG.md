@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.7.2...commons-v1.8.0) (2023-09-04)
+
+
+### Features
+
+* **athena:** add athena package ([#62](https://github.com/will-bank/nestjs-packages/issues/62)) ([301637d](https://github.com/will-bank/nestjs-packages/commit/301637ddf3705b06a00899f16b81440496535d0a))
+
 ## [1.7.2](https://github.com/will-bank/nestjs-packages/compare/commons-v1.7.1...commons-v1.7.2) (2023-08-31)
 
 
