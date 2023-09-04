@@ -1,0 +1,54 @@
+{
+  "name": "athena",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/athena/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/athena",
+        "tsConfig": "libs/athena/tsconfig.lib.json",
+        "packageJson": "libs/athena/package.json",
+        "main": "libs/athena/src/index.ts",
+        "assets": ["libs/athena/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs athena {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/athena/**/*.ts", "libs/athena/package.json"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/athena/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "athena-v${VERSION}"
+      }
+    }
+  },
+  "tags": []
+}

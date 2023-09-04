@@ -78,7 +78,6 @@ const nestLikeColorScheme: Record<string, (text: string) => string> = {
   debug: clc.magentaBright,
   verbose: clc.cyanBright,
 };
-
 const nestLikeConsoleFormat = (appName = 'NestWinston'): Format =>
   format.printf(
     ({

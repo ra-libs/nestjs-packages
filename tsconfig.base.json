@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@will-bank/athena": ["libs/athena/src/index.ts"],
       "@will-bank/commons": ["libs/commons/src/index.ts"],
       "@will-bank/growthbook": ["libs/growthbook/src/index.ts"],
       "@will-bank/logger": ["libs/logger/src/index.ts"],
