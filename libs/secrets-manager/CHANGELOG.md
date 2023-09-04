@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/will-bank/nestjs-packages/compare/secrets-manager-v1.2.0...secrets-manager-v1.3.0) (2023-09-04)
+
+
+### Features
+
+* **athena:** add athena package ([#62](https://github.com/will-bank/nestjs-packages/issues/62)) ([301637d](https://github.com/will-bank/nestjs-packages/commit/301637ddf3705b06a00899f16b81440496535d0a))
+
 # [1.2.0](https://github.com/will-bank/nestjs-packages/compare/secrets-manager-v1.1.0...secrets-manager-v1.2.0) (2023-08-25)
 
 
