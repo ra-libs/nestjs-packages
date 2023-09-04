@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/will-bank/nestjs-packages/compare/s3-v1.1.0...s3-v1.2.0) (2023-09-04)
+
+
+### Features
+
+* **athena:** add athena package ([#62](https://github.com/will-bank/nestjs-packages/issues/62)) ([301637d](https://github.com/will-bank/nestjs-packages/commit/301637ddf3705b06a00899f16b81440496535d0a))
+
 # [1.1.0](https://github.com/will-bank/nestjs-packages/compare/s3-v1.0.1...s3-v1.1.0) (2023-08-25)
 
 
