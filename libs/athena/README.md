@@ -44,7 +44,7 @@ export class YourService {
   constructor(private readonly athenaService: AthenaService, private readonly configService: ConfigService) {}
 
   async xptoMethod() {
-    await this.athenaService.startQueryExecution({
+    const results = await this.athenaService.runQuery({
       QueryString: 'Your Query',
     });
   }
@@ -58,7 +58,7 @@ import { AthenaService } from '@will-bank/athena';
 
 const athenaService = new AthenaService();
 
-await athenaService.startQueryExecution({
+const results = await athenaService.runQuery({
   QueryString: 'Your Query',
 });
 ```
