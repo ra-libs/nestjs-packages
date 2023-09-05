@@ -9,9 +9,12 @@ export type RunQueryOptions = {
   retry?: number;
 };
 
-export type Column = string;
-export type Row<T = any> = T[];
+export type Column<C = string> = C;
+export type Row<R = any> = R[];
 
-export type ExtractedResult<T = any> = {
-  [key: Column]: Row<T>[];
+export type ExtractedResult<
+  C extends string | number | symbol = any,
+  R = any
+> = {
+  [key in Column<C>]: Row<R>[];
 };

@@ -114,7 +114,9 @@ export class AthenaService {
     });
   }
 
-  extractResult<T = any>(results: GetQueryResultsOutput): ExtractedResult<T> {
+  extractResult<C extends string | number | symbol = any, R = any>(
+    results: GetQueryResultsOutput
+  ): ExtractedResult<C, R> {
     const athenaColumns = results.ResultSet?.Rows?.shift();
 
     const columns = athenaColumns?.Data?.map((data) => {
