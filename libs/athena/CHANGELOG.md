@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/will-bank/nestjs-packages/compare/athena-v1.2.0...athena-v1.2.1) (2023-09-05)
+
+
+### Bug Fixes
+
+* add extract result generic type ([c9161d0](https://github.com/will-bank/nestjs-packages/commit/c9161d09de9306d2cfaf0ca1867e36204b6c6307))
+
 # [1.2.0](https://github.com/will-bank/nestjs-packages/compare/athena-v1.1.0...athena-v1.2.0) (2023-09-05)
 
 
