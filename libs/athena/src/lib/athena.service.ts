@@ -16,7 +16,7 @@ import {
 } from '@aws-sdk/client-athena';
 import { Injectable } from '@nestjs/common';
 
-import { ResultConfiguration } from './types';
+import { ExtractedResult, ResultConfiguration, RunQueryOptions } from './types';
 
 @Injectable()
 export class AthenaService {
@@ -76,7 +76,11 @@ export class AthenaService {
     this.resultConfiguration = resultConfiguration;
   }
 
-  async runQuery(query: string, retry = 2000): Promise<GetQueryResultsOutput> {
+  async runQuery(
+    query: string,
+    options: RunQueryOptions = { retry: 2000 }
+  ): Promise<GetQueryResultsOutput> {
+    const { retry } = options;
     const { QueryExecutionId } = await this.startQueryExecution({
       QueryString: query,
       ResultConfiguration: this.resultConfiguration,
@@ -108,5 +112,27 @@ export class AthenaService {
         }
       }, retry);
     });
+  }
+
+  extractResult(results: GetQueryResultsOutput): ExtractedResult {
+    const athenaColumns = results.ResultSet?.Rows?.shift();
+
+    const columns = athenaColumns?.Data?.map((data) => {
+      return Object.values(data)[0];
+    });
+
+    const rows = results.ResultSet?.Rows?.map((row) => {
+      return row.Data?.map((data) => {
+        return Object.values(data)[0];
+      });
+    });
+
+    const resultsObject = columns?.reduce((acc, column, index) => {
+      acc[column] = rows?.map((row) => {
+        return row?.[index];
+      });
+      return acc;
+    }, {});
+    return resultsObject;
   }
 }
