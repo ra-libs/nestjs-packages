@@ -16,9 +16,12 @@ import {
 } from '@aws-sdk/client-athena';
 import { Injectable } from '@nestjs/common';
 
+import { ResultConfiguration } from './types';
+
 @Injectable()
 export class AthenaService {
   public client: AthenaClient;
+  private resultConfiguration: ResultConfiguration;
 
   constructor(configurations: AthenaClientConfig = {}) {
     const athenaClientConfig: AthenaClientConfig = {};
@@ -34,8 +37,6 @@ export class AthenaService {
         secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY'],
       };
     }
-
-    // if(process.env['ATHENA_AWS_ENDPOINT'])
 
     this.client = new AthenaClient({
       ...athenaClientConfig,
@@ -69,5 +70,43 @@ export class AthenaService {
   ): Promise<GetQueryExecutionOutput> {
     const command = new GetQueryExecutionCommand(input);
     return this.client.send(command);
+  }
+
+  setResultConfiguration(resultConfiguration: ResultConfiguration) {
+    this.resultConfiguration = resultConfiguration;
+  }
+
+  async runQuery(query: string, retry = 2000): Promise<GetQueryResultsOutput> {
+    const { QueryExecutionId } = await this.startQueryExecution({
+      QueryString: query,
+      ResultConfiguration: this.resultConfiguration,
+    });
+
+    if (!QueryExecutionId) throw new Error('QueryExecutionId not found');
+    return this.waitForQueryResults(QueryExecutionId, retry);
+  }
+
+  async waitForQueryResults(queryExecutionId: string, retry = 2000) {
+    return new Promise<GetQueryResultsOutput>((resolve, reject) => {
+      const interval = setInterval(async () => {
+        const { QueryExecution } = await this.getQueryExecution({
+          QueryExecutionId: queryExecutionId,
+        });
+
+        if (QueryExecution?.Status?.State === 'SUCCEEDED') {
+          clearInterval(interval);
+          const results = await this.getQueryResults({
+            QueryExecutionId: queryExecutionId,
+          });
+
+          return resolve(results);
+        }
+
+        if (QueryExecution?.Status?.State === 'FAILED') {
+          clearInterval(interval);
+          reject(QueryExecution.Status.StateChangeReason);
+        }
+      }, retry);
+    });
   }
 }
