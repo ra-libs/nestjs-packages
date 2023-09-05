@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/will-bank/nestjs-packages/compare/athena-v1.2.1...athena-v1.2.2) (2023-09-05)
+
+
+### Bug Fixes
+
+* **athena:** generic types ([5c7e9ce](https://github.com/will-bank/nestjs-packages/commit/5c7e9ce4555523cc56b7bb07277ff9fa919be111))
+
 ## [1.2.1](https://github.com/will-bank/nestjs-packages/compare/athena-v1.2.0...athena-v1.2.1) (2023-09-05)
 
 
