@@ -16,7 +16,7 @@ import {
 } from '@aws-sdk/client-athena';
 import { Injectable } from '@nestjs/common';
 
-import { ExtractedResult, ResultConfiguration, RunQueryOptions } from './types';
+import { ResultConfiguration, RunQueryOptions } from './types';
 
 @Injectable()
 export class AthenaService {
@@ -114,9 +114,7 @@ export class AthenaService {
     });
   }
 
-  extractResult<C extends string | number | symbol = any, R = any>(
-    results: GetQueryResultsOutput
-  ): ExtractedResult<C, R> {
+  extractResult(results: GetQueryResultsOutput) {
     const athenaColumns = results.ResultSet?.Rows?.shift();
 
     const columns = athenaColumns?.Data?.map((data) => {
