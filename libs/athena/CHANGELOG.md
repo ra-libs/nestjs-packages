@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/will-bank/nestjs-packages/compare/athena-v1.0.0...athena-v1.1.0) (2023-09-05)
+
+
+### Features
+
+* **athena:** add runQuery ([a796efa](https://github.com/will-bank/nestjs-packages/commit/a796efadc0bbcbd92bcac5f2e599ff52b228e674))
+
 # 1.0.0 (2023-09-04)
 
 
