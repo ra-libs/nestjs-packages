@@ -10,8 +10,8 @@ export type RunQueryOptions = {
 };
 
 export type Column = string;
-export type Row = unknown[];
+export type Row<T = any> = T[];
 
-export type ExtractedResult = {
-  [key: Column]: Row[];
+export type ExtractedResult<T = any> = {
+  [key: Column]: Row<T>[];
 };

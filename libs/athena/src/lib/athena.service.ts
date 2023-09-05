@@ -114,7 +114,7 @@ export class AthenaService {
     });
   }
 
-  extractResult(results: GetQueryResultsOutput): ExtractedResult {
+  extractResult<T = any>(results: GetQueryResultsOutput): ExtractedResult<T> {
     const athenaColumns = results.ResultSet?.Rows?.shift();
 
     const columns = athenaColumns?.Data?.map((data) => {
