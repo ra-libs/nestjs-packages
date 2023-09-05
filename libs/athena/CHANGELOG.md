@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/will-bank/nestjs-packages/compare/athena-v1.1.0...athena-v1.2.0) (2023-09-05)
+
+
+### Features
+
+* **athena:** add extract result method ([122c58c](https://github.com/will-bank/nestjs-packages/commit/122c58ce0842228bd8948e86fd5dd2e02d239b43))
+
 # [1.1.0](https://github.com/will-bank/nestjs-packages/compare/athena-v1.0.0...athena-v1.1.0) (2023-09-05)
 
 
