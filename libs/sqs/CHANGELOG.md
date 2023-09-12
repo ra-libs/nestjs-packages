@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/will-bank/nestjs-packages/compare/sqs-v1.1.0...sqs-v1.2.0) (2023-09-12)
+
+
+### Features
+
+* **sqs:** add consumers ([#65](https://github.com/will-bank/nestjs-packages/issues/65)) ([ce5a2dd](https://github.com/will-bank/nestjs-packages/commit/ce5a2dd13d7be5dd3cedee06f856cd90193dba56))
+
 # [1.1.0](https://github.com/will-bank/nestjs-packages/compare/sqs-v1.0.2...sqs-v1.1.0) (2023-09-04)
 
 
