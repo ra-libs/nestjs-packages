@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/will-bank/nestjs-packages/compare/sqs-v1.2.0...sqs-v1.2.1) (2023-09-12)
+
+
+### Bug Fixes
+
+* **sqs:** types ([#66](https://github.com/will-bank/nestjs-packages/issues/66)) ([9ae0e02](https://github.com/will-bank/nestjs-packages/commit/9ae0e02df4eafb327966cac99360a2a8d7d83299))
+
 # [1.2.0](https://github.com/will-bank/nestjs-packages/compare/sqs-v1.1.0...sqs-v1.2.0) (2023-09-12)
 
 
