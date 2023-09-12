@@ -5,8 +5,10 @@
     "tslib": "^2.3.0",
     "@nestjs/common": "10.2.1",
     "sqs-producer": "^3.2.1",
-    "@aws-sdk/client-sns": "^3.391.0",
-    "@aws-sdk/client-sqs": "^3.398.0"
+    "@aws-sdk/client-sqs": "^3.398.0",
+    "@golevelup/nestjs-discovery": "^4.0.0",
+    "@will-bank/logger": "*",
+    "sqs-consumer": "^7.2.2"
   },
   "type": "commonjs",
   "main": "./src/index.js",

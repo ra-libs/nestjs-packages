@@ -10,7 +10,55 @@ pnpm add @will-bank/sqs
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
 
-## Usage
+## Usage - Consumer
+
+### Nestjs
+
+in your `app.module.ts` import this module
+
+```ts
+import { SQSModule } from '@will-bank/sqs';
+
+@Module({
+  imports: [
+    // ...
+    SQSModule.forRoot({
+      consumers: [
+        {
+          queueName: 'test',
+          queueUrl: 'http://localhost:4566/000000000000/test',
+        },
+      ],
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+You can pass configurations options as an object parameter. By default this module uses environment variables
+
+- AWS_REGION
+
+In your specific service:
+
+## Decorate Methods
+
+```ts
+import { Message, SqsMessageHandler, SqsConsumerEventHandler } from '@will-bank/sqs';
+
+@Injectable()
+export class AppMessageHandler {
+  @SqsMessageHandler(/** name: */ 'queueName', /** batch: */ false)
+  public async handleMessage(message: Message) {}
+
+  @SqsConsumerEventHandler(/** name: */ 'queueName', /** eventName: */ 'processing_error')
+  public onProcessingError(error: Error, message: Message) {
+    // report errors here
+  }
+}
+```
+
+## Usage - Producer
 
 ### Nestjs
 
@@ -26,7 +74,7 @@ import { SQSModule } from '@will-bank/sqs';
       producers: [
         {
           queueName: 'test',
-          queueUrl: 'https://test.com',
+          queueUrl: 'http://localhost:4566/000000000000/test',
         },
       ],
     }),
@@ -63,9 +111,9 @@ export class YourService {
 ### Node
 
 ```ts
-import { SQSService } from '@will-bank/sqs';
+import { SQSProducerService } from '@will-bank/sqs';
 
-const sqsService = new SQSService({
+const sqsProducerService = new SQSProducerService({
   producers: [
     {
       queueName: 'test',
@@ -74,7 +122,7 @@ const sqsService = new SQSService({
   ],
 });
 
-await sqsService.send('queue-name', {
+await sqsProducerService.send({
   id: 'test',
   body: 'test',
 });

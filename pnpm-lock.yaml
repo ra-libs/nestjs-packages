@@ -26,6 +26,9 @@ importers:
       '@aws-sdk/client-ssm':
         specifier: ^3.398.0
         version: 3.398.0
+      '@golevelup/nestjs-discovery':
+        specifier: ^4.0.0
+        version: 4.0.0(@nestjs/common@10.2.1)(@nestjs/core@10.2.1)
       '@growthbook/growthbook':
         specifier: ^0.27.0
         version: 0.27.0
@@ -65,6 +68,9 @@ importers:
       rxjs:
         specifier: ^7.8.1
         version: 7.8.1
+      sqs-consumer:
+        specifier: ^7.2.2
+        version: 7.2.2(@aws-sdk/client-sqs@3.398.0)
       sqs-producer:
         specifier: ^3.2.1
         version: 3.2.1(@aws-sdk/client-sqs@3.398.0)
@@ -3489,6 +3495,17 @@ packages:
     resolution: {integrity: sha512-Uo3pGspElQW91PCvKSIAXoEgAUlRnH29sX2/p89kg7sP1m2PzCufHINd0FhTXQf6DYGiUlVncdSPa2F9wxed2A==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
     dev: true
+
+  /@golevelup/nestjs-discovery@4.0.0(@nestjs/common@10.2.1)(@nestjs/core@10.2.1):
+    resolution: {integrity: sha512-iyZLYip9rhVMR0C93vo860xmboRrD5g5F5iEOfpeblGvYSz8ymQrL9RAST7x/Fp3n+TAXSeOLzDIASt+rak68g==}
+    peerDependencies:
+      '@nestjs/common': ^10.x
+      '@nestjs/core': ^10.x
+    dependencies:
+      '@nestjs/common': 10.2.1(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestjs/core': 10.2.1(@nestjs/common@10.2.1)(@nestjs/platform-express@10.2.1)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      lodash: 4.17.21
+    dev: false
 
   /@golevelup/ts-jest@0.4.0:
     resolution: {integrity: sha512-ehgllV/xU8PC+yVyEUtTzhiSQKsr7k5Jz74B6dtCaVJz7/Vo7JiaACsCLvD7/iATlJUAEqvBson0OHewD3JDzQ==}
@@ -7851,7 +7868,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: true
 
   /decamelize-keys@1.1.1:
     resolution: {integrity: sha512-WiPxgEirIV0/eIOMcnFBA3/IJZAZqKnwAwWyvvdi4lsr1WCN22nhdf/3db3DoZcUjTV2SqfzIwNyp6y2xs3nmg==}
@@ -10912,7 +10928,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
@@ -11220,7 +11235,6 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-    dev: true
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
@@ -13253,6 +13267,18 @@ packages:
   /sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
     dev: true
+
+  /sqs-consumer@7.2.2(@aws-sdk/client-sqs@3.398.0):
+    resolution: {integrity: sha512-7Ng6dBSGdn3GEJ+H9vCUIDaiH1y2GK56Jllr9ogiafBEaxpiMx5wLQ/OogVvTstFvIPCk/JfTbn3atwlzfdF1g==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      '@aws-sdk/client-sqs': ^3.363.0
+    dependencies:
+      '@aws-sdk/client-sqs': 3.398.0
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /sqs-producer@3.2.1(@aws-sdk/client-sqs@3.398.0):
     resolution: {integrity: sha512-nflzvmKVtj6fOUuV0u/5soY1fZZc1I+5vBYmjt6uAzN2nmgiMqIk/Uyag2ETMGEWJI48+j+Cajm05tXv5zallA==}

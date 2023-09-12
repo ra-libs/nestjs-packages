@@ -1,8 +1,11 @@
+import { DiscoveryModule, DiscoveryService } from '@golevelup/nestjs-discovery';
 import { createMock } from '@golevelup/ts-jest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { Producer } from 'sqs-producer';
 
+import { SQS_OPTIONS } from '../sqs.constants';
 import { SQSService } from '../sqs.service';
+import { SQSOptions } from '../types';
 
 const producerCreateMock = createMock<Producer>();
 
@@ -19,24 +22,25 @@ describe('SQSService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports: [DiscoveryModule],
       providers: [
         {
-          provide: SQSService,
-          useFactory: () => {
-            return new SQSService({
-              producers: [
-                {
-                  queueName: 'test',
-                  queueUrl: 'https://test.com',
-                },
-              ],
-            });
-          },
+          provide: SQS_OPTIONS,
+          useValue: {
+            producers: [
+              {
+                queueName: 'test',
+                queueUrl: 'http://localhost:4566/000000000000/test',
+              },
+            ],
+          } as SQSOptions,
         },
+        SQSService,
       ],
     }).compile();
 
     service = module.get<SQSService>(SQSService);
+    await service.onModuleInit();
   });
 
   it('should be defined', () => {
