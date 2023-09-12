@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/will-bank/nestjs-packages/compare/athena-v1.2.3...athena-v1.3.0) (2023-09-12)
+
+
+### Features
+
+* **sqs:** add consumers ([#65](https://github.com/will-bank/nestjs-packages/issues/65)) ([ce5a2dd](https://github.com/will-bank/nestjs-packages/commit/ce5a2dd13d7be5dd3cedee06f856cd90193dba56))
+
 ## [1.2.3](https://github.com/will-bank/nestjs-packages/compare/athena-v1.2.2...athena-v1.2.3) (2023-09-05)
 
 
