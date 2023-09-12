@@ -22,8 +22,8 @@ import {
   SQS_OPTIONS,
 } from './sqs.constants';
 import {
-  Message,
   QueueName,
+  SendMessage,
   SqsConsumerEventHandlerMeta,
   SqsMessageHandlerMeta,
   SQSOptions,
@@ -184,7 +184,7 @@ export class SQSService implements OnModuleInit, OnModuleDestroy {
 
   public async send<T = unknown>(
     queueName: QueueName,
-    payload: Message<T> | Message<T>[]
+    payload: SendMessage<T> | SendMessage<T>[]
   ) {
     if (!this.producers.has(queueName)) {
       throw new Error(`No producer for queue ${queueName} exists`);

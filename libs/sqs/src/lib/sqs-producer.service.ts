@@ -1,7 +1,7 @@
 import { SQSClient, SQSClientConfig } from '@aws-sdk/client-sqs';
 import { Producer } from 'sqs-producer';
 
-import { Message, SQSProducerOptionsService } from './types';
+import { SendMessage, SQSProducerOptionsService } from './types';
 
 export class SQSProducerService {
   private producer: Producer;
@@ -34,7 +34,7 @@ export class SQSProducerService {
     return this.producer?.queueSize();
   }
 
-  public async send<T = unknown>(payload: Message<T> | Message<T>[]) {
+  public async send<T = unknown>(payload: SendMessage<T> | SendMessage<T>[]) {
     const originalMessages = Array.isArray(payload) ? payload : [payload];
     const messages = originalMessages.map((message) => {
       let body = message.body;

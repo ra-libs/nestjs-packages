@@ -25,7 +25,9 @@ export type SQSProducerOptions = ProducerOptions & {
   queueName: QueueName;
 };
 
-export interface Message<T = unknown> {
+export type Message = SQSMessage;
+
+export interface SendMessage<T = unknown> {
   id: string;
   body: T;
   groupId?: string;
