@@ -91,7 +91,7 @@ describe('GrowthbookService', () => {
     });
   });
 
-  describe('setDefaultFeatureValue', () => {
+  describe('toggleFeatureValue', () => {
     it('should toggleFeatureValue', async () => {
       const body: ToggleFeatureBody = {
         reason: 'test',
@@ -107,8 +107,87 @@ describe('GrowthbookService', () => {
         data: {},
       });
 
-      await expect(growthbookService.toggleFeatureValue('test', body)).rejects
-        .not;
+      expect(await growthbookService.toggleFeatureValue('test', body));
+      expect(axiosMock.post).toBeCalledTimes(1);
+    });
+
+    it('should toggleFeatureValue with debounce', async () => {
+      const body: ToggleFeatureBody = {
+        reason: 'test',
+        environments: {
+          dev: true,
+        },
+      };
+
+      const axiosMock = createMock<Axios>();
+      jest.spyOn(axios, 'post').mockImplementation(axiosMock.post);
+      const mockedResponse = { test: 'test' };
+      axiosMock.post.mockResolvedValue({
+        status: HttpStatus.OK,
+        data: mockedResponse,
+      });
+
+      const firstResult = await growthbookService.toggleFeatureValue(
+        'test',
+        body,
+        1000
+      );
+      const seconResult = await growthbookService.toggleFeatureValue(
+        'test',
+        body,
+        1000
+      );
+
+      expect(firstResult).toEqual(mockedResponse);
+      expect(seconResult).toEqual({
+        message: 'Debounce time not elapsed',
+      });
+      expect(axiosMock.post).toBeCalledTimes(1);
+    });
+
+    it('should toggleFeatureValue 2 times after debounce', async () => {
+      const body: ToggleFeatureBody = {
+        reason: 'test',
+        environments: {
+          dev: true,
+        },
+      };
+
+      const axiosMock = createMock<Axios>();
+      jest.spyOn(axios, 'post').mockImplementation(axiosMock.post);
+      const mockedResponse = { test: 'test' };
+      axiosMock.post.mockResolvedValue({
+        status: HttpStatus.OK,
+        data: mockedResponse,
+      });
+
+      const debounceTimeMs = 1000;
+
+      const firstResult = await growthbookService.toggleFeatureValue(
+        'test',
+        body,
+        debounceTimeMs
+      );
+      const seconResult = await growthbookService.toggleFeatureValue(
+        'test',
+        body,
+        debounceTimeMs
+      );
+
+      await new Promise((resolve) => setTimeout(resolve, debounceTimeMs + 10));
+
+      const thirdResult = await growthbookService.toggleFeatureValue(
+        'test',
+        body,
+        debounceTimeMs
+      );
+
+      expect(firstResult).toEqual(mockedResponse);
+      expect(seconResult).toEqual({
+        message: 'Debounce time not elapsed',
+      });
+      expect(thirdResult).toEqual(mockedResponse);
+      expect(axiosMock.post).toBeCalledTimes(2);
     });
   });
 });

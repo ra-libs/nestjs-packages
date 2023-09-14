@@ -9,6 +9,9 @@ export class GrowthbookService<
   AppFeatures extends Record<string, any> = Record<string, any>
 > implements OnModuleInit
 {
+  private startDebounceTime = 0;
+  private endDebounceTime = 0;
+
   constructor(private context: Context = {}) {}
 
   async onModuleInit() {
@@ -77,16 +80,46 @@ export class GrowthbookService<
     return featureValue;
   }
 
-  async toggleFeatureValue(key: string, body: ToggleFeatureBody) {
-    const baseUrl = this.context.apiHost || process.env['GROWTHBOOK_API_HOST'];
-    const accessToken = process.env['GROWTHBOOK_API_ACCESS_TOKEN'];
+  /**
+   *
+   * @param key
+   * @param body
+   * @param debounceTimeMs  set debounce time to prevent multiple calls to API at once (default 0), useful for 429 errors
+   * @returns
+   */
+  async toggleFeatureValue(
+    key: string,
+    body: ToggleFeatureBody,
+    debounceTimeMs = 0
+  ) {
+    let triggerAPI = true;
 
-    const requestUrl = `${baseUrl}/api/v1/features/${key}/toggle`;
-    const headers = {
-      Authorization: `Bearer ${accessToken}`,
-    };
+    if (debounceTimeMs > 0) {
+      const now = Date.now();
+      if (this.startDebounceTime == 0 || now > this.endDebounceTime) {
+        this.startDebounceTime = now;
+        this.endDebounceTime = now + debounceTimeMs;
+      } else {
+        triggerAPI = false;
+      }
+    }
 
-    const { data } = await axios.post(requestUrl, body, { headers: headers });
-    return data;
+    if (triggerAPI) {
+      const baseUrl =
+        this.context.apiHost || process.env['GROWTHBOOK_API_HOST'];
+      const accessToken = process.env['GROWTHBOOK_API_ACCESS_TOKEN'];
+
+      const requestUrl = `${baseUrl}/api/v1/features/${key}/toggle`;
+      const headers = {
+        Authorization: `Bearer ${accessToken}`,
+      };
+
+      const { data } = await axios.post(requestUrl, body, { headers: headers });
+      return data;
+    } else {
+      return {
+        message: 'Debounce time not elapsed',
+      };
+    }
   }
 }
