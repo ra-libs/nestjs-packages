@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.15.0...growthbook-v1.16.0) (2023-09-14)
+
+
+### Features
+
+* **growthbook:** add debounce to avoid 429 ([#67](https://github.com/will-bank/nestjs-packages/issues/67)) ([060a5a9](https://github.com/will-bank/nestjs-packages/commit/060a5a999ebbcc3371111576e569e1bbd9916108))
+
 # [1.15.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.14.0...growthbook-v1.15.0) (2023-09-12)
 
 
