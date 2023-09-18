@@ -48,6 +48,16 @@ export class SQSService implements OnModuleInit, OnModuleDestroy {
     if (process.env['SQS_AWS_ENDPOINT']) {
       this.sqsOptionsConfig.endpoint = process.env['SQS_AWS_ENDPOINT'];
     }
+
+    if (
+      process.env['AWS_ACCESS_KEY_ID'] &&
+      process.env['AWS_SECRET_ACCESS_KEY']
+    ) {
+      this.sqsOptionsConfig.credentials = {
+        accessKeyId: process.env['AWS_ACCESS_KEY_ID'],
+        secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY'],
+      };
+    }
   }
 
   async onModuleInit() {

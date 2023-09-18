@@ -18,6 +18,16 @@ export class SNSService {
     if (process.env['SNS_AWS_ENDPOINT'])
       snsOptionsConfig.endpoint = process.env['SNS_AWS_ENDPOINT'];
 
+    if (
+      process.env['AWS_ACCESS_KEY_ID'] &&
+      process.env['AWS_SECRET_ACCESS_KEY']
+    ) {
+      snsOptionsConfig.credentials = {
+        accessKeyId: process.env['AWS_ACCESS_KEY_ID'],
+        secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY'],
+      };
+    }
+
     this.client = new SNSClient({
       ...snsOptionsConfig,
       ...configurations,

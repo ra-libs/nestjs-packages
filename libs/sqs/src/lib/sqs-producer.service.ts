@@ -17,6 +17,16 @@ export class SQSProducerService {
       sqsOptionsConfig.endpoint = process.env['SQS_AWS_ENDPOINT'];
     }
 
+    if (
+      process.env['AWS_ACCESS_KEY_ID'] &&
+      process.env['AWS_SECRET_ACCESS_KEY']
+    ) {
+      sqsOptionsConfig.credentials = {
+        accessKeyId: process.env['AWS_ACCESS_KEY_ID'],
+        secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY'],
+      };
+    }
+
     const { sqsClientConfig, ...producerOptions } = this.options;
 
     const sqsClient = new SQSClient({
