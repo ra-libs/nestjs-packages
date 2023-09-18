@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/will-bank/nestjs-packages/compare/sqs-v1.2.1...sqs-v1.3.0) (2023-09-18)
+
+
+### Features
+
+* add AWS creds for github action tests ([#68](https://github.com/will-bank/nestjs-packages/issues/68)) ([5751990](https://github.com/will-bank/nestjs-packages/commit/57519906179a62274ad09c5e518cb595f4b240c8))
+
 ## [1.2.1](https://github.com/will-bank/nestjs-packages/compare/sqs-v1.2.0...sqs-v1.2.1) (2023-09-12)
 
 
