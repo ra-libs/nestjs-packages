@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/will-bank/nestjs-packages/compare/sns-v1.10.0...sns-v1.11.0) (2023-09-18)
+
+
+### Features
+
+* add AWS creds for github action tests ([#68](https://github.com/will-bank/nestjs-packages/issues/68)) ([5751990](https://github.com/will-bank/nestjs-packages/commit/57519906179a62274ad09c5e518cb595f4b240c8))
+
 # [1.10.0](https://github.com/will-bank/nestjs-packages/compare/sns-v1.9.0...sns-v1.10.0) (2023-09-12)
 
 
