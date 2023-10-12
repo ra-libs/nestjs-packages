@@ -6,8 +6,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { CustomerModel } from './@types';
 
 @Injectable()
-export class FillUserDataMiddleware implements NestMiddleware {
-  private readonly logger = new Logger(FillUserDataMiddleware.name);
+export class XDataHashMiddleware implements NestMiddleware {
+  private readonly logger = new Logger(XDataHashMiddleware.name);
 
   use(req: Request, res: Response, next: NextFunction): any {
     try {
