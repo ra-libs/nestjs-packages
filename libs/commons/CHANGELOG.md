@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.9.0...commons-v1.10.0) (2023-10-12)
+
+
+### Features
+
+* add fill user data middleware ([d969e8a](https://github.com/will-bank/nestjs-packages/commit/d969e8aa5a7db267b5fa0c6d74b33a8796f36844))
+
 # [1.9.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.8.0...commons-v1.9.0) (2023-09-12)
 
 
