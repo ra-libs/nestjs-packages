@@ -91,36 +91,54 @@ export class SQSService implements OnModuleInit, OnModuleDestroy {
       }
 
       const isBatchHandler = metadata.meta.batch === true;
-      const consumer = Consumer.create({
-        ...consumerOptions,
-        sqs: sqsClient,
-        ...(isBatchHandler
-          ? {
-              handleMessageBatch: metadata.discoveredMethod.handler.bind(
+      try {
+        const consumer = Consumer.create({
+          ...consumerOptions,
+          sqs: sqsClient,
+          ...(isBatchHandler
+            ? {
+                handleMessageBatch: metadata.discoveredMethod.handler.bind(
+                  metadata.discoveredMethod.parentClass.instance
+                ),
+              }
+            : {
+                handleMessage: metadata.discoveredMethod.handler.bind(
+                  metadata.discoveredMethod.parentClass.instance
+                ),
+              }),
+        });
+        const eventsMetadata = eventHandlers.filter(
+          ({ meta }) => meta.queueName === queueName
+        );
+        for (const eventMetadata of eventsMetadata) {
+          if (eventMetadata) {
+            consumer.addListener(
+              eventMetadata.meta.eventName,
+              eventMetadata.discoveredMethod.handler.bind(
                 metadata.discoveredMethod.parentClass.instance
-              ),
-            }
-          : {
-              handleMessage: metadata.discoveredMethod.handler.bind(
-                metadata.discoveredMethod.parentClass.instance
-              ),
-            }),
-      });
-
-      const eventsMetadata = eventHandlers.filter(
-        ({ meta }) => meta.queueName === queueName
-      );
-      for (const eventMetadata of eventsMetadata) {
-        if (eventMetadata) {
-          consumer.addListener(
-            eventMetadata.meta.eventName,
-            eventMetadata.discoveredMethod.handler.bind(
-              metadata.discoveredMethod.parentClass.instance
-            )
-          );
+              )
+            );
+          }
         }
+        this.consumers.set(queueName, consumer);
+
+        consumer.on('error', (error) => {
+          this.logger.error(`Error in consumer for queue ${queueName}`, error, {
+            queueName,
+            queueUrl: consumerOptions.queueUrl,
+          });
+          this.consumers.delete(queueName);
+        });
+      } catch (error: any) {
+        this.logger.error(
+          `Error creating consumer for queue ${queueName}`,
+          error,
+          {
+            queueName,
+            queueUrl: consumerOptions.queueUrl,
+          }
+        );
       }
-      this.consumers.set(queueName, consumer);
     });
 
     // Create a producer for each queue
