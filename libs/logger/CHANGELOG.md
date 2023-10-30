@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/will-bank/nestjs-packages/compare/logger-v1.10.0...logger-v1.10.1) (2023-10-30)
+
+
+### Bug Fixes
+
+* **sqs:** consumer error throw catch ([#70](https://github.com/will-bank/nestjs-packages/issues/70)) ([90ad27b](https://github.com/will-bank/nestjs-packages/commit/90ad27b0a5bbd13c81c17703cbed7ac4a032254b))
+
 # [1.10.0](https://github.com/will-bank/nestjs-packages/compare/logger-v1.9.0...logger-v1.10.0) (2023-09-12)
 
 
