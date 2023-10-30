@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/will-bank/nestjs-packages/compare/sns-v1.11.0...sns-v1.11.1) (2023-10-30)
+
+
+### Bug Fixes
+
+* **sqs:** consumer error throw catch ([#70](https://github.com/will-bank/nestjs-packages/issues/70)) ([90ad27b](https://github.com/will-bank/nestjs-packages/commit/90ad27b0a5bbd13c81c17703cbed7ac4a032254b))
+
 # [1.11.0](https://github.com/will-bank/nestjs-packages/compare/sns-v1.10.0...sns-v1.11.0) (2023-09-18)
 
 
