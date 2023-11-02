@@ -155,4 +155,25 @@ describe('MetricsService', () => {
       ]);
     });
   });
+
+  describe('distribution', () => {
+    it('should call ddClient.distribution', () => {
+      metricsService.distribution('test', 1);
+      expect(statsDMock.distribution).toHaveBeenCalledTimes(1);
+      expect(statsDMock.distribution).toHaveBeenCalledWith(
+        'test',
+        1,
+        undefined
+      );
+    });
+
+    it('should call ddClient.distribution with tags', () => {
+      metricsService.distribution('test', 1, ['tag1', 'tag2']);
+      expect(statsDMock.distribution).toHaveBeenCalledTimes(1);
+      expect(statsDMock.distribution).toHaveBeenCalledWith('test', 1, [
+        'tag1',
+        'tag2',
+      ]);
+    });
+  });
 });

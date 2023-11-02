@@ -71,4 +71,10 @@ export class MetricsService {
       this.ddClient.timing(metric, value, tags);
     }
   }
+
+  public distribution(metric: string, value: number, tags?: Tags): void {
+    if (this.shouldSendMetrics()) {
+      this.ddClient.distribution(metric, value, tags);
+    }
+  }
 }
