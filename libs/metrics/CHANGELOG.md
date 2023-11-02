@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.8.1...metrics-v1.9.0) (2023-11-02)
+
+
+### Features
+
+* **metrics:** add distribution method ([#71](https://github.com/will-bank/nestjs-packages/issues/71)) ([4dc9881](https://github.com/will-bank/nestjs-packages/commit/4dc98815ada865ff403bbc4b139719ad162a042c))
+
 ## [1.8.1](https://github.com/will-bank/nestjs-packages/compare/metrics-v1.8.0...metrics-v1.8.1) (2023-10-30)
 
 
