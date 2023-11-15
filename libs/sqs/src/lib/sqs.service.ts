@@ -12,7 +12,7 @@ import {
   OnModuleDestroy,
   OnModuleInit,
 } from '@nestjs/common';
-import { Logger } from '@will-bank/logger';
+import { WinstonLogger } from '@will-bank/logger';
 import { Consumer } from 'sqs-consumer';
 import { Producer } from 'sqs-producer';
 
@@ -35,7 +35,7 @@ export class SQSService implements OnModuleInit, OnModuleDestroy {
   public readonly producers = new Map<QueueName, Producer>();
 
   private sqsOptionsConfig: SQSClientConfig = {};
-  private readonly logger = new Logger(SQSService.name);
+  private readonly logger = new WinstonLogger();
 
   constructor(
     @Inject(SQS_OPTIONS) public readonly options: SQSOptions,
@@ -123,21 +123,23 @@ export class SQSService implements OnModuleInit, OnModuleDestroy {
         this.consumers.set(queueName, consumer);
 
         consumer.on('error', (error) => {
-          this.logger.error(`Error in consumer for queue ${queueName}`, error, {
-            queueName,
-            queueUrl: consumerOptions.queueUrl,
+          this.logger.error(`Error in consumer for queue ${queueName}`, {
+            props: {
+              queueName,
+              queueUrl: consumerOptions.queueUrl,
+            },
+            error,
           });
           this.consumers.delete(queueName);
         });
       } catch (error: any) {
-        this.logger.error(
-          `Error creating consumer for queue ${queueName}`,
-          error,
-          {
+        this.logger.error(`Error creating consumer for queue ${queueName}`, {
+          props: {
             queueName,
             queueUrl: consumerOptions.queueUrl,
-          }
-        );
+          },
+          error,
+        });
       }
     });
 
