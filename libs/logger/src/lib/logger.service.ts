@@ -1,77 +1,76 @@
-import { Injectable, LoggerService, Scope } from '@nestjs/common';
-import {
-  createLogger,
-  Logger as WinstonLogger,
-  LoggerOptions,
-  transports,
-} from 'winston';
+import { Inject, Injectable, Scope } from '@nestjs/common';
+import { INQUIRER } from '@nestjs/core';
 
-import { getFormat, getLogLevel } from './winston.utilities';
+import { LogData } from './interfaces';
+import {
+  ContextStorageService,
+  ContextStorageServiceKey,
+} from './interfaces/context-storage-service.interface';
+import { Logger, LoggerBaseKey } from './interfaces/logger.interface';
+import { LogLevel } from './types';
 
 @Injectable({ scope: Scope.TRANSIENT })
-export class Logger implements LoggerService {
-  public winstonLogger: WinstonLogger;
+export class LoggerService implements Logger {
+  private sourceClass: string;
+  private app: string;
 
-  protected context?: string;
-  protected options?: LoggerOptions;
+  public constructor(
+    @Inject(LoggerBaseKey) private logger: Logger,
 
-  constructor(context?: string, options?: LoggerOptions) {
-    this.winstonLogger = createLogger({
-      level: getLogLevel(),
-      format: getFormat(),
-      transports: [new transports.Console()],
-      ...options,
-    });
-    this.context = context;
-    this.options = options;
+    @Inject(INQUIRER) parentClass: object,
+    @Inject(ContextStorageServiceKey)
+    private contextStorageService: ContextStorageService
+  ) {
+    // Set the source class from the parent class
+    this.sourceClass = parentClass?.constructor?.name;
+
+    this.app = process.env['APP_NAME'] || '';
   }
 
-  public setContext(context: string) {
-    this.context = context;
+  public log(
+    level: LogLevel,
+    message: string | Error,
+    data?: LogData,
+    profile?: string
+  ) {
+    return this.logger.log(level, message, this.getLogData(data), profile);
   }
 
-  public child(options: object) {
-    const childLogger = new Logger(this.context, this.options);
-    childLogger.winstonLogger = this.winstonLogger.child(options);
-    return childLogger;
+  public debug(message: string, data?: LogData, profile?: string) {
+    return this.logger.debug(message, this.getLogData(data), profile);
   }
 
-  log(message: unknown, fields?: Record<string, unknown>) {
-    this.winstonLogger.info({
-      message,
-      context: this.context,
-      fields,
-    });
-  }
-  error(message: unknown, error?: Error, fields?: Record<string, unknown>) {
-    this.winstonLogger.error({
-      message,
-      context: this.context,
-      error,
-      fields,
-    });
-  }
-  warn(message: unknown, fields?: Record<string, unknown>) {
-    this.winstonLogger.warn({
-      message,
-      context: this.context,
-      fields,
-    });
+  public info(message: string, data?: LogData, profile?: string) {
+    return this.logger.info(message, this.getLogData(data), profile);
   }
 
-  debug(message: unknown, fields?: Record<string, unknown>) {
-    this.winstonLogger.debug({
-      message,
-      context: this.context,
-      fields,
-    });
+  public warn(message: string | Error, data?: LogData, profile?: string) {
+    return this.logger.warn(message, this.getLogData(data), profile);
   }
 
-  verbose(message: unknown, fields?: Record<string, unknown>) {
-    this.winstonLogger.verbose({
-      message,
-      context: this.context,
-      fields,
-    });
+  public error(message: string | Error, data?: LogData, profile?: string) {
+    return this.logger.error(message, this.getLogData(data), profile);
+  }
+
+  public fatal(message: string | Error, data?: LogData, profile?: string) {
+    return this.logger.fatal(message, this.getLogData(data), profile);
+  }
+
+  public emergency(message: string | Error, data?: LogData, profile?: string) {
+    return this.logger.emergency(message, this.getLogData(data), profile);
+  }
+
+  private getLogData(data?: LogData): LogData {
+    return {
+      ...data,
+      app: data?.app || this.app,
+      sourceClass: data?.sourceClass || this.sourceClass,
+      correlationId:
+        data?.correlationId || this.contextStorageService.getContextId(),
+    };
+  }
+
+  public startProfile(id: string) {
+    this.logger.startProfile(id);
   }
 }

@@ -1,3 +1,1 @@
-export * from './lib/logger.module';
-export * from './lib/logger.service';
-export * from './lib/@types';
+export * from './lib';

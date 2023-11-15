@@ -1,23 +1,56 @@
-import { DynamicModule, Module } from '@nestjs/common';
-import * as winston from 'winston';
+import {
+  Global,
+  Inject,
+  MiddlewareConsumer,
+  Module,
+  NestModule,
+  RequestMethod,
+} from '@nestjs/common';
+import * as morgan from 'morgan';
 
-import { Logger } from './logger.service';
+import { NestjsLoggerServiceAdapter } from './adapters';
+import { ContextModule } from './context';
+import { Logger, LoggerBaseKey, LoggerKey } from './interfaces';
+import { LoggerService } from './logger.service';
+import { WinstonLogger } from './winston-logger.service';
 
-@Module({})
-export class LoggerModule {
-  static forFeature(
-    context?: string,
-    options?: winston.LoggerOptions
-  ): DynamicModule {
-    return {
-      module: LoggerModule,
-      providers: [
-        {
-          provide: Logger,
-          useValue: new Logger(context, options),
-        },
-      ],
-      exports: [Logger],
-    };
+@Global()
+@Module({
+  imports: [ContextModule],
+  providers: [
+    {
+      provide: LoggerBaseKey,
+      useClass: WinstonLogger,
+    },
+    {
+      provide: LoggerKey,
+      useClass: LoggerService,
+    },
+    {
+      provide: NestjsLoggerServiceAdapter,
+      useFactory: (logger: Logger) => new NestjsLoggerServiceAdapter(logger),
+      inject: [LoggerKey],
+    },
+  ],
+  exports: [LoggerKey, NestjsLoggerServiceAdapter],
+})
+export class LoggerModule implements NestModule {
+  constructor(@Inject(LoggerKey) private logger: Logger) {}
+
+  public configure(consumer: MiddlewareConsumer): void {
+    consumer
+      .apply(
+        morgan('combined', {
+          stream: {
+            write: (message: string) => {
+              this.logger.info(message, {
+                sourceClass: 'RequestLogger',
+              });
+            },
+          },
+        })
+      )
+      .exclude('/health', '/health/*')
+      .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
 }
