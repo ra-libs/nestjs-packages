@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.16.1...growthbook-v2.0.0) (2023-11-15)
+
+
+### Features
+
+* **logger:** add correlation id per request and log requests using morgan ([08d05ec](https://github.com/will-bank/nestjs-packages/commit/08d05ec6ec47165303406c7860f82ef2211ceb85))
+
+
+### BREAKING CHANGES
+
+* **logger:** Logger interface changed
+
 ## [1.16.1](https://github.com/will-bank/nestjs-packages/compare/growthbook-v1.16.0...growthbook-v1.16.1) (2023-10-30)
 
 
