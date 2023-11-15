@@ -66,9 +66,8 @@ export const getFormat = (): Format => {
 };
 
 function buildPrint(info: TransformableInfo): string {
-  return (info.message = `${buildPrintSourceClass(info)}${
-    info.message
-  }${buildPrintError(info)}`);
+  return (info.message = `${buildPrintSourceClass(info)}${info.message
+    }${buildPrintError(info)}`);
 }
 
 function buildPrintSourceClass(info: TransformableInfo): string {
@@ -102,7 +101,7 @@ export const getLogLevel = (): string => {
 
 // For Local Development
 const clc = {
-  bold: (text: string) => `\x1B[1m${text}\x1B[0m`,
+  bold: (text: string) => chalk.bold(text),
   green: (text: string) => chalk.green(text),
   yellow: (text: string) => chalk.yellow(text),
   red: (text: string) => chalk.red(text),
@@ -125,8 +124,6 @@ const nestLikeColorScheme: Record<string, (text: string) => string> = {
 const nestLikeConsoleFormat = (): Format =>
   format.printf((info: TransformableInfo) => {
     const { level, message, data, ms, error, ...meta } = info;
-
-    console.log('info: ', info);
 
     let { timestamp } = info;
     delete meta['timestamp'];
