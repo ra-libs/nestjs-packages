@@ -21,57 +21,52 @@ pnpm add @will-bank/logger
 in your `main.ts`
 
 ```ts
-import { Logger } from '@will-bank/logger`
+import { NestjsLoggerServiceAdapter } from '@will-bank/logger`
 
 async function bootstrap(){
   const app = await NestFactory.create(AppModule, {
-    logger: new Logger(),
+    bufferLogs: true,
   });
+
+  app.useLogger(app.get(NestjsLoggerServiceAdapter));
 }
 
 ```
 
 This will override the application logger.
 
-#### Per service
-
-in your specifc service
-
-```ts
-import { Logger } from '@will-bank/logger';
-
-@Injectable()
-export class YourCustomService {
-  private readonly logger = new Logger(YourCustomService.name);
-
-  yourMethod() {
-    this.logger.log('XPTO');
-  }
-}
-```
-
-or you can use dependecy-injection, in your module add:
+in your `app.module.ts`
 
 ```ts
 import { LoggerModule } from '@will-bank/logger';
 
 @Module({
-  imports: [LoggerModule.forFeature('YourCustomService')],
+  imports: [LoggerModule],
+  providers: [],
+  controllers: [],
 })
-export class YourCustomModule {}
+export class AppModule {}
 ```
 
-in your service:
+This will initialize all the logger dependencies providers
+
+#### Per service
+
+in your specifc service
 
 ```ts
-import { Logger } from '@will-bank/logger';
+import { Logger, LoggerKey } from '@will-bank/logger';
 
 @Injectable()
 export class YourCustomService {
-  constructor(private readonly logger: Logger) {}
+  @Inject(LoggerKey) logger: Logger;
 
   yourMethod() {
-    this.logger.log('Hello World!');
+    this.logger.info('XPTO', {
+      props: {
+        foo: 'foo',
+      },
+    });
   }
 }
 ```
@@ -79,11 +74,13 @@ export class YourCustomService {
 ## Node
 
 ```ts
-import { Logger } from '@will-bank/logger';
+import { WinstonLogger } from '@will-bank/logger';
 
-const logger = new Logger('Your Custom Logger');
+const logger = new WinstonLogger();
 
-logger.error('Unexpected error!', new Error('Ops..'));
+logger.error('Unexpected error!', {
+  error: new Error('Ops..'),
+});
 ```
 
 ## Specs
