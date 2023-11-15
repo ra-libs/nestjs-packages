@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/will-bank/nestjs-packages/compare/logger-v2.0.1...logger-v2.0.2) (2023-11-15)
+
+
+### Bug Fixes
+
+* add logger doc ([0b3f7ab](https://github.com/will-bank/nestjs-packages/commit/0b3f7ab30978a929c1e044f3277f73fa4f6ae3c6))
+
 ## [2.0.1](https://github.com/will-bank/nestjs-packages/compare/logger-v2.0.0...logger-v2.0.1) (2023-11-15)
 
 
