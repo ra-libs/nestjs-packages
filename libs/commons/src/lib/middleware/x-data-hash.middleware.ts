@@ -1,5 +1,5 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
-import { Logger } from '@will-bank/logger';
+import { WinstonLogger } from '@will-bank/logger';
 import { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -7,7 +7,7 @@ import { CustomerModel } from './@types';
 
 @Injectable()
 export class XDataHashMiddleware implements NestMiddleware {
-  private readonly logger = new Logger(XDataHashMiddleware.name);
+  private readonly logger = new WinstonLogger();
 
   use(req: Request, res: Response, next: NextFunction): any {
     try {
@@ -38,11 +38,10 @@ export class XDataHashMiddleware implements NestMiddleware {
       }
 
       return next();
-    } catch (error) {
-      this.logger.error(
-        `FillUserDataMiddleware - Invalid provided JSON`,
-        error as any
-      );
+    } catch (error: any) {
+      this.logger.error(`FillUserDataMiddleware - Invalid provided JSON`, {
+        error,
+      });
 
       return res
         .status(400)

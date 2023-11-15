@@ -1,43 +1,82 @@
+import * as chalk from 'chalk';
 import safeStringify from 'fast-safe-stringify';
 import { Format, TransformableInfo } from 'logform';
 import { inspect } from 'util';
-import { format } from 'winston';
+import { format, LoggerOptions, transports } from 'winston';
 
-import { LogLevel } from './@types';
+import { LogLevel } from './types';
+
+export function getLoggerFormatOptions(options?: LoggerOptions): LoggerOptions {
+  // Setting log levels for winston
+  const levels: any = {};
+  let cont = 0;
+
+  Object.values(LogLevel).forEach((level) => {
+    levels[level] = cont;
+    cont++;
+  });
+
+  return {
+    level: getLogLevel(),
+    levels: levels,
+    format: getFormat(),
+    transports: [new transports.Console()],
+    ...options,
+  };
+}
 
 export const getFormat = (): Format => {
+  const formatError = format((info, opts) => {
+    // Info contains an Error property
+    if (info['error'] && info['error'] instanceof Error) {
+      info['stack'] = info['error'].stack;
+    }
+    return info;
+  });
+
+  const metadataExceptFields = ['timestamp', 'level', 'message', 'ms', 'error'];
+
   if (process.env['NODE_ENV'] !== 'production') {
     return format.combine(
       format.errors({ stack: true }),
+      formatError(),
       format.timestamp(),
       format.ms(),
       format.splat(),
+      format.metadata({
+        key: 'data',
+        fillExcept: metadataExceptFields,
+      }),
       nestLikeConsoleFormat()
     );
   }
 
   return format.combine(
     format.errors({ stack: true }),
+    formatError(),
     format.timestamp(),
     format.splat(),
+    format.metadata({
+      key: 'data',
+      fillExcept: metadataExceptFields,
+    }),
     format.printf(buildPrint),
     format.json()
   );
 };
 
 function buildPrint(info: TransformableInfo): string {
-  return (info.message = `${buildPrintContext(info)}${
+  return (info.message = `${buildPrintSourceClass(info)}${
     info.message
   }${buildPrintError(info)}`);
 }
 
-function buildPrintContext(info: TransformableInfo): string {
-  const context = info['context'] || info['metadata']?.context;
+function buildPrintSourceClass(info: TransformableInfo): string {
+  const sourceClass = info['sourceClass'] || info['metadata']?.sourceClass;
 
-  if (context) {
-    return `[${context}] `;
+  if (sourceClass) {
+    return `[${sourceClass}] `;
   }
-
   return ``;
 }
 
@@ -57,81 +96,80 @@ function buildPrintError(info: TransformableInfo): string {
 
 export const getLogLevel = (): string => {
   const defaultLogLevel =
-    process.env['NODE_ENV'] === 'production' ? LogLevel.INFO : LogLevel.DEBUG;
+    process.env['NODE_ENV'] === 'production' ? LogLevel.Info : LogLevel.Debug;
   return process.env['LOG_LEVEL'] || defaultLogLevel;
 };
 
 // For Local Development
 const clc = {
-  bold: (text: string) => `\x1B[1m${text}\x1B[0m`,
-  green: (text: string) => `\x1B[32m${text}\x1B[39m`,
-  yellow: (text: string) => `\x1B[33m${text}\x1B[39m`,
-  red: (text: string) => `\x1B[31m${text}\x1B[39m`,
-  magentaBright: (text: string) => `\x1B[95m${text}\x1B[39m`,
-  cyanBright: (text: string) => `\x1B[96m${text}\x1B[39m`,
+  bold: (text: string) => chalk.bold(text),
+  green: (text: string) => chalk.green(text),
+  yellow: (text: string) => chalk.yellow(text),
+  red: (text: string) => chalk.red(text),
+  redBright: (text: string) => chalk.redBright(text),
+  boldRed: (text: string) => chalk.bold.red(text),
+  magentaBright: (text: string) => chalk.magentaBright(text),
+  cyanBright: (text: string) => chalk.cyanBright(text),
 };
 
 const nestLikeColorScheme: Record<string, (text: string) => string> = {
   info: clc.green,
-  error: clc.red,
+  error: clc.redBright,
   warn: clc.yellow,
   debug: clc.magentaBright,
   verbose: clc.cyanBright,
+  fatal: clc.red,
+  emergency: clc.boldRed,
 };
-const nestLikeConsoleFormat = (appName = 'NestWinston'): Format =>
-  format.printf(
-    ({
-      level,
-      message,
-      context,
-      timestamp,
-      fields,
-      ms,
-      ...meta
-    }: TransformableInfo) => {
-      if ('undefined' !== typeof timestamp) {
-        // Only format the timestamp to a locale representation if it's ISO 8601 format. Any format
-        // that is not a valid date string will throw, just ignore it (it will be printed as-is).
-        try {
-          if (timestamp === new Date(timestamp).toISOString()) {
-            timestamp = new Date(timestamp).toLocaleString();
-          }
-        } catch (error) {
-          // eslint-disable-next-line no-empty
+
+const nestLikeConsoleFormat = (): Format =>
+  format.printf((info: TransformableInfo) => {
+    const { level, message, data, ms, error, ...meta } = info;
+
+    let { timestamp } = info;
+    delete meta['timestamp'];
+
+    if ('undefined' !== typeof timestamp) {
+      // Only format the timestamp to a locale representation if it's ISO 8601 format. Any format
+      // that is not a valid date string will throw, just ignore it (it will be printed as-is).
+      try {
+        if (timestamp === new Date(timestamp).toISOString()) {
+          timestamp = new Date(timestamp).toLocaleString();
         }
+      } catch (error) {
+        // eslint-disable-next-line no-empty
       }
-
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      const color =
-        nestLikeColorScheme[level] || ((text: string): string => text);
-      const yellow = clc.yellow;
-
-      delete meta['dd'];
-      let metaToUse = meta;
-
-      if (typeof fields === 'object' && fields !== null) {
-        metaToUse = { ...fields, ...meta };
-      }
-      const stringifiedMeta = safeStringify(metaToUse);
-      const formattedMeta = inspect(JSON.parse(stringifiedMeta), {
-        colors: true,
-        depth: null,
-      });
-
-      if (fields && typeof fields === 'string' && !context) {
-        context = fields;
-      }
-
-      return (
-        `${color(`[${appName}] - `)} ` +
-        ('undefined' !== typeof timestamp ? `${timestamp} ` : '') +
-        `${color(level.toUpperCase())}\t` +
-        ('undefined' !== typeof context
-          ? `${yellow('[' + context + ']')} `
-          : '') +
-        `${color(message)}` +
-        `${formattedMeta !== '{}' ? ` - ${formattedMeta}` : ''}` +
-        ('undefined' !== typeof ms ? ` ${yellow(ms)}` : '')
-      );
     }
-  );
+
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    const color =
+      nestLikeColorScheme[level] || ((text: string): string => text);
+    const yellow = clc.yellow;
+
+    delete meta['dd'];
+    let metaToUse = meta;
+
+    const { sourceClass, props, correlationId, app = 'Nest' } = data;
+
+    if (typeof props === 'object' && props !== null) {
+      metaToUse = { ...props, ...meta, correlationId };
+    }
+
+    const stringifiedMeta = safeStringify(metaToUse);
+    const formattedMeta = inspect(JSON.parse(stringifiedMeta), {
+      colors: true,
+      depth: null,
+    });
+
+    return (
+      `${color(`[${app}] - `)} ` +
+      ('undefined' !== typeof timestamp ? `${timestamp} ` : '') +
+      `${color(level.toUpperCase())}\t` +
+      ('undefined' !== typeof sourceClass
+        ? `${yellow('[' + sourceClass + ']')} `
+        : '') +
+      `${color(`${message}${buildPrintError(info)}`)}` +
+      `${formattedMeta !== '{}' ? ` - ${formattedMeta}` : ''}` +
+      ('undefined' !== typeof ms ? ` ${yellow(ms)}` : '')
+    );
+  });
