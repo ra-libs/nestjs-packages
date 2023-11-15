@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/will-bank/nestjs-packages/compare/commons-v2.0.0...commons-v2.1.0) (2023-11-15)
+
+
+### Features
+
+* add x-customer-id header ([3132ae6](https://github.com/will-bank/nestjs-packages/commit/3132ae63c4b8881b53e7bc86c32e32c17cf8c72d))
+
 # [2.0.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.10.1...commons-v2.0.0) (2023-11-15)
 
 
