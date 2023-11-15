@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/will-bank/nestjs-packages/compare/sqs-v2.0.0...sqs-v2.0.1) (2023-11-15)
+
+
+### Bug Fixes
+
+* **logger:** add correlationId to log meta event without props ([9193f7f](https://github.com/will-bank/nestjs-packages/commit/9193f7f8bd306079d2264b741b915174405dc016))
+
 # [2.0.0](https://github.com/will-bank/nestjs-packages/compare/sqs-v1.3.1...sqs-v2.0.0) (2023-11-15)
 
 
