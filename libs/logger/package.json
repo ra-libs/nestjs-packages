@@ -10,5 +10,13 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
+  },
+  "peerDependencies": {
+    "@nestjs/core": "^10.2.7"
+  },
+  "dependenciesMeta": {
+    "@nestjs/core": {
+      "injected": true
+    }
   }
 }
