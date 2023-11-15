@@ -147,13 +147,9 @@ const nestLikeConsoleFormat = (): Format =>
     const yellow = clc.yellow;
 
     delete meta['dd'];
-    let metaToUse = meta;
 
-    const { sourceClass, props, correlationId, app = 'Nest' } = data;
-
-    if (typeof props === 'object' && props !== null) {
-      metaToUse = { ...props, ...meta, correlationId };
-    }
+    const { sourceClass, props, correlationId, app = 'Nest' } = data || {};
+    const metaToUse = { ...props, ...meta, correlationId };
 
     const stringifiedMeta = safeStringify(metaToUse);
     const formattedMeta = inspect(JSON.parse(stringifiedMeta), {
