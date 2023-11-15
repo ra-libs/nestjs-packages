@@ -1,3 +1,22 @@
+# [2.0.0](https://github.com/will-bank/nestjs-packages/compare/commons-v1.10.1...commons-v2.0.0) (2023-11-15)
+
+
+### Bug Fixes
+
+* **logger:** color fix and remove console log ([6895372](https://github.com/will-bank/nestjs-packages/commit/6895372324488588baef8db240553e3e173b7859))
+* **logger:** package json version ([70ca255](https://github.com/will-bank/nestjs-packages/commit/70ca2553fbc5612591db44fa5ed6f1caf61788ce))
+* use winston logger in commons and sqs ([90dffd2](https://github.com/will-bank/nestjs-packages/commit/90dffd218c5fe80809a5fb210ea0ce79dc9648c4))
+
+
+### Features
+
+* **logger:** add correlation id per request and log requests using morgan ([08d05ec](https://github.com/will-bank/nestjs-packages/commit/08d05ec6ec47165303406c7860f82ef2211ceb85))
+
+
+### BREAKING CHANGES
+
+* **logger:** Logger interface changed
+
 ## [1.10.1](https://github.com/will-bank/nestjs-packages/compare/commons-v1.10.0...commons-v1.10.1) (2023-10-30)
 
 
