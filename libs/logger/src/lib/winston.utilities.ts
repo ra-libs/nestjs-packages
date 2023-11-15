@@ -66,8 +66,9 @@ export const getFormat = (): Format => {
 };
 
 function buildPrint(info: TransformableInfo): string {
-  return (info.message = `${buildPrintSourceClass(info)}${info.message
-    }${buildPrintError(info)}`);
+  return (info.message = `${buildPrintSourceClass(info)}${
+    info.message
+  }${buildPrintError(info)}`);
 }
 
 function buildPrintSourceClass(info: TransformableInfo): string {
