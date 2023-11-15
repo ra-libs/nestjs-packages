@@ -31,6 +31,7 @@ export class XDataHashMiddleware implements NestMiddleware {
 
       req.headers['x-b3-traceid'] = traceId;
       req.headers['x-account-id'] = accountWithDigit;
+      req.headers['x-customer-id'] = userDataJson.accessPublic.sub;
       req.headers['x-document-id'] = userDataJson.accessPrivate.username;
 
       if (req.body) {
