@@ -34,8 +34,6 @@ export const getFormat = (): Format => {
     return info;
   });
 
-  const metadataExceptFields = ['timestamp', 'level', 'message', 'ms', 'error'];
-
   if (process.env['NODE_ENV'] !== 'production') {
     return format.combine(
       format.errors({ stack: true }),
@@ -45,7 +43,7 @@ export const getFormat = (): Format => {
       format.splat(),
       format.metadata({
         key: 'data',
-        fillExcept: metadataExceptFields,
+        fillExcept: ['timestamp', 'level', 'message', 'ms', 'error', 'dd'],
       }),
       nestLikeConsoleFormat()
     );
@@ -56,10 +54,6 @@ export const getFormat = (): Format => {
     formatError(),
     format.timestamp(),
     format.splat(),
-    format.metadata({
-      key: 'data',
-      fillExcept: metadataExceptFields,
-    }),
     format.printf(buildPrint),
     format.json()
   );

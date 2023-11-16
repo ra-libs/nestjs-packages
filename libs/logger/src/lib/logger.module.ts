@@ -40,7 +40,7 @@ export class LoggerModule implements NestModule {
   public configure(consumer: MiddlewareConsumer): void {
     consumer
       .apply(
-        morgan('combined', {
+        morgan(':method :url :status - :response-time ms :user-agent', {
           stream: {
             write: (message: string) => {
               this.logger.info(message, {
