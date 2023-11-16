@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/will-bank/nestjs-packages/compare/logger-v2.0.2...logger-v2.0.3) (2023-11-16)
+
+
+### Bug Fixes
+
+* **logger:** morgan format ([1a1c01f](https://github.com/will-bank/nestjs-packages/commit/1a1c01fbb59c562f370107d2dca2d0884cd2ad60))
+
 ## [2.0.2](https://github.com/will-bank/nestjs-packages/compare/logger-v2.0.1...logger-v2.0.2) (2023-11-15)
 
 
