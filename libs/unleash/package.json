@@ -1,6 +1,6 @@
 {
   "name": "@will-bank/unleash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "tslib": "^2.3.0",
     "@nestjs/common": "10.2.7",

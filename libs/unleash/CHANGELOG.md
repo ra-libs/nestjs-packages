@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/will-bank/nestjs-packages/compare/unleash-v1.0.0...unleash-v1.0.1) (2023-11-18)
+
+
+### Bug Fixes
+
+* **unleash:** add readme ([2faf52c](https://github.com/will-bank/nestjs-packages/commit/2faf52c25a1d95fb875ece83160560f4410facf7))
+
 # 1.0.0 (2023-11-18)
 
 
