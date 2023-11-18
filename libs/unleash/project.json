@@ -1,0 +1,57 @@
+{
+  "name": "unleash",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/unleash/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/unleash",
+        "tsConfig": "libs/unleash/tsconfig.lib.json",
+        "packageJson": "libs/unleash/package.json",
+        "main": "libs/unleash/src/index.ts",
+        "assets": ["libs/unleash/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs unleash {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/unleash/**/*.ts",
+          "libs/unleash/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/unleash/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": true,
+        "changelog": true,
+        "npm": true,
+        "tagFormat": "unleash-v${VERSION}"
+      }
+    }
+  },
+  "tags": []
+}
