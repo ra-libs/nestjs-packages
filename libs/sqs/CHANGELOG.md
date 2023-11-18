@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/will-bank/nestjs-packages/compare/sqs-v2.0.3...sqs-v2.1.0) (2023-11-18)
+
+
+### Features
+
+* **unleash:** add unleash lib ([5fa52d5](https://github.com/will-bank/nestjs-packages/commit/5fa52d5dc68c6270b6e6978c419e742cb5d11bc3))
+
 ## [2.0.3](https://github.com/will-bank/nestjs-packages/compare/sqs-v2.0.2...sqs-v2.0.3) (2023-11-16)
 
 
