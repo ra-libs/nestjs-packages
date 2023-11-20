@@ -1,6 +1,8 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
-import { WinstonLogger } from '@will-bank/logger';
 import { NextFunction, Request, Response } from 'express';
+
+import { LogLevel } from '../types';
+import { WinstonLogger } from '../winston-logger.service';
 
 @Injectable()
 export class RequestLoggerMiddleware implements NestMiddleware {
@@ -13,9 +15,19 @@ export class RequestLoggerMiddleware implements NestMiddleware {
     response.on('finish', () => {
       const { statusCode } = response;
       const durationInMilliseconds = this.getDurationInMilliseconds(start);
-      this.logger.info(
-        `${method} ${originalUrl} ${statusCode} ${durationInMilliseconds}ms - ${userAgent} ${ip}`,
+
+      const logLevel =
+        statusCode >= 500
+          ? LogLevel.Error
+          : statusCode >= 400
+          ? LogLevel.Warn
+          : LogLevel.Info;
+
+      this.logger.log(
+        logLevel,
+        `${method} ${originalUrl} ${statusCode} - ${durationInMilliseconds} ms - ${userAgent} ${ip}`,
         {
+          sourceClass: 'RequestLogger',
           props: {
             originalUrl,
             statusCode,
