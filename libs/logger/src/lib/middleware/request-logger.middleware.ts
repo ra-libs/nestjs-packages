@@ -6,7 +6,7 @@ import { WinstonLogger } from '../winston-logger.service';
 
 @Injectable()
 export class RequestLoggerMiddleware implements NestMiddleware {
-  private logger = new WinstonLogger();
+  private logger = new WinstonLogger('RequestLogger');
   use(request: Request, response: Response, next: NextFunction): void {
     const { ip, method, originalUrl } = request;
     const userAgent = request.get('user-agent') || '';
@@ -27,7 +27,6 @@ export class RequestLoggerMiddleware implements NestMiddleware {
         logLevel,
         `${method} ${originalUrl} ${statusCode} - ${durationInMilliseconds} ms - ${userAgent} ${ip}`,
         {
-          sourceClass: 'RequestLogger',
           props: {
             originalUrl,
             statusCode,

@@ -35,7 +35,7 @@ export class SQSService implements OnModuleInit, OnModuleDestroy {
   public readonly producers = new Map<QueueName, Producer>();
 
   private sqsOptionsConfig: SQSClientConfig = {};
-  private readonly logger = new WinstonLogger();
+  private readonly logger = new WinstonLogger(SQSService.name);
 
   constructor(
     @Inject(SQS_OPTIONS) public readonly options: SQSOptions,

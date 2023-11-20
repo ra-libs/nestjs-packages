@@ -1,6 +1,5 @@
 import {
   Global,
-  Inject,
   MiddlewareConsumer,
   Module,
   NestModule,
@@ -35,8 +34,6 @@ import { WinstonLogger } from './winston-logger.service';
   exports: [LoggerKey, NestjsLoggerServiceAdapter],
 })
 export class LoggerModule implements NestModule {
-  constructor(@Inject(LoggerKey) private logger: Logger) {}
-
   public configure(consumer: MiddlewareConsumer): void {
     consumer
       .apply(RequestLoggerMiddleware)
