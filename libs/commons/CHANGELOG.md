@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/will-bank/nestjs-packages/compare/commons-v2.2.0...commons-v2.3.0) (2023-11-20)
+
+
+### Features
+
+* move RequestLogger to logger lib and add log level by status code ([eb95b6f](https://github.com/will-bank/nestjs-packages/commit/eb95b6f2f24bf7e28e8a878f6553446f25016c70))
+
 # [2.2.0](https://github.com/will-bank/nestjs-packages/compare/commons-v2.1.3...commons-v2.2.0) (2023-11-18)
 
 
