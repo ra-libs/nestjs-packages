@@ -7,7 +7,7 @@ import { CustomerModel } from './@types';
 
 @Injectable()
 export class XDataHashMiddleware implements NestMiddleware {
-  private readonly logger = new WinstonLogger();
+  private readonly logger = new WinstonLogger(XDataHashMiddleware.name);
 
   use(req: Request, res: Response, next: NextFunction): any {
     try {

@@ -6,8 +6,10 @@ import { getLoggerFormatOptions } from './winston.utilities';
 
 export class WinstonLogger implements Logger {
   private logger: winston.Logger;
+  private sourceClass: string;
 
-  constructor(options?: winston.LoggerOptions) {
+  constructor(sourceClass?: string, options?: winston.LoggerOptions) {
+    this.sourceClass = sourceClass || WinstonLogger.name;
     // Create winston logger
     this.logger = winston.createLogger(getLoggerFormatOptions(options));
   }
@@ -58,5 +60,12 @@ export class WinstonLogger implements Logger {
 
   public startProfile(id: string) {
     this.logger.profile(id);
+  }
+
+  private getLogData(data?: LogData): LogData {
+    return {
+      ...data,
+      sourceClass: data?.sourceClass || this.sourceClass,
+    };
   }
 }
