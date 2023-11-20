@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/will-bank/nestjs-packages/compare/sqs-v2.2.1...sqs-v2.2.2) (2023-11-20)
+
+
+### Bug Fixes
+
+* add sourceClass on WinstonLogger constructor ([4331bd2](https://github.com/will-bank/nestjs-packages/commit/4331bd2ab079e94e3b732a0c40dfed3cbe6718ec))
+
 ## [2.2.1](https://github.com/will-bank/nestjs-packages/compare/sqs-v2.2.0...sqs-v2.2.1) (2023-11-20)
 
 
