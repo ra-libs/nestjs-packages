@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/will-bank/nestjs-packages/compare/commons-v2.3.0...commons-v2.3.1) (2023-11-20)
+
+
+### Bug Fixes
+
+* **logger:** add sourceClass to winston logger constructor ([e502d1c](https://github.com/will-bank/nestjs-packages/commit/e502d1c0f6cad80d2021922412ea652d15e7340d))
+
 # [2.3.0](https://github.com/will-bank/nestjs-packages/compare/commons-v2.2.0...commons-v2.3.0) (2023-11-20)
 
 
