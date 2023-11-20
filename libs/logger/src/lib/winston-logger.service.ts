@@ -24,7 +24,7 @@ export class WinstonLogger implements Logger {
       level: level,
       message: message instanceof Error ? message.message : message,
       error: message instanceof Error ? message : undefined,
-      ...data,
+      ...this.getLogData(data),
     };
 
     if (profile) {
@@ -65,7 +65,7 @@ export class WinstonLogger implements Logger {
   private getLogData(data?: LogData): LogData {
     return {
       ...data,
-      sourceClass: data?.sourceClass || this.sourceClass,
-    };
+      sourceClass: data?.sourceClass || this.sourceClass
+    }
   }
 }
