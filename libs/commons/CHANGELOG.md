@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/will-bank/nestjs-packages/compare/commons-v2.3.2...commons-v2.4.0) (2023-11-21)
+
+
+### Features
+
+* **logger:** add child method to winston logger ([a3a6331](https://github.com/will-bank/nestjs-packages/commit/a3a6331771fdf2eabd4353434f61bb9ac4256806))
+
 ## [2.3.2](https://github.com/will-bank/nestjs-packages/compare/commons-v2.3.1...commons-v2.3.2) (2023-11-20)
 
 
