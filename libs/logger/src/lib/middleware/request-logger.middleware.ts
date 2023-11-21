@@ -1,12 +1,13 @@
-import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Inject, Injectable, NestMiddleware } from '@nestjs/common';
 import { NextFunction, Request, Response } from 'express';
 
+import { LogData, Logger, LoggerKey } from '../interfaces';
 import { LogLevel } from '../types';
-import { WinstonLogger } from '../winston-logger.service';
 
 @Injectable()
 export class RequestLoggerMiddleware implements NestMiddleware {
-  private logger = new WinstonLogger('RequestLogger');
+  constructor(@Inject(LoggerKey) private logger: Logger) {}
+
   use(request: Request, response: Response, next: NextFunction): void {
     const { ip, method, originalUrl } = request;
     const userAgent = request.get('user-agent') || '';
@@ -23,16 +24,18 @@ export class RequestLoggerMiddleware implements NestMiddleware {
           ? LogLevel.Warn
           : LogLevel.Info;
 
+      const logData: LogData = {
+        props: {
+          originalUrl,
+          statusCode,
+          userAgent,
+        },
+      };
+
       this.logger.log(
         logLevel,
         `${method} ${originalUrl} ${statusCode} - ${durationInMilliseconds} ms - ${userAgent} ${ip}`,
-        {
-          props: {
-            originalUrl,
-            statusCode,
-            userAgent,
-          },
-        }
+        logData
       );
     });
 
