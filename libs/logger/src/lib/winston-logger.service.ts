@@ -62,10 +62,14 @@ export class WinstonLogger implements Logger {
     this.logger.profile(id);
   }
 
+  public child(options: object) {
+    return this.logger.child(options);
+  }
+
   private getLogData(data?: LogData): LogData {
     return {
       ...data,
-      sourceClass: data?.sourceClass || this.sourceClass
-    }
+      sourceClass: data?.sourceClass || this.sourceClass,
+    };
   }
 }
