@@ -1,4 +1,4 @@
-import { DiscoveryModule, DiscoveryService } from '@golevelup/nestjs-discovery';
+import { DiscoveryModule } from '@golevelup/nestjs-discovery';
 import { createMock } from '@golevelup/ts-jest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { Producer } from 'sqs-producer';
