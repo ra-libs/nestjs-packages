@@ -1,3 +1,11 @@
+## [2.2.1](https://github.com/will-bank/nestjs-packages/compare/athena-v2.2.0...athena-v2.2.1) (2023-11-21)
+
+
+### Bug Fixes
+
+* update deps ([04538b4](https://github.com/will-bank/nestjs-packages/commit/04538b45acb8384bbda42d6c42b778ebb080afa2))
+* update nx deps ([611540d](https://github.com/will-bank/nestjs-packages/commit/611540d1c127af6e8793f41914c323c406dcb8b7))
+
 # [2.2.0](https://github.com/will-bank/nestjs-packages/compare/athena-v2.1.0...athena-v2.2.0) (2023-11-20)
 
 
