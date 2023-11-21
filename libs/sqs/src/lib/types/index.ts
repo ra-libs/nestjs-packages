@@ -25,7 +25,7 @@ export type SQSProducerOptions = ProducerOptions & {
   queueName: QueueName;
 };
 
-export type Message = SQSMessage;
+export type RawMessage = SQSMessage;
 
 export interface SendMessage<T = unknown> {
   id: string;
@@ -55,4 +55,24 @@ export type SQSProducerOptionsService = SQSProducerOptions & {
 export type SQSConsumerOptionsService = SQSConsumerOptions & {
   handleMessage: (message: SQSMessage) => Promise<void | SQSMessage>;
   sqsClientConfig?: SQSClientConfig;
+};
+
+export type Message = SQSMessage & {
+  Body: {
+    Type: string;
+    MessageId: string;
+    TopicArn: string;
+    Message: string;
+    Timestamp: string;
+    SignatureVersion: string;
+    Signature: string;
+    SigningCertURL: string;
+    UnsubscribeURL: string;
+    MessageAttributes: {
+      [key: string]: {
+        Type: string;
+        Value: string;
+      };
+    };
+  };
 };

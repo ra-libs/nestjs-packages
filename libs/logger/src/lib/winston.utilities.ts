@@ -26,7 +26,7 @@ export function getLoggerFormatOptions(options?: LoggerOptions): LoggerOptions {
 }
 
 export const getFormat = (): Format => {
-  const formatError = format((info, opts) => {
+  const formatError = format((info) => {
     // Info contains an Error property
     if (info['error'] && info['error'] instanceof Error) {
       info['stack'] = info['error'].stack;
@@ -118,7 +118,8 @@ const nestLikeColorScheme: Record<string, (text: string) => string> = {
 
 const nestLikeConsoleFormat = (): Format =>
   format.printf((info: TransformableInfo) => {
-    const { level, message, data, ms, error, ...meta } = info;
+    const { level, message, data, ms, ...meta } = info;
+    delete meta['error'];
 
     let { timestamp } = info;
     delete meta['timestamp'];

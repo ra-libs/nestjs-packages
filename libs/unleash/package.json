@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "dependencies": {
     "tslib": "^2.3.0",
-    "@nestjs/common": "10.2.7",
+    "@nestjs/common": "10.2.10",
     "unleash-client": "^5.1.0",
     "axios": "^1.6.0"
   },
