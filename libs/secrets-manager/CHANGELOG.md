@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/will-bank/nestjs-packages/compare/secrets-manager-v2.2.1...secrets-manager-v2.3.0) (2023-11-21)
+
+
+### Features
+
+* **sqs:** add RawMessage and Message type ([27d1967](https://github.com/will-bank/nestjs-packages/commit/27d1967ea41ee486a8ef4d1a9e02791ac5a7a878))
+
 ## [2.2.1](https://github.com/will-bank/nestjs-packages/compare/secrets-manager-v2.2.0...secrets-manager-v2.2.1) (2023-11-21)
 
 
