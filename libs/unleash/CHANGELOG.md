@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/will-bank/nestjs-packages/compare/unleash-v1.1.1...unleash-v1.2.0) (2023-11-21)
+
+
+### Features
+
+* **sqs:** add RawMessage and Message type ([27d1967](https://github.com/will-bank/nestjs-packages/commit/27d1967ea41ee486a8ef4d1a9e02791ac5a7a878))
+
 ## [1.1.1](https://github.com/will-bank/nestjs-packages/compare/unleash-v1.1.0...unleash-v1.1.1) (2023-11-21)
 
 
