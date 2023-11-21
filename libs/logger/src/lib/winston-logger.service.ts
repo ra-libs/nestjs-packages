@@ -7,9 +7,12 @@ import { getLoggerFormatOptions } from './winston.utilities';
 export class WinstonLogger implements Logger {
   private logger: winston.Logger;
   private sourceClass: string;
+  private options: winston.LoggerOptions;
 
   constructor(sourceClass?: string, options?: winston.LoggerOptions) {
     this.sourceClass = sourceClass || WinstonLogger.name;
+    this.options = options || {};
+
     // Create winston logger
     this.logger = winston.createLogger(getLoggerFormatOptions(options));
   }
@@ -63,7 +66,9 @@ export class WinstonLogger implements Logger {
   }
 
   public child(options: object) {
-    return this.logger.child(options);
+    const childLogger = new WinstonLogger(this.sourceClass, this.options);
+    childLogger.logger = this.logger.child(options);
+    return childLogger;
   }
 
   private getLogData(data?: LogData): LogData {
