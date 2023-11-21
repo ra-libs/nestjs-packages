@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/will-bank/nestjs-packages/compare/logger-v2.4.0...logger-v2.4.1) (2023-11-21)
+
+
+### Bug Fixes
+
+* **logger:** use inject logger in request middleware to get correlation id ([1743d8a](https://github.com/will-bank/nestjs-packages/commit/1743d8ad2fb6de105fa9b6fe1c2393897d1eb31f))
+
 # [2.4.0](https://github.com/will-bank/nestjs-packages/compare/logger-v2.3.1...logger-v2.4.0) (2023-11-21)
 
 
