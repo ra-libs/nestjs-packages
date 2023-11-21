@@ -1,3 +1,10 @@
+## [2.4.3](https://github.com/will-bank/nestjs-packages/compare/sqs-v2.4.2...sqs-v2.4.3) (2023-11-21)
+
+
+### Bug Fixes
+
+* **sqs:** Message type ([d38a18c](https://github.com/will-bank/nestjs-packages/commit/d38a18c63b58c8add580231c59547f30d7a000f5))
+
 ## [2.4.2](https://github.com/will-bank/nestjs-packages/compare/sqs-v2.4.1...sqs-v2.4.2) (2023-11-21)
 
 
