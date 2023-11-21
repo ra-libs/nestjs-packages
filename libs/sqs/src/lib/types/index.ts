@@ -57,18 +57,18 @@ export type SQSConsumerOptionsService = SQSConsumerOptions & {
   sqsClientConfig?: SQSClientConfig;
 };
 
-export type Message = SQSMessage & {
+export type Message = Omit<SQSMessage, 'Body'> & {
   Body: {
-    Type: string;
-    MessageId: string;
-    TopicArn: string;
+    Type?: string;
+    MessageId?: string;
+    TopicArn?: string;
     Message: string;
-    Timestamp: string;
-    SignatureVersion: string;
-    Signature: string;
-    SigningCertURL: string;
-    UnsubscribeURL: string;
-    MessageAttributes: {
+    Timestamp?: string;
+    SignatureVersion?: string;
+    Signature?: string;
+    SigningCertURL?: string;
+    UnsubscribeURL?: string;
+    MessageAttributes?: {
       [key: string]: {
         Type: string;
         Value: string;
