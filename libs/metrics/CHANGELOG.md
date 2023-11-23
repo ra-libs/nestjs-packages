@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/will-bank/nestjs-packages/compare/metrics-v2.3.0...metrics-v2.3.1) (2023-11-23)
+
+
+### Bug Fixes
+
+* **metrics:** export Tags ([5d5d3d0](https://github.com/will-bank/nestjs-packages/commit/5d5d3d027fd070ec61ea5583f7beae232335f6a9))
+
 # [2.3.0](https://github.com/will-bank/nestjs-packages/compare/metrics-v2.2.1...metrics-v2.3.0) (2023-11-21)
 
 
