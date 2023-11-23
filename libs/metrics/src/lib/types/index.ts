@@ -1,2 +1,2 @@
 
-export { Tags } from 'hot-shots'
+export { Tags, StatsCb } from 'hot-shots'
