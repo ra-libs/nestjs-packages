@@ -60,9 +60,8 @@ export const getFormat = (): Format => {
 };
 
 function buildPrint(info: TransformableInfo): string {
-  return (info.message = `${buildPrintSourceClass(info)}${
-    info.message
-  }${buildPrintError(info)}`);
+  return (info.message = `${buildPrintSourceClass(info)}${info.message
+    }${buildPrintError(info)}`);
 }
 
 function buildPrintSourceClass(info: TransformableInfo): string {
@@ -93,6 +92,10 @@ export const getLogLevel = (): string => {
     process.env['NODE_ENV'] === 'production' ? LogLevel.Info : LogLevel.Debug;
   return process.env['LOG_LEVEL'] || defaultLogLevel;
 };
+
+export const getAppName = (): string => {
+  return process.env['APP_NAME'] || '';
+}
 
 // For Local Development
 const clc = {
@@ -143,7 +146,7 @@ const nestLikeConsoleFormat = (): Format =>
 
     delete meta['dd'];
 
-    const { sourceClass, props, correlationId, app = 'Nest' } = data || {};
+    const { sourceClass, props, correlationId, app = getAppName() } = data || {};
     const metaToUse = { ...props, ...meta, correlationId };
 
     const stringifiedMeta = safeStringify(metaToUse);

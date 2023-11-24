@@ -8,6 +8,7 @@ import {
 } from './interfaces/context-storage-service.interface';
 import { Logger, LoggerBaseKey } from './interfaces/logger.interface';
 import { LogLevel } from './types';
+import { getAppName } from './winston.utilities';
 
 @Injectable({ scope: Scope.TRANSIENT })
 export class LoggerService implements Logger {
@@ -24,7 +25,7 @@ export class LoggerService implements Logger {
     // Set the source class from the parent class
     this.sourceClass = parentClass?.constructor?.name;
 
-    this.app = process.env['APP_NAME'] || '';
+    this.app = getAppName();
   }
 
   public log(
