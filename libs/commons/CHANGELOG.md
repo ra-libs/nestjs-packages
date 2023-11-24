@@ -1,3 +1,10 @@
+## [2.5.2](https://github.com/will-bank/nestjs-packages/compare/commons-v2.5.1...commons-v2.5.2) (2023-11-24)
+
+
+### Bug Fixes
+
+* **logger:** app name local ([9127db8](https://github.com/will-bank/nestjs-packages/commit/9127db8500ac83110cfb93dbbd6077edffc42d71))
+
 ## [2.5.1](https://github.com/will-bank/nestjs-packages/compare/commons-v2.5.0...commons-v2.5.1) (2023-11-21)
 
 
