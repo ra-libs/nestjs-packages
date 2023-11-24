@@ -1,3 +1,10 @@
+## [2.4.4](https://github.com/will-bank/nestjs-packages/compare/sqs-v2.4.3...sqs-v2.4.4) (2023-11-24)
+
+
+### Bug Fixes
+
+* **logger:** app name local ([9127db8](https://github.com/will-bank/nestjs-packages/commit/9127db8500ac83110cfb93dbbd6077edffc42d71))
+
 ## [2.4.3](https://github.com/will-bank/nestjs-packages/compare/sqs-v2.4.2...sqs-v2.4.3) (2023-11-21)
 
 
