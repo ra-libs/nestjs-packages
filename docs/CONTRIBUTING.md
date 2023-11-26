@@ -31,7 +31,7 @@ That's it :rocket:
 ### Manually
 
 ```bash
-nx g @nx/nest:library <LIBRARY_NAME> --publishable --importPath @will-bank/<LIBRARY_NAME>
+nx g @nx/nest:library <LIBRARY_NAME> --publishable --importPath @ra-libs/<LIBRARY_NAME>
 ```
 
 After publishable library created, you must update `package.json`
@@ -41,7 +41,7 @@ After publishable library created, you must update `package.json`
 ```json
   "repository": {
     "type": "git",
-    "url": "https://github.com/will-bank/nestjs-packages.git",
+    "url": "https://github.com/ra-libs/nestjs-packages.git",
     "directory": "libs/<LIBRARY_NAME>"
   },
 ```

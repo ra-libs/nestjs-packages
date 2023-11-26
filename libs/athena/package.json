@@ -1,5 +1,5 @@
 {
-  "name": "@will-bank/athena",
+  "name": "@ra-libs/athena",
   "version": "2.3.0",
   "dependencies": {
     "tslib": "^2.3.0",
@@ -9,13 +9,5 @@
   "type": "commonjs",
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/will-bank/nestjs-packages.git",
-    "directory": "libs/athena"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  }
+  "private": true
 }

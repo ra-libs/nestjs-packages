@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/unleash
+pnpm add @ra-libs/unleash
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -17,7 +17,7 @@ pnpm add @will-bank/unleash
 in your `app.module.ts` import this module
 
 ```ts
-import { UnleashModule } from '@will-bank/unleash';
+import { UnleashModule } from '@ra-libs/unleash';
 
 @Module({
   imports: [
@@ -43,7 +43,7 @@ If you want to toggle feature using this library you should add these environmen
 In your specific service inject the UnleashService as follow:
 
 ```ts
-import { UnleashService } from '@will-bank/unleash';
+import { UnleashService } from '@ra-libs/unleash';
 
 @Injectable()
 export class YourService {
@@ -60,7 +60,7 @@ export class YourService {
 ### Node
 
 ```ts
-import { UnleashService } from '@will-bank/unleash';
+import { UnleashService } from '@ra-libs/unleash';
 
 const unleashService = new UnleashService();
 

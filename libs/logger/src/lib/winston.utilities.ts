@@ -16,12 +16,18 @@ export function getLoggerFormatOptions(options?: LoggerOptions): LoggerOptions {
     cont++;
   });
 
+  const transportsOptions = [new transports.Console()];
+  if (options?.transports) {
+    transportsOptions.push(...(options?.transports as any));
+  }
+
   return {
     level: getLogLevel(),
     levels: levels,
     format: getFormat(),
-    transports: [new transports.Console()],
+
     ...options,
+    transports: transportsOptions,
   };
 }
 
@@ -60,8 +66,9 @@ export const getFormat = (): Format => {
 };
 
 function buildPrint(info: TransformableInfo): string {
-  return (info.message = `${buildPrintSourceClass(info)}${info.message
-    }${buildPrintError(info)}`);
+  return (info.message = `${buildPrintSourceClass(info)}${
+    info.message
+  }${buildPrintError(info)}`);
 }
 
 function buildPrintSourceClass(info: TransformableInfo): string {
@@ -95,7 +102,7 @@ export const getLogLevel = (): string => {
 
 export const getAppName = (): string => {
   return process.env['APP_NAME'] || '';
-}
+};
 
 // For Local Development
 const clc = {
@@ -146,7 +153,12 @@ const nestLikeConsoleFormat = (): Format =>
 
     delete meta['dd'];
 
-    const { sourceClass, props, correlationId, app = getAppName() } = data || {};
+    const {
+      sourceClass,
+      props,
+      correlationId,
+      app = getAppName(),
+    } = data || {};
     const metaToUse = { ...props, ...meta, correlationId };
 
     const stringifiedMeta = safeStringify(metaToUse);

@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/secrets-manager
+pnpm add @ra-libs/secrets-manager
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -17,7 +17,7 @@ pnpm add @will-bank/secrets-manager
 in your `app.module.ts` import this module
 
 ```ts
-import { SecretsManagerModule } from '@will-bank/secrets-manager';
+import { SecretsManagerModule } from '@ra-libs/secrets-manager';
 
 @Module({
   imports: [
@@ -35,7 +35,7 @@ You can pass configurations options as an object parameter. By default this modu
 In your specific service inject the SecretsManagerService as follow:
 
 ```ts
-import { SecretsManagerService } from '@will-bank/secrets-manager';
+import { SecretsManagerService } from '@ra-libs/secrets-manager';
 
 @Injectable()
 export class YourService {
@@ -55,7 +55,7 @@ export class YourService {
 ### Node
 
 ```ts
-import { SecretsManagerService } from '@will-bank/secrets-manager';
+import { SecretsManagerService } from '@ra-libs/secrets-manager';
 
 const secretsManagerService = new SecretsManagerService();
 

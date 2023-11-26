@@ -1,3 +1,5 @@
+import winston = require('winston');
+
 export enum LogLevel {
   Emergency = 'emergency', // One or more systems are unusable.
   Fatal = 'fatal', // A person must take an action immediately
@@ -6,3 +8,7 @@ export enum LogLevel {
   Info = 'info', // Routine information, such as ongoing status or performance
   Debug = 'debug', // Debug or trace information
 }
+
+export type LoggerModuleOptions = {
+  winstonOptions?: winston.LoggerOptions;
+};

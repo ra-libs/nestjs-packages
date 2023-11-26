@@ -39,7 +39,7 @@
       "options": {
         "github": true,
         "changelog": true,
-        "npm": true,
+        "npm": false,
         "tagFormat": "sns-v${VERSION}"
       }
     }

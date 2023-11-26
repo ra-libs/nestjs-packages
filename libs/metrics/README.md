@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/metrics
+pnpm add @ra-libs/metrics
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -33,7 +33,7 @@ This library can be modified using some env vars
 in your `app.module.ts` import this module
 
 ```ts
-import { MetricsModule } from '@will-bank/metrics';
+import { MetricsModule } from '@ra-libs/metrics';
 
 @Module({
   imports: [
@@ -49,7 +49,7 @@ You can pass configuration options as an object parameter or it will use by defa
 In your specific service inject the GrowthbookService as follow:
 
 ```ts
-import { MetricsService } from '@will-bank/metrics';
+import { MetricsService } from '@ra-libs/metrics';
 
 @Injectable()
 export class YourService {
@@ -68,7 +68,7 @@ export class YourService {
 ### Node
 
 ```ts
-import { MetricsService } from '@will-bank/metrics';
+import { MetricsService } from '@ra-libs/metrics';
 
 const metricsService = new MetricsService();
 

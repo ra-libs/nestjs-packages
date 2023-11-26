@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/ssm
+pnpm add @ra-libs/ssm
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -17,7 +17,7 @@ pnpm add @will-bank/ssm
 in your `app.module.ts` import this module
 
 ```ts
-import { SSMModule } from '@will-bank/ssm';
+import { SSMModule } from '@ra-libs/ssm';
 
 @Module({
   imports: [
@@ -35,7 +35,7 @@ You can pass configurations options as an object parameter. By default this modu
 In your specific service inject the SSMService as follow:
 
 ```ts
-import { SSMService } from '@will-bank/ssm';
+import { SSMService } from '@ra-libs/ssm';
 
 @Injectable()
 export class YourService {
@@ -58,7 +58,7 @@ export class YourService {
 ### Node
 
 ```ts
-import { SSMService } from '@will-bank/ssm';
+import { SSMService } from '@ra-libs/ssm';
 
 const ssmService = new SSMService();
 

@@ -1,5 +1,5 @@
 create-lib:
-	pnpm dlx nx g @nx/nest:library ${NAME} --publishable --importPath @will-bank/${NAME}
+	pnpm dlx nx g @nx/nest:library ${NAME} --publishable --importPath @ra-libs/${NAME}
 	$(MAKE) setup-lib NAME=${NAME}
 
 setup-lib:
@@ -7,9 +7,8 @@ setup-lib:
 	cd libs/${NAME} && \
 	pnpm pkg set private=false --json && \
 	pnpm pkg set 'repository.type'='git' && \
-	pnpm pkg set 'repository.url'='https://github.com/will-bank/nestjs-packages.git' && \
-	pnpm pkg set 'repository.directory'='libs/${NAME}' && \
-	pnpm pkg set 'publishConfig.registry'='https://npm.pkg.github.com/'
+	pnpm pkg set 'repository.url'='https://github.com/ra-libs/nestjs-packages.git' && \
+	pnpm pkg set 'repository.directory'='libs/${NAME}'
 
 lint:
 	pnpm dlx nx format:write

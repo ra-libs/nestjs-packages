@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/growthbook
+pnpm add @ra-libs/growthbook
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -17,7 +17,7 @@ pnpm add @will-bank/growthbook
 in your `app.module.ts` import this module
 
 ```ts
-import { GrowthbookModule } from '@will-bank/growthbook';
+import { GrowthbookModule } from '@ra-libs/growthbook';
 
 @Module({
   imports: [
@@ -36,7 +36,7 @@ You can pass configuration options as an object parameter or it will use by defa
 In your specific service inject the GrowthbookService as follow:
 
 ```ts
-import { GrowthbookService } from '@will-bank/growthbook';
+import { GrowthbookService } from '@ra-libs/growthbook';
 
 @Injectable()
 export class YourService {
@@ -58,7 +58,7 @@ export class YourService {
 ### Use unmapped function
 
 ```ts
-import { GrowthbookService } from '@will-bank/growthbook';
+import { GrowthbookService } from '@ra-libs/growthbook';
 
 export class YourService {
   constructor(private readonly growthbookService: GrowthbookService) {}
@@ -78,7 +78,7 @@ export class YourService {
 ### Node
 
 ```ts
-import { GrowthbookService } from '@will-bank/growthbook';
+import { GrowthbookService } from '@ra-libs/growthbook';
 
 const growthbookService = new GrowthbookService();
 

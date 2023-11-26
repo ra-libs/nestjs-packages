@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/athena
+pnpm add @ra-libs/athena
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -17,7 +17,7 @@ pnpm add @will-bank/athena
 in your `app.module.ts` import this module
 
 ```ts
-import { AthenaModule } from '@will-bank/athena';
+import { AthenaModule } from '@ra-libs/athena';
 
 @Module({
   imports: [
@@ -37,7 +37,7 @@ You can pass configurations options as an object parameter. By default this modu
 In your specific service inject the S3Service as follow:
 
 ```ts
-import { AthenaService } from '@will-bank/athena';
+import { AthenaService } from '@ra-libs/athena';
 
 @Injectable()
 export class YourService {
@@ -54,7 +54,7 @@ export class YourService {
 ### Node
 
 ```ts
-import { AthenaService } from '@will-bank/athena';
+import { AthenaService } from '@ra-libs/athena';
 
 const athenaService = new AthenaService();
 

@@ -5,10 +5,6 @@
   "scripts": {
     "prepare": "husky install"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "preinstall": "npx only-allow pnpm"
-  },
   "private": true,
   "dependencies": {
     "@aws-sdk/client-athena": "^3.454.0",

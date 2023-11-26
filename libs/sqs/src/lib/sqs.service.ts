@@ -12,7 +12,7 @@ import {
   OnModuleDestroy,
   OnModuleInit,
 } from '@nestjs/common';
-import { WinstonLogger } from '@will-bank/logger';
+import { WinstonLogger } from '@ra-libs/logger';
 import { Consumer } from 'sqs-consumer';
 import { Producer } from 'sqs-producer';
 

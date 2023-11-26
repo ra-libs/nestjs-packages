@@ -1,14 +1,6 @@
 {
-  "name": "@will-bank/growthbook",
+  "name": "@ra-libs/growthbook",
   "version": "2.3.0",
   "type": "commonjs",
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/will-bank/nestjs-packages.git",
-    "directory": "libs/growthbook"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  }
+  "private": true
 }

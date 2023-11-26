@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/s3
+pnpm add @ra-libs/s3
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -17,7 +17,7 @@ pnpm add @will-bank/s3
 in your `app.module.ts` import this module
 
 ```ts
-import { S3Module } from '@will-bank/s3';
+import { S3Module } from '@ra-libs/s3';
 
 @Module({
   imports: [
@@ -36,7 +36,7 @@ You can pass configurations options as an object parameter. By default this modu
 In your specific service inject the S3Service as follow:
 
 ```ts
-import { S3Service } from '@will-bank/s3';
+import { S3Service } from '@ra-libs/s3';
 
 @Injectable()
 export class YourService {
@@ -55,7 +55,7 @@ export class YourService {
 ### Node
 
 ```ts
-import { S3Service } from '@will-bank/s3';
+import { S3Service } from '@ra-libs/s3';
 
 const s3Service = new S3Service('your-bucket');
 

@@ -1,5 +1,5 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
-import { WinstonLogger } from '@will-bank/logger';
+import { WinstonLogger } from '@ra-libs/logger';
 import { NextFunction, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 

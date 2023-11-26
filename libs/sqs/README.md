@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/sqs
+pnpm add @ra-libs/sqs
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -17,7 +17,7 @@ pnpm add @will-bank/sqs
 in your `app.module.ts` import this module
 
 ```ts
-import { SQSModule } from '@will-bank/sqs';
+import { SQSModule } from '@ra-libs/sqs';
 
 @Module({
   imports: [
@@ -44,7 +44,7 @@ In your specific service:
 ## Decorate Methods
 
 ```ts
-import { Message, SqsMessageHandler, SqsConsumerEventHandler } from '@will-bank/sqs';
+import { Message, SqsMessageHandler, SqsConsumerEventHandler } from '@ra-libs/sqs';
 
 @Injectable()
 export class AppMessageHandler {
@@ -65,7 +65,7 @@ export class AppMessageHandler {
 in your `app.module.ts` import this module
 
 ```ts
-import { SQSModule } from '@will-bank/sqs';
+import { SQSModule } from '@ra-libs/sqs';
 
 @Module({
   imports: [
@@ -90,7 +90,7 @@ You can pass configurations options as an object parameter. By default this modu
 In your specific service inject the SQSService as follow:
 
 ```ts
-import { SQSService } from '@will-bank/sqs';
+import { SQSService } from '@ra-libs/sqs';
 
 @Injectable()
 export class YourService {
@@ -111,7 +111,7 @@ export class YourService {
 ### Node
 
 ```ts
-import { SQSProducerService } from '@will-bank/sqs';
+import { SQSProducerService } from '@ra-libs/sqs';
 
 const sqsProducerService = new SQSProducerService({
   producers: [

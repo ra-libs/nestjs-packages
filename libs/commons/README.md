@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/commons
+pnpm add @ra-libs/commons
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -23,7 +23,7 @@ This decorator will extract the `x-request-id` from the request headers if it ex
 In your specific controller add the RequestId decorator
 
 ```ts
-import { RequestId } from '@will-bank/commons';
+import { RequestId } from '@ra-libs/commons';
 
 @Controller('XPTO')
 export class YourController {
@@ -39,7 +39,7 @@ export class YourController {
 #### RequestMiddleware
 
 ```ts
-import { RequestLoggerMiddleware } from '@will-bank/commons';
+import { RequestLoggerMiddleware } from '@ra-libs/commons';
 
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

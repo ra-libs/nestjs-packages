@@ -9,7 +9,7 @@ Using this library will make it easier to filter logs in datadog.
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/logger
+pnpm add @ra-libs/logger
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -21,7 +21,7 @@ pnpm add @will-bank/logger
 in your `main.ts`
 
 ```ts
-import { NestjsLoggerServiceAdapter } from '@will-bank/logger`
+import { NestjsLoggerServiceAdapter } from '@ra-libs/logger`
 
 async function bootstrap(){
   const app = await NestFactory.create(AppModule, {
@@ -38,7 +38,7 @@ This will override the application logger.
 in your `app.module.ts`
 
 ```ts
-import { LoggerModule } from '@will-bank/logger';
+import { LoggerModule } from '@ra-libs/logger';
 
 @Module({
   imports: [LoggerModule],
@@ -55,7 +55,7 @@ This will initialize all the logger dependencies providers
 in your specifc service
 
 ```ts
-import { Logger, LoggerKey } from '@will-bank/logger';
+import { Logger, LoggerKey } from '@ra-libs/logger';
 
 @Injectable()
 export class YourCustomService {
@@ -74,7 +74,7 @@ export class YourCustomService {
 ## Node
 
 ```ts
-import { WinstonLogger } from '@will-bank/logger';
+import { WinstonLogger } from '@ra-libs/logger';
 
 const logger = new WinstonLogger();
 

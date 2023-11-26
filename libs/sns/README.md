@@ -5,7 +5,7 @@ This library was generated with [Nx](https://nx.dev).
 ## Installing this package
 
 ```bash
-pnpm add @will-bank/sns
+pnpm add @ra-libs/sns
 ```
 
 > Make sure to create your `.npmrc` correctly. check this [documentation](../../docs/NPMRC.md)
@@ -17,7 +17,7 @@ pnpm add @will-bank/sns
 in your `app.module.ts` import this module
 
 ```ts
-import { SNSModule } from '@will-bank/sns';
+import { SNSModule } from '@ra-libs/sns';
 
 @Module({
   imports: [
@@ -35,7 +35,7 @@ You can pass configurations options as an object parameter. By default this modu
 In your specific service inject the SNSService as follow:
 
 ```ts
-import { SNSService } from '@will-bank/sns';
+import { SNSService } from '@ra-libs/sns';
 
 @Injectable()
 export class YourService {
@@ -59,7 +59,7 @@ export class YourService {
 ### Node
 
 ```ts
-import { SNSService } from '@will-bank/sns';
+import { SNSService } from '@ra-libs/sns';
 
 const snsService = new SNSService();
 

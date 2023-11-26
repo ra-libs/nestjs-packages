@@ -1,6 +1,6 @@
 module.exports = {
   branches: ['main'],
-  repositoryUrl: 'https://github.com/will-bank/nestjs-packages',
+  repositoryUrl: 'https://github.com/ra-libs/nestjs-packages',
   gitAssets: [
     'package-lock.json',
     '${PROJECT_DIR}/CHANGELOG.md',
