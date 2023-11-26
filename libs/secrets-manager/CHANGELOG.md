@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ra-libs/nestjs-packages/compare/secrets-manager-v1.0.0...secrets-manager-v1.0.1) (2023-11-26)
+
+
+### Bug Fixes
+
+* disable libs github semantic ([840e04d](https://github.com/ra-libs/nestjs-packages/commit/840e04d1ab9adbdbacab5488c89223ec2e845c5b))
+
 # 1.0.0 (2023-11-26)
 
 
