@@ -2,7 +2,7 @@
   "name": "@ra-libs/logger",
   "version": "1.0.0",
   "type": "commonjs",
-  "private": true,
+  "private": false,
   "peerDependencies": {
     "@nestjs/core": "^10.2.7"
   },
@@ -10,5 +10,10 @@
     "@nestjs/core": {
       "injected": true
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ra-libs/nestjs-packages.git",
+    "directory": "libs/logger"
   }
 }
