@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ra-libs/nestjs-packages/compare/sqs-v1.1.0...sqs-v1.1.1) (2023-11-26)
+
+
+### Bug Fixes
+
+* **logger:** deploy ([727ab94](https://github.com/ra-libs/nestjs-packages/commit/727ab947f98db254d3cc39730f94d7fcbe547002))
+
 # [1.1.0](https://github.com/ra-libs/nestjs-packages/compare/sqs-v1.0.0...sqs-v1.1.0) (2023-11-26)
 
 
