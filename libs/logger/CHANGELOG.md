@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ra-libs/nestjs-packages/compare/logger-v1.0.0...logger-v1.1.0) (2023-11-26)
+
+
+### Features
+
+* allow publish logger ([5277f05](https://github.com/ra-libs/nestjs-packages/commit/5277f05305654490962391fa70ab12d21e9b5588))
+
 # 1.0.0 (2023-11-26)
 
 
