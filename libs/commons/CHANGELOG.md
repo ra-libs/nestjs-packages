@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/ra-libs/nestjs-packages/compare/commons-v1.0.0...commons-v1.1.0) (2023-11-26)
+
+
+### Bug Fixes
+
+* disable libs github semantic ([840e04d](https://github.com/ra-libs/nestjs-packages/commit/840e04d1ab9adbdbacab5488c89223ec2e845c5b))
+
+
+### Features
+
+* allow publish logger ([5277f05](https://github.com/ra-libs/nestjs-packages/commit/5277f05305654490962391fa70ab12d21e9b5588))
+
 # 1.0.0 (2023-11-26)
 
 
